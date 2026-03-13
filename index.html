@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK's Greatest Driving Roads — Interactive Map</title>
+<meta name="description" content="Explore the UK's most exhilarating driving roads for sports cars. An interactive map featuring 20 legendary routes across England, Scotland, and Wales.">
+
+<!-- Fonts -->
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <div class="logo-group">
+      <svg class="logo-icon" viewBox="0 0 32 32" width="32" height="32" fill="none" aria-hidden="true">
+        <path d="M16 2L4 10v12l12 8 12-8V10L16 2z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        <path d="M8 14c2-3 5-5 8-5s6 2 8 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M10 18c1.5-2 3.5-3 6-3s4.5 1 6 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+        <circle cx="16" cy="21" r="1.5" fill="currentColor"/>
+      </svg>
+      <div>
+        <span class="logo-text">UK Driving Roads</span>
+        <span class="logo-sub">The Essential Sports Car Map</span>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <button class="nav-btn active" data-filter="all">All Roads</button>
+      <button class="nav-btn" data-filter="scotland">Scotland</button>
+      <button class="nav-btn" data-filter="wales">Wales</button>
+      <button class="nav-btn" data-filter="england">England</button>
+    </nav>
+    <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">Britain's Greatest<br><span class="hero-accent">Driving Roads</span></h1>
+    <p class="hero-desc">20 legendary routes across England, Scotland, and Wales — every hairpin, summit, and sweeping curve that makes a sports car feel alive.</p>
+    <button class="hero-cta" id="scrollToMap">
+      <i data-lucide="map" style="width:18px;height:18px"></i>
+      Explore the Map
+    </button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num" id="roadCount">20</span>
+      <span class="stat-label">Roads</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">3</span>
+      <span class="stat-label">Countries</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">800+</span>
+      <span class="stat-label">Miles</span>
+    </div>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section" id="map-section">
+  <div class="map-controls">
+    <div class="search-box">
+      <i data-lucide="search" style="width:16px;height:16px"></i>
+      <input type="text" id="searchInput" placeholder="Search roads..." autocomplete="off">
+    </div>
+    <div class="difficulty-filters">
+      <button class="diff-btn active" data-difficulty="all">All</button>
+      <button class="diff-btn" data-difficulty="thrilling">Thrilling</button>
+      <button class="diff-btn" data-difficulty="challenging">Challenging</button>
+      <button class="diff-btn" data-difficulty="scenic">Scenic</button>
+    </div>
+  </div>
+  <div class="map-wrapper">
+    <div id="map"></div>
+    <aside class="road-panel collapsed" id="roadPanel">
+      <div class="panel-header">
+        <h2 class="panel-title" id="panelTitle">Select a Road</h2>
+        <button class="panel-close" id="panelClose" aria-label="Close panel">
+          <i data-lucide="x" style="width:18px;height:18px"></i>
+        </button>
+      </div>
+      <div class="panel-body" id="panelBody">
+        <p class="panel-hint">Click any marker on the map to discover route details, driving tips, and what makes each road special.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- Road List -->
+<section class="road-list-section" id="road-list">
+  <h2 class="section-title">All Routes at a Glance</h2>
+  <div class="road-grid" id="roadGrid"></div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>Drive responsibly. Respect speed limits and road conditions. These roads are public highways — not racetracks.</p>
+  <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer" class="footer-attr">Created with Perplexity Computer</a>
+</footer>
+
+<script src="./roads-data.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

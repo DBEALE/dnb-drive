@@ -1,0 +1,305 @@
+/* ===== THEME TOGGLE ===== */
+(function() {
+  const toggle = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  root.setAttribute('data-theme', theme);
+  updateToggleIcon();
+
+  toggle && toggle.addEventListener('click', () => {
+    theme = theme === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', theme);
+    updateToggleIcon();
+    // Update map tiles if map exists
+    if (window.currentTileLayer && window.map) {
+      window.map.removeLayer(window.currentTileLayer);
+      window.currentTileLayer = createTileLayer();
+      window.map.addLayer(window.currentTileLayer);
+    }
+  });
+
+  function updateToggleIcon() {
+    if (!toggle) return;
+    toggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+    toggle.innerHTML = theme === 'dark'
+      ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
+})();
+
+/* ===== LUCIDE ICONS ===== */
+lucide.createIcons();
+
+/* ===== MAP SETUP ===== */
+function createTileLayer() {
+  const theme = document.documentElement.getAttribute('data-theme');
+  const isDark = theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches);
+  
+  if (isDark) {
+    return L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 18
+    });
+  } else {
+    return L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 18
+    });
+  }
+}
+
+const map = L.map('map', {
+  center: [54.5, -3.5],
+  zoom: 6,
+  zoomControl: true,
+  scrollWheelZoom: true
+});
+
+window.map = map;
+window.currentTileLayer = createTileLayer();
+window.currentTileLayer.addTo(map);
+
+// Collapse panel by default on mobile
+if (window.innerWidth <= 900) {
+  document.getElementById('roadPanel').classList.add('collapsed');
+}
+
+/* ===== MARKERS ===== */
+const markers = [];
+const markerGroup = L.featureGroup();
+
+function getCountryClass(region) {
+  return region.toLowerCase();
+}
+
+function createMarkerIcon(road) {
+  const countryClass = getCountryClass(road.region);
+  return L.divIcon({
+    className: '',
+    html: `<div class="custom-marker ${countryClass}">${road.id}</div>`,
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+    popupAnchor: [0, -20]
+  });
+}
+
+ROADS_DATA.forEach(road => {
+  const marker = L.marker([road.lat, road.lng], {
+    icon: createMarkerIcon(road)
+  });
+
+  const popupContent = `
+    <div class="popup-name">${road.name}</div>
+    <div class="popup-region">${road.county}, ${road.region}</div>
+    <span class="diff-badge ${road.difficulty}">${road.difficulty}</span>
+    <div class="popup-link" onclick="showRoadPanel(${road.id})">View details →</div>
+  `;
+
+  marker.bindPopup(popupContent, { maxWidth: 250, closeButton: true });
+  
+  marker.on('click', () => {
+    showRoadPanel(road.id);
+  });
+
+  marker.roadData = road;
+  markers.push(marker);
+  markerGroup.addLayer(marker);
+});
+
+markerGroup.addTo(map);
+
+/* ===== ROAD PANEL ===== */
+const panel = document.getElementById('roadPanel');
+const panelTitle = document.getElementById('panelTitle');
+const panelBody = document.getElementById('panelBody');
+const panelClose = document.getElementById('panelClose');
+
+function showRoadPanel(roadId) {
+  const road = ROADS_DATA.find(r => r.id === roadId);
+  if (!road) return;
+
+  panel.classList.remove('collapsed');
+  panelTitle.textContent = road.name;
+
+  const countryColor = `var(--color-${road.region.toLowerCase()})`;
+
+  panelBody.innerHTML = `
+    <div class="panel-road-name">${road.roadDesignation}</div>
+    <div class="panel-region">${road.county}, ${road.region}</div>
+    <p class="panel-desc">${road.description}</p>
+    <div class="panel-meta">
+      <div class="meta-item">
+        <span class="meta-label">Distance</span>
+        <span class="meta-value">${road.distance}</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Elevation</span>
+        <span class="meta-value">${road.elevation}</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Character</span>
+        <span class="meta-value"><span class="diff-badge ${road.difficulty}">${road.difficulty}</span></span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Region</span>
+        <span class="meta-value" style="color: ${countryColor}">${road.region}</span>
+      </div>
+    </div>
+    <div class="panel-highlights">
+      <h3>What Makes It Special</h3>
+      <ul class="highlight-list">
+        ${road.highlights.map(h => `<li><span class="highlight-dot"></span>${h}</li>`).join('')}
+      </ul>
+    </div>
+    <div class="panel-highlights">
+      <h3>Driving Tip</h3>
+      <ul class="highlight-list">
+        <li><span class="highlight-dot" style="background: var(--color-challenging)"></span>${road.tip}</li>
+      </ul>
+    </div>
+  `;
+
+  // Center map on the road
+  map.flyTo([road.lat, road.lng], 10, { duration: 0.8 });
+}
+
+panelClose.addEventListener('click', () => {
+  panel.classList.add('collapsed');
+  map.flyTo([54.5, -3.5], 6, { duration: 0.8 });
+});
+
+// Make globally accessible for popup onclick
+window.showRoadPanel = showRoadPanel;
+
+/* ===== COUNTRY FILTER ===== */
+let activeCountry = 'all';
+let activeDifficulty = 'all';
+let searchQuery = '';
+
+document.querySelectorAll('.nav-btn[data-filter]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.nav-btn[data-filter]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCountry = btn.dataset.filter;
+    applyFilters();
+  });
+});
+
+/* ===== DIFFICULTY FILTER ===== */
+document.querySelectorAll('.diff-btn[data-difficulty]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.diff-btn[data-difficulty]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeDifficulty = btn.dataset.difficulty;
+    applyFilters();
+  });
+});
+
+/* ===== SEARCH ===== */
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', (e) => {
+  searchQuery = e.target.value.toLowerCase().trim();
+  applyFilters();
+});
+
+/* ===== APPLY FILTERS ===== */
+function applyFilters() {
+  markerGroup.clearLayers();
+
+  const filtered = markers.filter(m => {
+    const road = m.roadData;
+    const matchCountry = activeCountry === 'all' || road.region.toLowerCase() === activeCountry;
+    const matchDifficulty = activeDifficulty === 'all' || road.difficulty === activeDifficulty;
+    const matchSearch = !searchQuery || 
+      road.name.toLowerCase().includes(searchQuery) ||
+      road.county.toLowerCase().includes(searchQuery) ||
+      road.roadDesignation.toLowerCase().includes(searchQuery) ||
+      road.region.toLowerCase().includes(searchQuery);
+    return matchCountry && matchDifficulty && matchSearch;
+  });
+
+  filtered.forEach(m => markerGroup.addLayer(m));
+
+  // Update road count
+  document.getElementById('roadCount').textContent = filtered.length;
+
+  // Rebuild road grid
+  buildRoadGrid(filtered.map(m => m.roadData));
+
+  // Fit map to visible markers
+  if (filtered.length > 0) {
+    const group = L.featureGroup(filtered);
+    map.fitBounds(group.getBounds().pad(0.15), { maxZoom: 10, duration: 0.5 });
+  }
+}
+
+/* ===== ROAD GRID ===== */
+const roadGrid = document.getElementById('roadGrid');
+
+function buildRoadGrid(roads) {
+  if (!roads) roads = ROADS_DATA;
+  
+  roadGrid.innerHTML = roads.map(road => {
+    const countryColor = `var(--color-${road.region.toLowerCase()})`;
+    return `
+      <div class="road-card" data-road-id="${road.id}">
+        <div class="road-card-header">
+          <div>
+            <div class="road-card-name">${road.name}</div>
+            <div class="road-card-region">${road.county}</div>
+          </div>
+          <span class="diff-badge ${road.difficulty}">${road.difficulty}</span>
+        </div>
+        <p class="road-card-desc">${road.description}</p>
+        <div class="road-card-footer">
+          <span class="road-card-stat" style="color: ${countryColor}">${road.region}</span>
+          <span class="road-card-stat">${road.distance}</span>
+          <span class="road-card-stat">${road.elevation}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Add click handlers to cards
+  roadGrid.querySelectorAll('.road-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const roadId = parseInt(card.dataset.roadId);
+      showRoadPanel(roadId);
+      document.getElementById('map-section').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+}
+
+// Initial grid build
+buildRoadGrid();
+
+/* ===== SCROLL TO MAP ===== */
+document.getElementById('scrollToMap').addEventListener('click', () => {
+  document.getElementById('map-section').scrollIntoView({ behavior: 'smooth' });
+});
+
+/* ===== INVALIDATE MAP ON SCROLL INTO VIEW ===== */
+const mapObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      map.invalidateSize();
+    }
+  });
+}, { threshold: 0.1 });
+mapObserver.observe(document.getElementById('map'));
+
+/* ===== HEADER SCROLL SHADOW ===== */
+const header = document.getElementById('header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const current = window.scrollY;
+  if (current > 10) {
+    header.style.boxShadow = 'var(--shadow-md)';
+  } else {
+    header.style.boxShadow = 'none';
+  }
+  lastScroll = current;
+}, { passive: true });
