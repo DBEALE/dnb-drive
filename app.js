@@ -125,9 +125,23 @@ function showRoadPanel(roadId) {
 
   const countryColor = `var(--color-${road.region.toLowerCase()})`;
 
+  const imagesHTML = road.images && road.images.length
+    ? `<div class="panel-images">
+        <div class="image-gallery">
+          ${road.images.map(img => `
+            <figure class="gallery-item">
+              <img class="gallery-img" src="${img.url}" alt="${img.caption}" loading="lazy">
+              <figcaption class="gallery-caption">${img.caption}</figcaption>
+            </figure>
+          `).join('')}
+        </div>
+      </div>`
+    : '';
+
   panelBody.innerHTML = `
     <div class="panel-road-name">${road.roadDesignation}</div>
     <div class="panel-region">${road.county}, ${road.region}</div>
+    ${imagesHTML}
     <p class="panel-desc">${road.description}</p>
     <div class="panel-meta">
       <div class="meta-item">
@@ -243,8 +257,14 @@ function buildRoadGrid(roads) {
   
   roadGrid.innerHTML = roads.map(road => {
     const countryColor = `var(--color-${road.region.toLowerCase()})`;
+    const cardImgHTML = road.images && road.images.length
+      ? `<div class="road-card-img-wrap">
+           <img class="road-card-img" src="${road.images[0].url}" alt="${road.images[0].caption}" loading="lazy">
+         </div>`
+      : '';
     return `
       <div class="road-card" data-road-id="${road.id}">
+        ${cardImgHTML}
         <div class="road-card-header">
           <div>
             <div class="road-card-name">${road.name}</div>

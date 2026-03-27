@@ -17,7 +17,11 @@ const ROADS_DATA = [
       "Technical sections demand precise line selection",
       "Minimal traffic on weekdays"
     ],
-    tip: "Drive it south to north for the best climbing experience. Watch for livestock on the road, especially sheep."
+    tip: "Drive it south to north for the best climbing experience. Watch for livestock on the road, especially sheep.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/A4069_Black_Mountain_Pass.jpg?width=800", caption: "The A4069 winding up through the Black Mountain" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Brecon_Beacons_National_Park.jpg?width=800", caption: "Sweeping Brecon Beacons moorland" }
+    ]
   },
   {
     id: 2,
@@ -37,7 +41,12 @@ const ROADS_DATA = [
       "Steepest road gradients in the UK",
       "The approach to Applecross village is equally spectacular"
     ],
-    tip: "Not recommended in winter or poor visibility. Use passing places correctly — pull left. The descent into Applecross is a fitting reward."
+    tip: "Not recommended in winter or poor visibility. Use passing places correctly — pull left. The descent into Applecross is a fitting reward.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bealach_na_Ba.jpg?width=800", caption: "The famous hairpin bends of Bealach na Bà" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Applecross_Bay.jpg?width=800", caption: "Applecross Bay from the summit" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Isle_of_Skye_from_Bealach_na_Ba.jpg?width=800", caption: "Views to the Isle of Skye from the pass" }
+    ]
   },
   {
     id: 3,
@@ -57,7 +66,11 @@ const ROADS_DATA = [
       "Minimal traffic across open moorland",
       "Each leg of the triangle has its own distinct character"
     ],
-    tip: "Start from the A5 near Betws-y-Coed. The B4501 is the standout section — save it for your second or third lap when you've learned the road."
+    tip: "Start from the A5 near Betws-y-Coed. The B4501 is the standout section — save it for your second or third lap when you've learned the road.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Denbigh_Moors.jpg?width=800", caption: "Open moorland of the Denbigh Moors" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Llyn_Brenig.jpg?width=800", caption: "Llyn Brenig reservoir on the moors" }
+    ]
   },
   {
     id: 4,
@@ -77,7 +90,11 @@ const ROADS_DATA = [
       "Atmospheric in all weather conditions",
       "A true test of a car's chassis balance"
     ],
-    tip: "Often closed in winter due to snow. Can be busy on summer weekends — try a Tuesday evening for the best experience."
+    tip: "Often closed in winter due to snow. Can be busy on summer weekends — try a Tuesday evening for the best experience.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ladybower_Reservoir.jpg?width=800", caption: "Ladybower Reservoir on the approach" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Snake_Pass.jpg?width=800", caption: "The Snake Pass threading through Peak District moorland" }
+    ]
   },
   {
     id: 5,
@@ -97,7 +114,11 @@ const ROADS_DATA = [
       "Dramatic elevation changes over a short distance",
       "Links perfectly with Snake Pass for a day route"
     ],
-    tip: "Combine with Snake Pass for a full day of Peak District driving. The Buxton approach (eastbound) is the more dramatic direction."
+    tip: "Combine with Snake Pass for a full day of Peak District driving. The Buxton approach (eastbound) is the more dramatic direction.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cat_and_Fiddle_Inn.jpg?width=800", caption: "The Cat and Fiddle Inn — England's second-highest pub" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Shutlingsloe.jpg?width=800", caption: "The Peak District moorland near the summit" }
+    ]
   },
   {
     id: 6,
@@ -117,7 +138,12 @@ const ROADS_DATA = [
       "Includes the Bealach na Bà as a detour",
       "Beaches, castles, and whisky distilleries along the route"
     ],
-    tip: "Don't try to rush it in a day. The west coast sections are the most spectacular for driving. Allow 5-7 days to do it justice."
+    tip: "Don't try to rush it in a day. The west coast sections are the most spectacular for driving. Allow 5-7 days to do it justice.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Stac_Pollaidh.jpg?width=800", caption: "Stac Pollaidh rising above the Highland landscape" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ardvreck_Castle.jpg?width=800", caption: "Ardvreck Castle on Loch Assynt" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Smoo_Cave.jpg?width=800", caption: "Smoo Cave near Durness on the north coast" }
+    ]
   },
   {
     id: 7,
@@ -137,7 +163,11 @@ const ROADS_DATA = [
       "Used as a climb in the Tour de France 2014",
       "Connects the stunning Swaledale and Wensleydale valleys"
     ],
-    tip: "Very narrow in places with limited visibility — use your horn on blind bends. The views from the top across Swaledale are extraordinary."
+    tip: "Very narrow in places with limited visibility — use your horn on blind bends. The views from the top across Swaledale are extraordinary.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Buttertubs_Pass.jpg?width=800", caption: "The dramatic Buttertubs Pass road" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Swaledale.jpg?width=800", caption: "Swaledale valley below the pass" }
+    ]
   },
   {
     id: 8,
@@ -157,7 +187,11 @@ const ROADS_DATA = [
       "Hartland Point to Bude section is the standout",
       "Perfect for a GT car at a relaxed pace"
     ],
-    tip: "A grand touring road rather than a B-road blast. Best enjoyed with the roof down on a clear summer evening."
+    tip: "A grand touring road rather than a B-road blast. Best enjoyed with the roof down on a clear summer evening.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Boscastle_harbour.jpg?width=800", caption: "Boscastle harbour on the North Cornwall coast" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bude,_Cornwall.jpg?width=800", caption: "Bude and the Atlantic coastline" }
+    ]
   },
   {
     id: 9,
@@ -177,7 +211,11 @@ const ROADS_DATA = [
       "Technical bends requiring precise throttle control",
       "Gateway to some of Snowdonia's finest walking"
     ],
-    tip: "Can be very busy in peak tourist season and at weekends. Early morning is the best time. Watch for climbers' parked cars narrowing the road."
+    tip: "Can be very busy in peak tourist season and at weekends. Early morning is the best time. Watch for climbers' parked cars narrowing the road.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Llanberis_Pass.jpg?width=800", caption: "The Llanberis Pass between towering rock faces" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Snowdon_from_Llanberis.jpg?width=800", caption: "Snowdon looming above the pass" }
+    ]
   },
   {
     id: 10,
@@ -197,7 +235,11 @@ const ROADS_DATA = [
       "One of the most photogenic driving roads in England",
       "Close to the Mendip Hills for extended driving"
     ],
-    tip: "Very busy during the day with tourists. Early morning or late evening are the times to enjoy it properly in a sports car."
+    tip: "Very busy during the day with tourists. Early morning or late evening are the times to enjoy it properly in a sports car.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cheddar_Gorge.jpg?width=800", caption: "The towering limestone walls of Cheddar Gorge" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cheddar_Gorge_road.jpg?width=800", caption: "The B3135 threading through the gorge" }
+    ]
   },
   {
     id: 11,
@@ -217,7 +259,11 @@ const ROADS_DATA = [
       "Featured in countless films including Skyfall",
       "Smooth, well-maintained surface throughout"
     ],
-    tip: "Stop at the viewpoint car parks — the Three Sisters viewpoint is unmissable. This road is about savoring the scenery as much as the driving."
+    tip: "Stop at the viewpoint car parks — the Three Sisters viewpoint is unmissable. This road is about savoring the scenery as much as the driving.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Buachaille_Etive_Mor.jpg?width=800", caption: "Buachaille Etive Mòr — Glencoe's iconic mountain" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Three_Sisters_(Glencoe).jpg?width=800", caption: "The Three Sisters ridgeline from the A82" }
+    ]
   },
   {
     id: 12,
@@ -237,7 +283,11 @@ const ROADS_DATA = [
       "Excellent road surface year-round",
       "Close to the Evo Triangle for a combined route"
     ],
-    tip: "Combine with the Evo Triangle for a full day of North Wales driving. The climb from Llangollen is the best direction."
+    tip: "Combine with the Evo Triangle for a full day of North Wales driving. The climb from Llangollen is the best direction.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Horseshoe_Pass.jpg?width=800", caption: "The sweeping curves of Horseshoe Pass" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Llangollen.jpg?width=800", caption: "Llangollen town at the foot of the pass" }
+    ]
   },
   {
     id: 13,
@@ -257,7 +307,11 @@ const ROADS_DATA = [
       "Roman fort ruins at the summit",
       "Often paired with neighbouring Wrynose Pass"
     ],
-    tip: "Low gear and steady nerve required. Not suitable for wide or long cars. The pass from west to east (climbing from Eskdale) is the classic direction."
+    tip: "Low gear and steady nerve required. Not suitable for wide or long cars. The pass from west to east (climbing from Eskdale) is the classic direction.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Hardknott_Pass.jpg?width=800", caption: "Hardknott Pass — England's steepest road" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Hardknott_Roman_Fort.jpg?width=800", caption: "Roman fort ruins at the summit" }
+    ]
   },
   {
     id: 14,
@@ -277,7 +331,11 @@ const ROADS_DATA = [
       "Passes the Dan-yr-Ogof caves complex",
       "A true enthusiast's hidden gem"
     ],
-    tip: "Drive this after the A4069 for comparison — many drivers prefer it. The middle section through the open valley is the highlight."
+    tip: "Drive this after the A4069 for comparison — many drivers prefer it. The middle section through the open valley is the highlight.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dan_yr_Ogof.jpg?width=800", caption: "Dan-yr-Ogof caves complex beside the A4067" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Craig_y_Nos_Country_Park.jpg?width=800", caption: "Craig y Nos Country Park in the Swansea Valley" }
+    ]
   },
   {
     id: 15,
@@ -297,7 +355,11 @@ const ROADS_DATA = [
       "Views across Brothers Water and Patterdale",
       "The Struggle — the steep southern approach from Ambleside"
     ],
-    tip: "The steep 'Struggle' approach from Ambleside is the more exciting climb. Stop at the Inn for a pint with a view."
+    tip: "The steep 'Struggle' approach from Ambleside is the more exciting climb. Stop at the Inn for a pint with a view.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Kirkstone_Pass.jpg?width=800", caption: "Kirkstone Pass — highest road pass in the Lake District" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ullswater.jpg?width=800", caption: "Ullswater at the foot of the pass" }
+    ]
   },
   {
     id: 16,
@@ -317,7 +379,12 @@ const ROADS_DATA = [
       "Atmospheric in mist or sunshine equally",
       "Multiple options to extend onto other moor roads"
     ],
-    tip: "Watch for ponies, cattle, and sheep on the road — they have right of way. The section west of Two Bridges is the finest."
+    tip: "Watch for ponies, cattle, and sheep on the road — they have right of way. The section west of Two Bridges is the finest.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dartmoor_ponies.jpg?width=800", caption: "Dartmoor ponies grazing beside the road" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Haytor_Rocks.jpg?width=800", caption: "Haytor granite tor on the open moor" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dartmoor_moorland.jpg?width=800", caption: "The wild Dartmoor moorland landscape" }
+    ]
   },
   {
     id: 17,
@@ -337,7 +404,12 @@ const ROADS_DATA = [
       "Cairngorms mountain scenery throughout",
       "Variable conditions add to the driving challenge"
     ],
-    tip: "Check road conditions in winter — these routes close in severe weather. The A939 over The Lecht is the more technically interesting section."
+    tip: "Check road conditions in winter — these routes close in severe weather. The A939 over The Lecht is the more technically interesting section.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Glenshee_ski_area.jpg?width=800", caption: "Glenshee ski area in the Cairngorms" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cairn_Gorm_mountain.jpg?width=800", caption: "Cairngorm mountains — Britain's highest public roads" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The_Lecht.jpg?width=800", caption: "The Lecht ski road with dramatic hairpins" }
+    ]
   },
   {
     id: 18,
@@ -357,7 +429,11 @@ const ROADS_DATA = [
       "Abbotsbury village and the Swannery",
       "Elevated vantage points overlooking the English Channel"
     ],
-    tip: "A touring road for warm summer evenings. Stop at the viewpoints above Chesil Beach — the perspective is extraordinary."
+    tip: "A touring road for warm summer evenings. Stop at the viewpoints above Chesil Beach — the perspective is extraordinary.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Chesil_Beach.jpg?width=800", caption: "Chesil Beach — the famous 18-mile shingle barrier" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Abbotsbury_village.jpg?width=800", caption: "Abbotsbury village and the swannery" }
+    ]
   },
   {
     id: 19,
@@ -377,7 +453,11 @@ const ROADS_DATA = [
       "Fast flowing bends through open moorland",
       "Connects to other brilliant mid-Wales B-roads"
     ],
-    tip: "Combine with the Elan Valley road (via the B4518) for an extended loop through some of Wales's emptiest and most beautiful countryside."
+    tip: "Combine with the Elan Valley road (via the B4518) for an extended loop through some of Wales's emptiest and most beautiful countryside.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Elan_Valley_dams.jpg?width=800", caption: "Elan Valley reservoir dams in mid Wales" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cambrian_Mountains.jpg?width=800", caption: "The remote Cambrian Mountains" }
+    ]
   },
   {
     id: 20,
@@ -397,6 +477,10 @@ const ROADS_DATA = [
       "Flowing bends across open Pennine moorland",
       "Alston — England's highest market town"
     ],
-    tip: "Stop at the Hartside Summit — the views across the Lake District and the Solway Firth are remarkable. Continue through Alston for more excellent roads."
+    tip: "Stop at the Hartside Summit — the views across the Lake District and the Solway Firth are remarkable. Continue through Alston for more excellent roads.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cross_Fell.jpg?width=800", caption: "Cross Fell — the highest point in the Pennines" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Alston,_Cumbria.jpg?width=800", caption: "Alston — England's highest market town" }
+    ]
   }
 ];
