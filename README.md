@@ -1,3 +1,5 @@
+published: https://dbeale.github.io/dnb-drive/
+
 # DNB Drive — UK's Greatest Driving Roads
 
 An interactive web application showcasing 20 of the UK's most exhilarating driving roads for sports car enthusiasts. Explore legendary routes across England, Scotland, and Wales through a dynamic map interface with detailed road information, real-time filtering, and a beautiful dark/light theme.
