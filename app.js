@@ -110,6 +110,89 @@ ROADS_DATA.forEach(road => {
 
 markerGroup.addTo(map);
 
+/* ===== ROUTE HIGHLIGHTING ===== */
+let currentRouteLayer = null;
+let activeRouteId = null;
+let routeAbortController = null;
+
+function resolveColor(cssVar) {
+  return getComputedStyle(document.documentElement).getPropertyValue(cssVar).trim();
+}
+
+function clearRoute() {
+  if (routeAbortController) { routeAbortController.abort(); routeAbortController = null; }
+  if (currentRouteLayer) { map.removeLayer(currentRouteLayer); currentRouteLayer = null; }
+  activeRouteId = null;
+}
+
+function drawRouteLayers(geojsonOrLatlngs, color, isDashed) {
+  const opts = (weight, opacity, dash) => ({
+    color, weight, opacity, lineCap: 'round', lineJoin: 'round',
+    ...(dash ? { dashArray: '10 8' } : {})
+  });
+  const mk = (g) => isDashed
+    ? L.polyline(g, opts(4, 0.85, true))
+    : L.geoJSON(g, { style: opts(4, 0.9, false) });
+  const mkGlow = (g) => isDashed
+    ? L.polyline(g, opts(14, 0.18, false))
+    : L.geoJSON(g, { style: opts(14, 0.18, false) });
+
+  const glow = mkGlow(geojsonOrLatlngs);
+  const line = mk(geojsonOrLatlngs);
+  const group = L.layerGroup([glow, line]).addTo(map);
+  // push route behind markers
+  glow.getPane && glow.setZIndex && glow.setZIndex(300);
+  return group;
+}
+
+async function drawRoute(road) {
+  clearRoute();
+  if (!road.waypoints || road.waypoints.length < 2) {
+    map.flyTo([road.lat, road.lng], 10, { duration: 0.8 });
+    return;
+  }
+
+  activeRouteId = road.id;
+  const color = resolveColor(`--color-${road.region.toLowerCase()}`);
+
+  // Fly immediately to center while we wait for route
+  map.flyTo([road.lat, road.lng], 9, { duration: 0.6 });
+
+  routeAbortController = new AbortController();
+  const signal = routeAbortController.signal;
+
+  // OSRM expects lng,lat order
+  const coords = road.waypoints.map(([lat, lng]) => `${lng.toFixed(5)},${lat.toFixed(5)}`).join(';');
+  const url = `https://router.project-osrm.org/route/v1/driving/${coords}?overview=full&geometries=geojson`;
+
+  try {
+    const res = await fetch(url, { signal });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    if (activeRouteId !== road.id) return; // user moved on
+
+    if (data.routes && data.routes[0]) {
+      currentRouteLayer = drawRouteLayers(data.routes[0].geometry, color, false);
+      map.fitBounds(currentRouteLayer.getLayers()[0].getBounds().pad(0.15), {
+        animate: true, maxZoom: 13, duration: 0.6
+      });
+    } else {
+      useFallback(road, color);
+    }
+  } catch (e) {
+    if (e.name === 'AbortError') return;
+    if (activeRouteId === road.id) useFallback(road, color);
+  }
+}
+
+function useFallback(road, color) {
+  const latlngs = road.waypoints.map(([lat, lng]) => [lat, lng]);
+  currentRouteLayer = drawRouteLayers(latlngs, color, true);
+  const bounds = L.latLngBounds(latlngs);
+  map.fitBounds(bounds.pad(0.25), { animate: true, maxZoom: 13, duration: 0.6 });
+}
+
 /* ===== ROAD PANEL ===== */
 const panel = document.getElementById('roadPanel');
 const panelTitle = document.getElementById('panelTitle');
@@ -122,6 +205,7 @@ function showRoadPanel(roadId) {
 
   panel.classList.remove('collapsed');
   panelTitle.textContent = road.name;
+  drawRoute(road);
 
   const countryColor = `var(--color-${road.region.toLowerCase()})`;
 
@@ -175,14 +259,12 @@ function showRoadPanel(roadId) {
     </div>
   `;
 
-  // Invalidate after panel width change then fly
   requestAnimationFrame(() => map.invalidateSize());
-  // Center map on the road
-  map.flyTo([road.lat, road.lng], 10, { duration: 0.8 });
 }
 
 panelClose.addEventListener('click', () => {
   panel.classList.add('collapsed');
+  clearRoute();
   map.flyTo([54.5, -3.5], 6, { duration: 0.8 });
 });
 
@@ -222,6 +304,8 @@ searchInput.addEventListener('input', (e) => {
 
 /* ===== APPLY FILTERS ===== */
 function applyFilters() {
+  clearRoute();
+  panel.classList.add('collapsed');
   markerGroup.clearLayers();
 
   const filtered = markers.filter(m => {
