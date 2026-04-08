@@ -175,6 +175,8 @@ function showRoadPanel(roadId) {
     </div>
   `;
 
+  // Invalidate after panel width change then fly
+  requestAnimationFrame(() => map.invalidateSize());
   // Center map on the road
   map.flyTo([road.lat, road.lng], 10, { duration: 0.8 });
 }
@@ -309,6 +311,12 @@ const mapObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 mapObserver.observe(document.getElementById('map'));
+
+/* ===== INVALIDATE MAP ON RESIZE (panel open/close, window resize) ===== */
+const mapEl = document.getElementById('map');
+if (window.ResizeObserver) {
+  new ResizeObserver(() => { map.invalidateSize(); }).observe(mapEl);
+}
 
 /* ===== HEADER SCROLL SHADOW ===== */
 const header = document.getElementById('header');
