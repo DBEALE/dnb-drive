@@ -445,6 +445,9 @@ if (window.ResizeObserver) {
     home:       'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9zm6 11V10h6v10H9z',
     beer:       'M17 11h1a3 3 0 010 6h-1M3 11h14v10a1 1 0 01-1 1H4a1 1 0 01-1-1V11zm3-7l.5 4M11 4l-.5 4',
     trees:      'M17 14c0 3.31-3.13 6-7 6S3 17.31 3 14c0-2.33 1.35-4.38 3.38-5.54A4.99 4.99 0 0110 3a5 5 0 014.62 3.09A5.49 5.49 0 0117 11M10 8v6m0 6v-6',
+    flag:       'M4 22V2m0 0l16 6-16 6',
+    car:        'M5 17H3V9l2-5h14l2 5v8h-2M5 17a2 2 0 104 0 2 2 0 00-4 0zm10 0a2 2 0 104 0 2 2 0 00-4 0zM3 9h18',
+    factory:    'M2 22V10l6-4v4l6-4v4l6-4v12H2zm3-4h2v4H5zm5 0h2v4h-2zm5 0h2v4h-2z',
   };
 
   function makeSvgIcon(category) {

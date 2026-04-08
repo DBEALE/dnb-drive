@@ -107,6 +107,70 @@ const POIS_DATA = {
     ]
   },
 
+  motorsport: {
+    label: 'Racing Circuits',
+    icon: 'flag',
+    color: '#d43a3a',
+    pois: [
+      { name: 'Goodwood Motor Circuit',      lat: 50.8597, lng: -0.7568, desc: "Home of the Festival of Speed and Revival. One of Britain's finest and most historic race circuits." },
+      { name: 'Oulton Park',                 lat: 53.1773, lng: -2.6094, desc: "Cheshire's natural amphitheatre circuit — widely considered the most picturesque track in Britain." },
+      { name: 'Donington Park',              lat: 52.8303, lng: -1.3742, desc: "Historic Leicestershire circuit that hosted British Grand Prix races and world-class motorcycle racing." },
+      { name: 'Knockhill',                   lat: 56.1748, lng: -3.4642, desc: "Scotland's national motorsport centre, set in beautiful Fife countryside with a challenging layout." },
+      { name: 'Anglesey Circuit',            lat: 53.3127, lng: -4.4423, desc: "Wales's only dedicated race circuit, with a coastal layout and spectacular sea views." },
+      { name: 'Pembrey Circuit',             lat: 51.7143, lng: -4.2871, desc: "Former RAF airfield circuit on the Carmarthenshire coast — used for driver training and club racing." },
+      { name: 'Cadwell Park',                lat: 53.3289, lng: -0.1842, desc: "The 'mini Nürburgring' of Britain — a magnificent natural woodland circuit in the Lincolnshire Wolds." },
+      { name: 'Castle Combe Circuit',        lat: 51.4987, lng: -2.2124, desc: "Wiltshire's legendary circuit inside a former WWII airfield — the fastest in Britain." },
+      { name: 'Thruxton Circuit',            lat: 51.2098, lng: -1.5887, desc: "The fastest circuit in the UK — a converted airfield where the BTCC has raced since 1969." },
+      { name: 'Silverstone Circuit',         lat: 52.0786, lng: -1.0169, desc: "Home of the British Grand Prix — the birthplace of post-war Formula 1 on a former RAF bomber airfield." },
+      { name: 'Brands Hatch',                lat: 51.3611, lng: 0.2632,  desc: "Kent's natural bowl circuit — one of the most dramatic settings in world motorsport." },
+      { name: 'Prescott Hill Climb',         lat: 51.9617, lng: -2.1086, desc: "The Bugatti Owners Club's famous hillclimb in the Cotswolds — a legendary venue since 1938." },
+      { name: 'Shelsley Walsh Hill Climb',   lat: 52.3247, lng: -2.3541, desc: "The oldest motorsport venue in the world still in continuous use — hillclimbs since 1905." },
+      { name: 'Rest-and-be-Thankful',        lat: 56.2436, lng: -4.9482, desc: "Historic Scottish hillclimb venue used from 1905–2011, now famously prone to landslides on the A83." },
+    ]
+  },
+
+  motormuseums: {
+    label: 'Motor Museums',
+    icon: 'car',
+    color: '#e07020',
+    pois: [
+      { name: 'National Motor Museum, Beaulieu', lat: 50.8085, lng: -1.4584, desc: "Britain's greatest car museum — 250+ vehicles from Edwardian brass to Le Mans racers, in a spectacular New Forest setting." },
+      { name: 'British Motor Museum, Gaydon',    lat: 52.2021, lng: -1.5194, desc: "The world's largest collection of historic British cars — over 300 vehicles including the entire British Leyland story." },
+      { name: 'Coventry Transport Museum',       lat: 52.4084, lng: -1.5027, desc: "Home of the world land speed record cars Thrust2 and ThrustSSC, plus the largest collection of British road vehicles anywhere." },
+      { name: 'Haynes Motor Museum',             lat: 51.0271, lng: -2.5614, desc: "Somerset's magnificent collection of 400+ classic and exotic cars including a stunning Ferrari gallery." },
+      { name: 'Lakeland Motor Museum',           lat: 54.3219, lng: -2.9481, desc: "Bowness-on-Windermere museum with 30,000 exhibits — cars, bikes, and Donald Campbell's Bluebird K7 replica." },
+      { name: 'Grampian Transport Museum',       lat: 57.2307, lng: -2.7122, desc: "Alford's outstanding collection including Craigievar Express — the oldest surviving self-propelled vehicle built in Britain." },
+      { name: 'National Motorcycle Museum',      lat: 52.4390, lng: -1.7262, desc: "The world's largest collection of British motorcycles — 1,000 machines from every manufacturer that ever mattered." },
+      { name: 'Myreton Motor Museum',            lat: 55.9547, lng: -2.8097, desc: "Charming East Lothian collection of cars, motorcycles and WWII military vehicles in a converted farm steading." },
+      { name: 'Scottish Vintage Vehicle Federation Museum', lat: 56.1302, lng: -3.9287, desc: "Scotland's largest collection of vintage and classic vehicles at Lathalmond, Fife." },
+      { name: 'Manx Motor Museum',               lat: 54.2361, lng: -4.5252, desc: "Isle of Man museum celebrating the legendary TT circuit and the island's rich motorsport heritage." },
+      { name: 'Thinktank Birmingham',            lat: 52.4863, lng: -1.8769, desc: "Birmingham's science museum with an outstanding transport gallery and the UK's only surviving Spitfire prototype." },
+      { name: 'Brooklands Museum',               lat: 51.3537, lng: -0.4640, desc: "The birthplace of British motorsport and aviation — the world's first purpose-built racing circuit, opened 1907." },
+    ]
+  },
+
+  industrial: {
+    label: 'Industrial Heritage',
+    icon: 'factory',
+    color: '#7a7a5a',
+    pois: [
+      { name: 'Ironbridge Gorge Museums',    lat: 52.6277, lng: -2.4845, desc: "The birthplace of the Industrial Revolution — Iron Bridge, Blists Hill Victorian Town, and ten world-class museums in one valley." },
+      { name: 'Blaenavon Ironworks',         lat: 51.7742, lng: -3.0847, desc: "UNESCO World Heritage Site — one of the best-preserved 18th-century ironworks complexes in the world." },
+      { name: 'Big Pit National Coal Museum', lat: 51.7593, lng: -3.1098, desc: "Go underground in a real Welsh coal mine with former miners as guides — free entry and genuinely unforgettable." },
+      { name: 'Beamish Museum',              lat: 54.8870, lng: -1.6681, desc: "The North of England's living open-air museum — a complete 1900s and 1940s town with working trams, pit village, and farm." },
+      { name: 'Cromford Mill',               lat: 53.0825, lng: -1.5573, desc: "Arkwright's original water-powered cotton mill — the world's first successful factory, UNESCO World Heritage Site." },
+      { name: 'Quarry Bank Mill',            lat: 53.3519, lng: -2.2375, desc: "Georgian cotton mill on the River Bollin — National Trust site with working looms and complete mill workers' village." },
+      { name: 'SS Great Britain',            lat: 51.4493, lng: -2.5978, desc: "Brunel's revolutionary iron steamship — the world's first ocean-going propeller-driven vessel, back in her Bristol dry dock." },
+      { name: 'Pontcysyllte Aqueduct',       lat: 52.9717, lng: -3.0883, desc: "Telford's 1805 cast-iron aqueduct carrying the Llangollen Canal 126ft above the Dee Valley — UNESCO World Heritage Site." },
+      { name: 'National Slate Museum',       lat: 53.1182, lng: -4.0933, desc: "Former Dinorwig quarry workshops in Llanberis — largest slate quarry in the world at its peak, with working waterwheel." },
+      { name: 'Killhope Lead Mining Museum', lat: 54.7478, lng: -2.2213, desc: "The most complete surviving lead mining complex in Britain — Victorian steam engine, underground tours, and ore crushing machinery." },
+      { name: 'Florence Mine Heritage Centre', lat: 54.4952, lng: -3.5241, desc: "The last working deep iron ore mine in Europe — tours of the underground workings near Egremont, Cumbria." },
+      { name: 'National Waterways Museum',   lat: 51.8617, lng: -2.2467, desc: "Gloucester Docks — largest inland waterways museum in Britain, housed in a magnificent Victorian warehouse complex." },
+      { name: 'Summerlee Museum',            lat: 55.8547, lng: -4.0283, desc: "Scotland's noisiest museum — working industrial machinery, ironworks, and trams at Coatbridge." },
+      { name: 'Middleton Railway',           lat: 53.7782, lng: -1.5421, desc: "The world's oldest continuously working railway (1758) — now a heritage steam railway in Leeds." },
+    ]
+  },
+
   nature: {
     label: 'Nature',
     icon: 'trees',
