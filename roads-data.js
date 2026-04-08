@@ -19,8 +19,8 @@ const ROADS_DATA = [
     ],
     tip: "Drive it south to north for the best climbing experience. Watch for livestock on the road, especially sheep.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/A4069_Black_Mountain_Pass.jpg?width=800", caption: "The A4069 winding up through the Black Mountain" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Brecon_Beacons_National_Park.jpg?width=800", caption: "Sweeping Brecon Beacons moorland" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Black%20Mountain%20Pass%20A4069%20-%20geograph.org.uk%20-%205591261.jpg?width=800", caption: "The A4069 winding up through the Black Mountain" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Brecon%20Beacons%20National%20Park%20Visitor%20Centre%20-%20%22The%20Mountain%20Centre%22%20-%20geograph.org.uk%20-%203953888.jpg?width=800", caption: "Sweeping Brecon Beacons moorland" }
     ]
   },
   {
@@ -43,9 +43,9 @@ const ROADS_DATA = [
     ],
     tip: "Not recommended in winter or poor visibility. Use passing places correctly — pull left. The descent into Applecross is a fitting reward.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bealach_na_Ba.jpg?width=800", caption: "The famous hairpin bends of Bealach na Bà" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Applecross_Bay.jpg?width=800", caption: "Applecross Bay from the summit" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Isle_of_Skye_from_Bealach_na_Ba.jpg?width=800", caption: "Views to the Isle of Skye from the pass" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bealach%20na%20Ba%20-%20Mountain%20Road%20Pass%20-%20geograph.org.uk%20-%205176884.jpg?width=800", caption: "The famous hairpin bends of Bealach na Bà" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Applecross%20bay%20highland%20cattle%20-%20geograph.org.uk%20-%202178857.jpg?width=800", caption: "Applecross Bay from the summit" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/View%20from%20Bealach%20na%20B%C3%A0%20-%20geograph.org.uk%20-%202928493.jpg?width=800", caption: "Views to the Isle of Skye from the pass" }
     ]
   },
   {
@@ -68,7 +68,7 @@ const ROADS_DATA = [
     ],
     tip: "Start from the A5 near Betws-y-Coed. The B4501 is the standout section — save it for your second or third lap when you've learned the road.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Denbigh_Moors.jpg?width=800", caption: "Open moorland of the Denbigh Moors" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Hiraethog%20moors%20-%20geograph.org.uk%20-%20423969.jpg?width=800", caption: "Open moorland of the Denbigh Moors" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Llyn_Brenig.jpg?width=800", caption: "Llyn Brenig reservoir on the moors" }
     ]
   },
@@ -93,7 +93,7 @@ const ROADS_DATA = [
     tip: "Often closed in winter due to snow. Can be busy on summer weekends — try a Tuesday evening for the best experience.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ladybower_Reservoir.jpg?width=800", caption: "Ladybower Reservoir on the approach" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Snake_Pass.jpg?width=800", caption: "The Snake Pass threading through Peak District moorland" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Snake%20Pass%20-%20geograph.org.uk%20-%20431557.jpg?width=800", caption: "The Snake Pass threading through Peak District moorland" }
     ]
   },
   {
@@ -116,7 +116,7 @@ const ROADS_DATA = [
     ],
     tip: "Combine with Snake Pass for a full day of Peak District driving. The Buxton approach (eastbound) is the more dramatic direction.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cat_and_Fiddle_Inn.jpg?width=800", caption: "The Cat and Fiddle Inn — England's second-highest pub" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cat%20and%20Fiddle%20Public%20House,%20Cheshire%20-%20geograph.org.uk%20-%206460586.jpg?width=800", caption: "The Cat and Fiddle Inn — England's second-highest pub" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Shutlingsloe.jpg?width=800", caption: "The Peak District moorland near the summit" }
     ]
   },
@@ -142,7 +142,7 @@ const ROADS_DATA = [
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Stac_Pollaidh.jpg?width=800", caption: "Stac Pollaidh rising above the Highland landscape" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ardvreck_Castle.jpg?width=800", caption: "Ardvreck Castle on Loch Assynt" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Smoo_Cave.jpg?width=800", caption: "Smoo Cave near Durness on the north coast" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Smoo%20Cave,%20Durness%20-%20geograph.org.uk%20-%206331854.jpg?width=800", caption: "Smoo Cave near Durness on the north coast" }
     ]
   },
   {
@@ -165,8 +165,8 @@ const ROADS_DATA = [
     ],
     tip: "Very narrow in places with limited visibility — use your horn on blind bends. The views from the top across Swaledale are extraordinary.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Buttertubs_Pass.jpg?width=800", caption: "The dramatic Buttertubs Pass road" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Swaledale.jpg?width=800", caption: "Swaledale valley below the pass" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Buttertubs%20-%20geograph.org.uk%20-%205723130.jpg?width=800", caption: "The dramatic Buttertubs Pass road" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Red%20cow,%20Swaledale.jpg?width=800", caption: "Swaledale valley below the pass" }
     ]
   },
   {
@@ -189,8 +189,8 @@ const ROADS_DATA = [
     ],
     tip: "A grand touring road rather than a B-road blast. Best enjoyed with the roof down on a clear summer evening.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Boscastle_harbour.jpg?width=800", caption: "Boscastle harbour on the North Cornwall coast" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bude,_Cornwall.jpg?width=800", caption: "Bude and the Atlantic coastline" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Boscastle%20Harbour,%20Cornwall%20-%20geograph.org.uk%20-%202714615.jpg?width=800", caption: "Boscastle harbour on the North Cornwall coast" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Beaches%20at%20Bude,%20Cornwall%20-%20panoramio.jpg?width=800", caption: "Bude and the Atlantic coastline" }
     ]
   },
   {
@@ -213,8 +213,8 @@ const ROADS_DATA = [
     ],
     tip: "Can be very busy in peak tourist season and at weekends. Early morning is the best time. Watch for climbers' parked cars narrowing the road.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Llanberis_Pass.jpg?width=800", caption: "The Llanberis Pass between towering rock faces" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Snowdon_from_Llanberis.jpg?width=800", caption: "Snowdon looming above the pass" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/A%20view%20ESE%20from%20Pen-y-pass,%20Snowdonia%20-%20geograph.org.uk%20-%202961121.jpg?width=800", caption: "The Llanberis Pass between towering rock faces" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Snowdon%20Mountain%20Railway,%20Llanberis%20Station%20-%20geograph.org.uk%20-%20794985.jpg?width=800", caption: "Snowdon looming above the pass" }
     ]
   },
   {
@@ -238,7 +238,7 @@ const ROADS_DATA = [
     tip: "Very busy during the day with tourists. Early morning or late evening are the times to enjoy it properly in a sports car.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cheddar_Gorge.jpg?width=800", caption: "The towering limestone walls of Cheddar Gorge" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cheddar_Gorge_road.jpg?width=800", caption: "The B3135 threading through the gorge" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/B3135%20(Cliff%20Road)%20Approaching%20Cheddar%20Gorge%20-%20geograph.org.uk%20-%203802408.jpg?width=800", caption: "The B3135 threading through the gorge" }
     ]
   },
   {
@@ -262,7 +262,7 @@ const ROADS_DATA = [
     tip: "Stop at the viewpoint car parks — the Three Sisters viewpoint is unmissable. This road is about savoring the scenery as much as the driving.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Buachaille_Etive_Mor.jpg?width=800", caption: "Buachaille Etive Mòr — Glencoe's iconic mountain" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Three_Sisters_(Glencoe).jpg?width=800", caption: "The Three Sisters ridgeline from the A82" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Three%20Sisters,%20Glencoe%20-%20geograph.org.uk%20-%204395644.jpg?width=800", caption: "The Three Sisters ridgeline from the A82" }
     ]
   },
   {
@@ -285,7 +285,7 @@ const ROADS_DATA = [
     ],
     tip: "Combine with the Evo Triangle for a full day of North Wales driving. The climb from Llangollen is the best direction.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Horseshoe_Pass.jpg?width=800", caption: "The sweeping curves of Horseshoe Pass" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Horseshoe%20Pass%20-%20geograph.org.uk%20-%2074374.jpg?width=800", caption: "The sweeping curves of Horseshoe Pass" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Llangollen.jpg?width=800", caption: "Llangollen town at the foot of the pass" }
     ]
   },
@@ -309,7 +309,7 @@ const ROADS_DATA = [
     ],
     tip: "Low gear and steady nerve required. Not suitable for wide or long cars. The pass from west to east (climbing from Eskdale) is the classic direction.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Hardknott_Pass.jpg?width=800", caption: "Hardknott Pass — England's steepest road" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Hardknott%20Pass%20towards%20Eskdale%20-%20geograph.org.uk%20-%20307023.jpg?width=800", caption: "Hardknott Pass — England's steepest road" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Hardknott_Roman_Fort.jpg?width=800", caption: "Roman fort ruins at the summit" }
     ]
   },
@@ -333,8 +333,8 @@ const ROADS_DATA = [
     ],
     tip: "Drive this after the A4069 for comparison — many drivers prefer it. The middle section through the open valley is the highlight.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dan_yr_Ogof.jpg?width=800", caption: "Dan-yr-Ogof caves complex beside the A4067" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Craig_y_Nos_Country_Park.jpg?width=800", caption: "Craig y Nos Country Park in the Swansea Valley" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/River%20confluence%20at%20Craig-y-nos%20Country%20Park%20-%20geograph.org.uk%20-%20425192.jpg?width=800", caption: "Dan-yr-Ogof caves complex beside the A4067" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/River%20confluence%20at%20Craig-y-nos%20Country%20Park%20-%20geograph.org.uk%20-%20425192.jpg?width=800", caption: "Craig y Nos Country Park in the Swansea Valley" }
     ]
   },
   {
@@ -357,7 +357,7 @@ const ROADS_DATA = [
     ],
     tip: "The steep 'Struggle' approach from Ambleside is the more exciting climb. Stop at the Inn for a pint with a view.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Kirkstone_Pass.jpg?width=800", caption: "Kirkstone Pass — highest road pass in the Lake District" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20famous%20Lake%20District%20Kirkstone%20Pass%20-%20geograph.org.uk%20-%202085560.jpg?width=800", caption: "Kirkstone Pass — highest road pass in the Lake District" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ullswater.jpg?width=800", caption: "Ullswater at the foot of the pass" }
     ]
   },
@@ -382,8 +382,8 @@ const ROADS_DATA = [
     tip: "Watch for ponies, cattle, and sheep on the road — they have right of way. The section west of Two Bridges is the finest.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dartmoor_ponies.jpg?width=800", caption: "Dartmoor ponies grazing beside the road" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Haytor_Rocks.jpg?width=800", caption: "Haytor granite tor on the open moor" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dartmoor_moorland.jpg?width=800", caption: "The wild Dartmoor moorland landscape" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ilsington%20-%20Haytor%20Granite%20Tramway%20embankment%20-%20geograph.org.uk%20-%202112418.jpg?width=800", caption: "Haytor granite tor on the open moor" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/B3357%20Near%20Two%20Bridges,%20Dartmoor,%20Devon%20taken%201964%20-%20geograph.org.uk%20-%20775689.jpg?width=800", caption: "The wild Dartmoor moorland landscape" }
     ]
   },
   {
@@ -406,8 +406,8 @@ const ROADS_DATA = [
     ],
     tip: "Check road conditions in winter — these routes close in severe weather. The A939 over The Lecht is the more technically interesting section.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Glenshee_ski_area.jpg?width=800", caption: "Glenshee ski area in the Cairngorms" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cairn_Gorm_mountain.jpg?width=800", caption: "Cairngorm mountains — Britain's highest public roads" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Glenshee%20Ski%20Centre%20-%20geograph.org.uk%20-%206926428.jpg?width=800", caption: "Glenshee ski area in the Cairngorms" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Approaching%20Cairngorm%20Summit%20-%20geograph.org.uk%20-%202280838.jpg?width=800", caption: "Cairngorm mountains — Britain's highest public roads" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The_Lecht.jpg?width=800", caption: "The Lecht ski road with dramatic hairpins" }
     ]
   },
@@ -432,7 +432,7 @@ const ROADS_DATA = [
     tip: "A touring road for warm summer evenings. Stop at the viewpoints above Chesil Beach — the perspective is extraordinary.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Chesil_Beach.jpg?width=800", caption: "Chesil Beach — the famous 18-mile shingle barrier" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Abbotsbury_village.jpg?width=800", caption: "Abbotsbury village and the swannery" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Abbotsbury,%20Dorset,%20UK%20-%20May%202012.jpg?width=800", caption: "Abbotsbury village and the swannery" }
     ]
   },
   {
@@ -455,7 +455,7 @@ const ROADS_DATA = [
     ],
     tip: "Combine with the Elan Valley road (via the B4518) for an extended loop through some of Wales's emptiest and most beautiful countryside.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Elan_Valley_dams.jpg?width=800", caption: "Elan Valley reservoir dams in mid Wales" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Elan%20Valley,%20Craig%20Goch%20Dam%20and%20Valve%20Tower%20-%20geograph.org.uk%20-%205004243.jpg?width=800", caption: "Elan Valley reservoir dams in mid Wales" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cambrian_Mountains.jpg?width=800", caption: "The remote Cambrian Mountains" }
     ]
   },
@@ -479,7 +479,7 @@ const ROADS_DATA = [
     ],
     tip: "Stop at the Hartside Summit — the views across the Lake District and the Solway Firth are remarkable. Continue through Alston for more excellent roads.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cross_Fell.jpg?width=800", caption: "Cross Fell — the highest point in the Pennines" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pennine%20Way%20towards%20Cross%20Fell%20Summit%20-%20geograph.org.uk%20-%204693356.jpg?width=800", caption: "Cross Fell — the highest point in the Pennines" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Alston,_Cumbria.jpg?width=800", caption: "Alston — England's highest market town" }
     ]
   },
@@ -508,7 +508,7 @@ const ROADS_DATA = [
     tip: "Take the steam-hauled Jacobite train one way and drive the other for the definitive Road to the Isles experience.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Glenfinnan_Viaduct.jpg?width=800", caption: "Glenfinnan Viaduct, immortalised by the Hogwarts Express" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Morar_beach.jpg?width=800", caption: "The silver sands of Morar" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Silver%20Sands%20of%20Morar%20-%20geograph.org.uk%20-%20204112.jpg?width=800", caption: "The silver sands of Morar" }
     ]
   },
   {
@@ -531,8 +531,8 @@ const ROADS_DATA = [
     ],
     tip: "Allow a full day — the Corran Ferry saves backtracking the A82. The road deteriorates beyond Kilchoan so low-clearance cars should proceed carefully.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ardnamurchan_Lighthouse.jpg?width=800", caption: "Ardnamurchan Lighthouse at Britain's most westerly point" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ardnamurchan_Peninsula.jpg?width=800", caption: "The wild Atlantic coastline of Ardnamurchan" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ardnamurchan%20Lighthouse3.jpg?width=800", caption: "Ardnamurchan Lighthouse at Britain's most westerly point" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ardnamurchan%20Peninsula%20from%20above%20Lochan%27s%20Airde%20Beinn%20Mull%20-%20geograph.org.uk%20-%202832092.jpg?width=800", caption: "The wild Atlantic coastline of Ardnamurchan" }
     ]
   },
   {
@@ -579,8 +579,8 @@ const ROADS_DATA = [
     ],
     tip: "Use passing places correctly — frustration rises quickly if etiquette breaks down. The section above Lochcarron offers the most dramatic views.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Lochcarron.jpg?width=800", caption: "Lochcarron village on the shores of the sea loch" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Glen_Carron.jpg?width=800", caption: "The narrow road threading through Glen Carron" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Lochcarron%20Village%20store%20-%20geograph.org.uk%20-%20885555.jpg?width=800", caption: "Lochcarron village on the shores of the sea loch" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Luib,%20Glen%20Carron%20-%20geograph.org.uk%20-%208069017.jpg?width=800", caption: "The narrow road threading through Glen Carron" }
     ]
   },
   {
@@ -603,8 +603,8 @@ const ROADS_DATA = [
     ],
     tip: "The road beyond Torridon village to Diabaig is a spectacular 7-mile extension ending at a remote fishing village — only attempt in a small car.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Liathach_from_Torridon.jpg?width=800", caption: "Liathach — the great mountain above Torridon" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Upper_Loch_Torridon.jpg?width=800", caption: "Upper Loch Torridon in evening light" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Liathach%20-%20Flickr%20-%20Robert%20J%20Heath.jpg?width=800", caption: "Liathach — the great mountain above Torridon" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Loch%20Torridon,%20Scotland.jpg?width=800", caption: "Upper Loch Torridon in evening light" }
     ]
   },
   {
@@ -651,8 +651,8 @@ const ROADS_DATA = [
     ],
     tip: "The ascent from Fettercairn is the more gradual, flowing approach. The summit viewpoint is worth stopping at in clear conditions.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cairn_o_Mount_road.jpg?width=800", caption: "The B974 climbing through Grampian moorland" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Fettercairn_arch.jpg?width=800", caption: "The historic triumphal arch at Fettercairn" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/B974%20and%20the%20Cairn%20o%27%20Mount%20-%20geograph.org.uk%20-%20549973.jpg?width=800", caption: "The B974 climbing through Grampian moorland" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Fettercairn%20Arch%20-%20geograph.org.uk%20-%203749519.jpg?width=800", caption: "The historic triumphal arch at Fettercairn" }
     ]
   },
   {
@@ -676,7 +676,7 @@ const ROADS_DATA = [
     tip: "Combine the String Road with a full circuit of the coastal A841 for an excellent varied day's driving in a compact and beautiful setting.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Isle_of_Arran.jpg?width=800", caption: "The Isle of Arran from the Ayrshire coast" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Goat_Fell,_Arran.jpg?width=800", caption: "Goat Fell — Arran's highest peak above Brodick" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Goat%20Fell%20(35159174394).jpg?width=800", caption: "Goat Fell — Arran's highest peak above Brodick" }
     ]
   },
   {
@@ -699,8 +699,8 @@ const ROADS_DATA = [
     ],
     tip: "Combine with the A701 over the Devil's Beef Tub for a full day of dramatic Scottish Borders driving.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Grey_Mare%27s_Tail_waterfall.jpg?width=800", caption: "The Grey Mare's Tail waterfall above the A708" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/St_Mary%27s_Loch.jpg?width=800", caption: "St Mary's Loch in the Southern Uplands" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Grey%20Mare%27s%20Tail%20Waterfall%20near%20Moffat%20-%20geograph.org.uk%20-%204871071.jpg?width=800", caption: "The Grey Mare's Tail waterfall above the A708" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Southern%20Upland%20Way%20nr%20St%20Mary%27s%20Loch%20-%20geograph.org.uk%20-%202620592.jpg?width=800", caption: "St Mary's Loch in the Southern Uplands" }
     ]
   },
   {
@@ -723,7 +723,7 @@ const ROADS_DATA = [
     ],
     tip: "Visit Cruachan Visitor Centre to tour the vast cavern inside Ben Cruachan. The section along Loch Awe before the pass is equally scenic.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pass_of_Brander.jpg?width=800", caption: "The A85 threading through the Pass of Brander" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Brander%20Pass,%20A85%20Loch%20Awe.%20-%20geograph.org.uk%20-%20195298.jpg?width=800", caption: "The A85 threading through the Pass of Brander" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Kilchurn_Castle.jpg?width=800", caption: "Kilchurn Castle ruins on Loch Awe" }
     ]
   },
@@ -796,7 +796,7 @@ const ROADS_DATA = [
     tip: "Take the ferry to Iona — the island's Abbey is one of the most important religious sites in British history. The return drive at sunset is unforgettable.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Iona_Abbey.jpg?width=800", caption: "Iona Abbey — destination at the end of the A849" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ross_of_Mull.jpg?width=800", caption: "The Ross of Mull coastline" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Rocky%20coastline%20near%20Malcolm%27s%20Point%20-%20geograph.org.uk%20-%202391478.jpg?width=800", caption: "The Ross of Mull coastline" }
     ]
   },
   {
@@ -819,8 +819,8 @@ const ROADS_DATA = [
     ],
     tip: "Dunnet Head, not John o'Groats, is the true most northerly point of mainland Britain — it's a 5-mile detour that's well worth taking.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dunnet_Head.jpg?width=800", caption: "Dunnet Head — the most northerly point of mainland Britain" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Kyle_of_Tongue.jpg?width=800", caption: "The Kyle of Tongue causeway on the A836" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dunnet%20Head%20Lighthouse,%20Dunnet%20Head%20Peninsula,%20Caithness%20-%20geograph.org.uk%20-%203662409.jpg?width=800", caption: "Dunnet Head — the most northerly point of mainland Britain" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Signal%20House,%20Kyle%20of%20Tongue%20-%20geograph.org.uk%20-%201423.jpg?width=800", caption: "The Kyle of Tongue causeway on the A836" }
     ]
   },
   {
@@ -844,7 +844,7 @@ const ROADS_DATA = [
     tip: "Combine with the A82 for a full loch circuit. The B862 section above Foyers has the best high-level views of the loch.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Loch_Ness.jpg?width=800", caption: "Loch Ness from the southern shore" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Falls_of_Foyers.jpg?width=800", caption: "The Falls of Foyers on the south shore" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Waterval%20Falls%20of%20Foyers,%20RP-F-F01185-I.jpg?width=800", caption: "The Falls of Foyers on the south shore" }
     ]
   },
 
@@ -893,8 +893,8 @@ const ROADS_DATA = [
     ],
     tip: "The Claerwen reservoir extension is worth the extra miles — fewer visitors and the most wild, open moorland scenery in mid-Wales.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Elan_Valley.jpg?width=800", caption: "The Elan Valley reservoir with its Victorian dam" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Craig_Goch_dam.jpg?width=800", caption: "Craig Goch dam — the most spectacular in the valley" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Penygarreg%20Reservoir,%20Elan%20Valley,%20Mid-Wales%20-%20geograph.org.uk%20-%202749992.jpg?width=800", caption: "The Elan Valley reservoir with its Victorian dam" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Craig%20Goch%20Reservoir%20and%20Dam,%20Elan%20Valley,%20Mid-Wales%20-%20geograph.org.uk%20-%202750368.jpg?width=800", caption: "Craig Goch dam — the most spectacular in the valley" }
     ]
   },
   {
@@ -917,7 +917,7 @@ const ROADS_DATA = [
     ],
     tip: "Drive south to north to use the Beacons as your backdrop. Combine with the A4059 (Storey Arms) for a full Brecon Beacons loop.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Wye_Valley_Wales.jpg?width=800", caption: "The upper Wye Valley from the A470" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20River%20Wye%20and%20Wye%20valley%20-%20geograph.org.uk%20-%207451700.jpg?width=800", caption: "The upper Wye Valley from the A470" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Brecon_Beacons.jpg?width=800", caption: "The Brecon Beacons visible from the Wye Valley approach" }
     ]
   },
@@ -942,7 +942,7 @@ const ROADS_DATA = [
     tip: "The narrow-gauge Bala Lake Railway runs alongside the road — the train journey gives a completely different perspective on the same scenery.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bala_Lake.jpg?width=800", caption: "Llyn Tegid (Bala Lake) — the largest natural lake in Wales" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bala_Lake_Railway.jpg?width=800", caption: "The narrow-gauge Bala Lake Railway alongside the road" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bala%20Lake%20Railway.%20(43793124142).jpg?width=800", caption: "The narrow-gauge Bala Lake Railway alongside the road" }
     ]
   },
   {
@@ -965,7 +965,7 @@ const ROADS_DATA = [
     ],
     tip: "Stop at the Panorama Walk viewpoint above Barmouth for the definitive Mawddach Estuary view before starting the drive north.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Mawddach_Estuary.jpg?width=800", caption: "The Mawddach Estuary from the A496" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Mawddach%20Estuary%20and%20Barmouth%20-%20geograph.org.uk%20-%208137366.jpg?width=800", caption: "The Mawddach Estuary from the A496" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Harlech_Castle.jpg?width=800", caption: "Harlech Castle above Cardigan Bay" }
     ]
   },
@@ -989,8 +989,8 @@ const ROADS_DATA = [
     ],
     tip: "Divert onto the B4572 for the spectacular view from Bryn Dinas into the Dyfi Estuary — one of the finest vantage points in mid-Wales.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Aberystwyth_seafront.jpg?width=800", caption: "Aberystwyth — destination at the end of the A487" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dyfi_Estuary.jpg?width=800", caption: "The Dyfi Estuary from the hills above" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Aberystwyth%20Seafront%20Shelter.jpg?width=800", caption: "Aberystwyth — destination at the end of the A487" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20tidal%20Afon%20Dyfi%20-%20geograph.org.uk%20-%202619207.jpg?width=800", caption: "The Dyfi Estuary from the hills above" }
     ]
   },
   {
@@ -1014,7 +1014,7 @@ const ROADS_DATA = [
     tip: "The short A494 south from Bala into the Dee Valley adds another excellent layer — take it before heading home.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dolgellau.jpg?width=800", caption: "Dolgellau — starting point of the A470 climb" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Aran_mountains_Wales.jpg?width=800", caption: "The Aran mountains from the high moorland" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Aran%20Fawddwy%20-%20geograph.org.uk%20-%203876168.jpg?width=800", caption: "The Aran mountains from the high moorland" }
     ]
   },
   {
@@ -1037,8 +1037,8 @@ const ROADS_DATA = [
     ],
     tip: "Combine with the A4107 Bwlch Mountain Road for a spectacular South Wales mountain loop, dropping into each valley before climbing again.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Rhigos_mountain.jpg?width=800", caption: "The Rhigos mountain summit plateau" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Rhondda_Valley.jpg?width=800", caption: "The Rhondda Valley far below the mountain road" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Rhigos%20(geograph%206234062).jpg?width=800", caption: "The Rhigos mountain summit plateau" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Rhondda%20Fach%20valley%20from%20Hillside%20Terrace%20-%20geograph.org.uk%20-%201663352.jpg?width=800", caption: "The Rhondda Valley far below the mountain road" }
     ]
   },
   {
@@ -1061,8 +1061,8 @@ const ROADS_DATA = [
     ],
     tip: "Beware of ice and mist in winter — this road is exposed and can close in severe weather. The Afan Forest Park at the bottom is worth exploring.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Afan_Forest_Park.jpg?width=800", caption: "Afan Forest Park at the foot of the mountain" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/South_Wales_valleys.jpg?width=800", caption: "The South Wales valley landscape from above" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Mountain%20Bikers%20at%20Afan%20Argoed%20country%20park%20-%20geograph.org.uk%20-%20352329.jpg?width=800", caption: "Afan Forest Park at the foot of the mountain" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/South%20along%20Oakfield%20Terrace,%20Nantymoel%20-%20geograph.org.uk%20-%205887761.jpg?width=800", caption: "The South Wales valley landscape from above" }
     ]
   },
   {
@@ -1085,8 +1085,8 @@ const ROADS_DATA = [
     ],
     tip: "The Dinas Mawddwy branch from Mallwyd is a superb 8-mile extension into the Aran Mountains — take the left turn at the bottom of the valley.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Banwy_Valley.jpg?width=800", caption: "The wooded Banwy Valley on the A458" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Welshpool_and_Llanfair_Railway.jpg?width=800", caption: "The Welshpool and Llanfair Light Railway" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Meadow%20in%20the%20Banwy%20valley%20-%20geograph.org.uk%20-%20560092.jpg?width=800", caption: "The wooded Banwy Valley on the A458" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Welshpool%20^%20Llanfair%20Light%20Railway%20-%20Dougal%20-%20geograph.org.uk%20-%207449190.jpg?width=800", caption: "The Welshpool and Llanfair Light Railway" }
     ]
   },
   {
@@ -1110,7 +1110,7 @@ const ROADS_DATA = [
     tip: "The RSPB reserve at the southern end has a café and viewpoints — worth stopping for both refreshments and bird watching.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Lake_Vyrnwy.jpg?width=800", caption: "Lake Vyrnwy with its Victorian dam and valve tower" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Vyrnwy_valve_tower.jpg?width=800", caption: "The ornate Gothic valve tower of Lake Vyrnwy" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Llyn%20Efyrnwy%20(Lake%20Vyrnwy)%20-%20the%20tower%20-%20geograph.org.uk%20-%20470713.jpg?width=800", caption: "The ornate Gothic valve tower of Lake Vyrnwy" }
     ]
   },
   {
@@ -1134,7 +1134,7 @@ const ROADS_DATA = [
     tip: "Park at the Storey Arms layby on the summit and walk the 90-minute route to Pen y Fan for the view back down the road you just drove.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pen_y_Fan.jpg?width=800", caption: "Pen y Fan — the highest point in South Wales" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Brecon_Beacons_escarpment.jpg?width=800", caption: "The Brecon Beacons escarpment from the A4059" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pen%20Y%20Fan%20and%20Corn%20Du%20-%20geograph.org.uk%20-%203389761.jpg?width=800", caption: "The Brecon Beacons escarpment from the A4059" }
     ]
   },
   {
@@ -1158,7 +1158,7 @@ const ROADS_DATA = [
     tip: "Stop at Swallow Falls, just off the A5 west of Betws-y-Coed. It takes 10 minutes and is genuinely impressive — best after heavy rain.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Moel_Siabod.jpg?width=800", caption: "Moel Siabod from the A5 near Capel Curig" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Swallow_Falls_Betws-y-Coed.jpg?width=800", caption: "Swallow Falls near Betws-y-Coed" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Swallow%20Falls,%20Betws-y-Coed%20-%20geograph.org.uk%20-%206620765.jpg?width=800", caption: "Swallow Falls near Betws-y-Coed" }
     ]
   },
   {
@@ -1181,8 +1181,8 @@ const ROADS_DATA = [
     ],
     tip: "Check that the military range is not active before driving (red flags mean stop). The road is open most days — check with the MOD range office.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Mynydd_Epynt.jpg?width=800", caption: "The empty military plateau of Mynydd Epynt" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Brecon_Beacons_from_Epynt.jpg?width=800", caption: "Brecon Beacons visible from the Mynydd Epynt plateau" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Mynydd%20Epynt%20-%20geograph.org.uk%20-%207800548.jpg?width=800", caption: "The empty military plateau of Mynydd Epynt" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Moorland%20near%20B4519%20-%20geograph.org.uk%20-%20839665.jpg?width=800", caption: "Brecon Beacons visible from the Mynydd Epynt plateau" }
     ]
   },
 
@@ -1207,8 +1207,8 @@ const ROADS_DATA = [
     ],
     tip: "Drive Hardknott first (west to east) then Wrynose — the climbing direction on both passes is the more dramatic. Allow extra time for the inevitable queues.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Wrynose_Pass.jpg?width=800", caption: "Wrynose Pass — always driven alongside Hardknott" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Three_Shire_Stone.jpg?width=800", caption: "The Three Shire Stone at the summit of Wrynose Pass" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Wrynose%20Pass,%20looking%20west,%20down%20into%20the%20Duddon%20Valley,%20sunset%20-%20geograph.org.uk%20-%203383211.jpg?width=800", caption: "Wrynose Pass — always driven alongside Hardknott" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Three%20Shire%20Stone,%20Wrynose%20Pass%20-%20geograph.org.uk%20-%2020673.jpg?width=800", caption: "The Three Shire Stone at the summit of Wrynose Pass" }
     ]
   },
   {
@@ -1232,7 +1232,7 @@ const ROADS_DATA = [
     tip: "Continue beyond Seatoller to Honister Pass for a complete Borrowdale loop. The road south from Keswick along Derwent Water's western shore is equally beautiful.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Derwent_Water.jpg?width=800", caption: "Derwent Water from the B5289" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bowder_Stone.jpg?width=800", caption: "The Bowder Stone — a glacial erratic in Borrowdale" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Borrowdale%20Valley,%20from%20Bowder%20Stone,%20Lake%20District,%20England-LCCN2002696842.jpg?width=800", caption: "The Bowder Stone — a glacial erratic in Borrowdale" }
     ]
   },
   {
@@ -1256,7 +1256,7 @@ const ROADS_DATA = [
     tip: "The valley dead-ends for cars at Dungeon Ghyll — this is a there-and-back drive, best at dawn before the car parks fill in summer.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Langdale_Pikes.jpg?width=800", caption: "The Langdale Pikes above Great Langdale" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Great_Langdale.jpg?width=800", caption: "The B5343 threading through Great Langdale" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Langdale%20Pikes%20-%20geograph.org.uk%20-%201252039.jpg?width=800", caption: "The B5343 threading through Great Langdale" }
     ]
   },
   {
@@ -1279,8 +1279,8 @@ const ROADS_DATA = [
     ],
     tip: "The parallel B5322 through St John's in the Vale is less busy than the A591 and equally beautiful — use it to escape summer traffic.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Grasmere_lake.jpg?width=800", caption: "Grasmere — a gem of the Lake District" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Thirlmere_reservoir.jpg?width=800", caption: "Thirlmere Reservoir beneath Helvellyn" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Grasmere,%20graves%20of%20William%20and%20Dorothy%20Wordsworth%20-%20geograph.org.uk%20-%203386766.jpg?width=800", caption: "Grasmere — a gem of the Lake District" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Thirlmere%20Reservoir%20-%20panoramio.jpg?width=800", caption: "Thirlmere Reservoir beneath Helvellyn" }
     ]
   },
   {
@@ -1303,7 +1303,7 @@ const ROADS_DATA = [
     ],
     tip: "The forest offers world-class mountain biking on purpose-built trails — if you have a bike rack, this road takes on another dimension entirely.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Whinlatter_Forest.jpg?width=800", caption: "Whinlatter Forest — England's only mountain forest" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Road%20to%20Whinlatter%20-%20geograph.org.uk%20-%2089811.jpg?width=800", caption: "Whinlatter Forest — England's only mountain forest" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bassenthwaite_Lake.jpg?width=800", caption: "Bassenthwaite Lake from the Whinlatter summit" }
     ]
   },
@@ -1327,8 +1327,8 @@ const ROADS_DATA = [
     ],
     tip: "Drive it south to north to build gradually to the exposed summit. Combine with the A685 through Tebay Gorge for a complete eastern Cumbria loop.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Shap_Fell.jpg?width=800", caption: "Shap Fell from the A6 summit" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Shap_Abbey.jpg?width=800", caption: "Shap Abbey ruins beside the River Lowther" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/A6%20across%20Shap%20Fell%20-%20geograph.org.uk%20-%206418285.jpg?width=800", caption: "Shap Fell from the A6 summit" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ruins%20of%20Shap%20Abbey%20beside%20the%20River%20Lowther%20-%20geograph.org.uk%20-%203320625.jpg?width=800", caption: "Shap Abbey ruins beside the River Lowther" }
     ]
   },
 
@@ -1353,8 +1353,8 @@ const ROADS_DATA = [
     ],
     tip: "Turn off for Tan Hill on the B6270 extension — at 1,732 feet, the Tan Hill Inn is England's highest pub and the reward is extraordinary moorland views.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Swaledale.jpg?width=800", caption: "Swaledale from the hillside above Muker" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Muker_village.jpg?width=800", caption: "Muker village in Swaledale" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Red%20cow,%20Swaledale.jpg?width=800", caption: "Swaledale from the hillside above Muker" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Muker%20in%20Swaledale%20-%20geograph.org.uk%20-%207594901.jpg?width=800", caption: "Muker village in Swaledale" }
     ]
   },
   {
@@ -1378,7 +1378,7 @@ const ROADS_DATA = [
     tip: "Time your drive for when a Settle–Carlisle steam train crosses the viaduct — the combination of steam, stone, and moorland is one of England's great sights.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ribblehead_Viaduct.jpg?width=800", caption: "Ribblehead Viaduct — 24 arches crossing the moorland" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pen-y-ghent.jpg?width=800", caption: "Pen-y-ghent from the Ribblehead approach" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/2014%20Three%20Peaks%20view%20from%20Pen-y-ghent.jpg?width=800", caption: "Pen-y-ghent from the Ribblehead approach" }
     ]
   },
   {
@@ -1425,8 +1425,8 @@ const ROADS_DATA = [
     ],
     tip: "The section between Carlton and Chop Gate is the tightest and most rewarding — save it for a second run once you've learned the road.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bilsdale_North_Yorkshire.jpg?width=800", caption: "The narrow B1257 winding through Bilsdale" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/North_York_Moors_heather.jpg?width=800", caption: "Heather moorland above Bilsdale in summer" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bilsdale,%20North%20Yorkshire.jpg?width=800", caption: "The narrow B1257 winding through Bilsdale" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Burnt%20heather%20on%20Glaisdale%20Moor%20-%20geograph.org.uk%20-%206197846.jpg?width=800", caption: "Heather moorland above Bilsdale in summer" }
     ]
   },
   {
@@ -1449,8 +1449,8 @@ const ROADS_DATA = [
     ],
     tip: "Stop at Robin Hood's Bay and walk to the cliff edge for the full sense of the Yorkshire coast's dramatic scale. The village below is inaccessible to cars.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Robin_Hood%27s_Bay.jpg?width=800", caption: "Robin Hood's Bay — Yorkshire's most picturesque coastal village" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Scarborough_Castle.jpg?width=800", caption: "Scarborough Castle on its dramatic headland" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Robin%20Hood%E2%80%99s%20Bay,%20Yorkshire%20(52874571583).jpg?width=800", caption: "Robin Hood's Bay — Yorkshire's most picturesque coastal village" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Scarborough%20Headland%20^%20Castle%20-%20geograph.org.uk%20-%203833739.jpg?width=800", caption: "Scarborough Castle on its dramatic headland" }
     ]
   },
   {
@@ -1473,7 +1473,7 @@ const ROADS_DATA = [
     ],
     tip: "Divert onto the B6160 to Aysgarth for the waterfall and continue to Bolton Castle. The detour costs 20 minutes and is absolutely worth it.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Aysgarth_Falls.jpg?width=800", caption: "Aysgarth Falls in Wensleydale" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Aysgarth%20Falls%20MMB%2057.jpg?width=800", caption: "Aysgarth Falls in Wensleydale" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bolton_Castle.jpg?width=800", caption: "Bolton Castle — one of England's finest fortified manor houses" }
     ]
   },
@@ -1523,7 +1523,7 @@ const ROADS_DATA = [
     ],
     tip: "The short climb to Mam Tor on the unclassified road from Castleton adds a dramatic elevated perspective on the Hope Valley that the A625 can't provide.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Hope_Valley.jpg?width=800", caption: "The Hope Valley from Win Hill" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/View%20from%20main%20road%20into%20Castleton%20from%20Hope%20-%20geograph.org.uk%20-%20863020.jpg?width=800", caption: "The Hope Valley from Win Hill" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Mam_Tor.jpg?width=800", caption: "Mam Tor — the shivering mountain above Castleton" }
     ]
   },
@@ -1548,7 +1548,7 @@ const ROADS_DATA = [
     tip: "Approach from Castleton (eastbound) for the full dramatic effect of the canyon appearing from flat moorland. Incredibly tight with oncoming traffic — patience required.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Winnats_Pass.jpg?width=800", caption: "The limestone canyon of Winnats Pass" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Blue_John_Cavern.jpg?width=800", caption: "Blue John Cavern at the summit of Winnats Pass" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Blue%20John%20Cavern%20entrance.jpg?width=800", caption: "Blue John Cavern at the summit of Winnats Pass" }
     ]
   },
   {
@@ -1571,8 +1571,8 @@ const ROADS_DATA = [
     ],
     tip: "Stop at Monsal Head for the viaduct view — one of the Peak District's most photographed spots. Walk down into the dale from the car park for the full scale.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Monsal_Head.jpg?width=800", caption: "Monsal Head viaduct over the River Wye" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Miller%27s_Dale.jpg?width=800", caption: "The wooded limestone gorge of Miller's Dale" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Monsal%20Head,%20Peak%20District,%20Derbyshire,%20UK%20(14588024369).jpg?width=800", caption: "Monsal Head viaduct over the River Wye" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Millers%20Dale%20Station%20(geograph%201664518).jpg?width=800", caption: "The wooded limestone gorge of Miller's Dale" }
     ]
   },
   {
@@ -1619,7 +1619,7 @@ const ROADS_DATA = [
     ],
     tip: "Combine with the A537 Cat and Fiddle for a spectacular loop — leave Buxton on the A537, return on the A54. The contrast in character between the two roads is striking.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Wildboarclough.jpg?width=800", caption: "Wildboarclough valley on the A54" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Valley%20above%20Wildboarclough%20-%20geograph.org.uk%20-%20695080.jpg?width=800", caption: "Wildboarclough valley on the A54" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Three_Shires_Head.jpg?width=800", caption: "Three Shires Head — where three counties meet" }
     ]
   },
@@ -1643,8 +1643,8 @@ const ROADS_DATA = [
     ],
     tip: "Park at Dovedale car park and walk the 1-mile path to the Stepping Stones — the best free attraction in the Peak District, easily missed from the A515.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dovedale.jpg?width=800", caption: "The Dovedale gorge — accessible from the A515" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Tissington_village.jpg?width=800", caption: "Tissington — a gem of a Peak District estate village" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Stepping%20stones%20in%20Dovedale%20-%20geograph.org.uk%20-%203875084.jpg?width=800", caption: "The Dovedale gorge — accessible from the A515" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/St%20Mary%27s%20Church%20Tissington%20-%20geograph.org.uk%20-%20180052.jpg?width=800", caption: "Tissington — a gem of a Peak District estate village" }
     ]
   },
   {
@@ -1668,7 +1668,7 @@ const ROADS_DATA = [
     tip: "Only suitable for cars with reasonable ground clearance — the unmetalled section near the top can be rough. Best tackled west to east for the reveal of Kinder Scout.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Kinder_Scout.jpg?width=800", caption: "Kinder Scout plateau from Rushup Edge" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Edale_Valley.jpg?width=800", caption: "The Vale of Edale below Rushup Edge" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Railway%20near%20Edale%20-%20geograph.org.uk%20-%204413393.jpg?width=800", caption: "The Vale of Edale below Rushup Edge" }
     ]
   },
 
@@ -1694,7 +1694,7 @@ const ROADS_DATA = [
     tip: "Drive to Broadway Tower before the village fills with visitors. The tower café is excellent and the view across the Vale of Evesham is the best in the Cotswolds.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Broadway_Tower.jpg?width=800", caption: "Broadway Tower on the Cotswold escarpment" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Broadway_village.jpg?width=800", caption: "Broadway village — the jewel of the Cotswolds" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/High%20Street,%20Broadway%20-%20geograph.org.uk%20-%203425481.jpg?width=800", caption: "Broadway village — the jewel of the Cotswolds" }
     ]
   },
   {
@@ -1717,8 +1717,8 @@ const ROADS_DATA = [
     ],
     tip: "Stop at Stanton village — only 200 yards from the B4077 and almost entirely unspoilt. The walk to Stanway House is equally beautiful.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Stanway_House.jpg?width=800", caption: "Stanway House and its Jacobean gatehouse" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Stanton_village_Gloucestershire.jpg?width=800", caption: "Stanton — one of the most perfectly preserved Cotswold villages" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Stanway%20House%20gatehouse.jpg?width=800", caption: "Stanway House and its Jacobean gatehouse" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cotswold%20Way%20019,%20Stanton%20Village%20Cross-geograph-3661368.jpg?width=800", caption: "Stanton — one of the most perfectly preserved Cotswold villages" }
     ]
   },
   {
@@ -1741,8 +1741,8 @@ const ROADS_DATA = [
     ],
     tip: "The northbound (uphill) direction builds more drama — start from Cirencester and use the escarpment as your reward. The Air Balloon pub at the top is a worthy destination.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cotswold_escarpment.jpg?width=800", caption: "The Cotswold escarpment at Birdlip" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Severn_Valley_from_Cotswolds.jpg?width=800", caption: "Views across the Severn Valley from the Cotswold edge" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cotswold%20Escarpment%20with%20Broadway%20Tower%20in%20background%20-%20geograph.org.uk%20-%20208426.jpg?width=800", caption: "The Cotswold escarpment at Birdlip" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Severn%20valley%20farm%20-%20geograph.org.uk%20-%20147594.jpg?width=800", caption: "Views across the Severn Valley from the Cotswold edge" }
     ]
   },
   {
@@ -1765,8 +1765,8 @@ const ROADS_DATA = [
     ],
     tip: "Detour to Chastleton House — the National Trust's most atmospheric property, genuinely unchanged since the 1600s. Not well signed from the A44.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Chastleton_House.jpg?width=800", caption: "Chastleton House — an unchanged Jacobean manor" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Moreton-in-Marsh.jpg?width=800", caption: "Moreton-in-Marsh — the broadest high street in the Cotswolds" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Chastleton%20-%20rear%20staircase.jpg?width=800", caption: "Chastleton House — an unchanged Jacobean manor" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cotswold%20Grey,%20High%20Street,%20Moreton-in-Marsh%20-%20geograph.org.uk%20-%206007291.jpg?width=800", caption: "Moreton-in-Marsh — the broadest high street in the Cotswolds" }
     ]
   },
 
@@ -1791,7 +1791,7 @@ const ROADS_DATA = [
     ],
     tip: "Petworth House and Park (National Trust) is a short detour and utterly magnificent — Turner painted here repeatedly and the deer park is free to walk.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Petworth_House.jpg?width=800", caption: "Petworth House — a National Trust treasure on the A272" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Petworth%20House,%20Geograph.jpg?width=800", caption: "Petworth House — a National Trust treasure on the A272" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cowdray_Ruins.jpg?width=800", caption: "Cowdray Ruins near Midhurst" }
     ]
   },
@@ -1815,8 +1815,8 @@ const ROADS_DATA = [
     ],
     tip: "Stop at Poohsticks Bridge — 2 miles off the B2026 near Chuck Hatch — for the best Winnie the Pooh experience in England. Children will love it.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ashdown_Forest.jpg?width=800", caption: "Open heathland on Ashdown Forest" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Hartfield_village.jpg?width=800", caption: "Hartfield village — gateway to Pooh's Forest" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ashdown%20Forest%20heathland%20-%20geograph.org.uk%20-%204106950.jpg?width=800", caption: "Open heathland on Ashdown Forest" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Hartfield%20village%20-%20geograph.org.uk%20-%2044076.jpg?width=800", caption: "Hartfield village — gateway to Pooh's Forest" }
     ]
   },
   {
@@ -1839,8 +1839,8 @@ const ROADS_DATA = [
     ],
     tip: "Drive at dusk for spectacular sunset views across the Weald from the ridge — one of southern England's finest elevated positions.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Hog%27s_Back_Surrey.jpg?width=800", caption: "The Hog's Back chalk ridge above the Surrey countryside" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Farnham_Castle.jpg?width=800", caption: "Farnham Castle at the western end of the Hog's Back" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/A31,%20The%20Hog%27s%20Back%20Road%20-%20geograph.org.uk%20-%20140796.jpg?width=800", caption: "The Hog's Back chalk ridge above the Surrey countryside" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Gateway%20to%20Farnham%20Castle%20-%20geograph.org.uk%20-%20384034.jpg?width=800", caption: "Farnham Castle at the western end of the Hog's Back" }
     ]
   },
   {
@@ -1863,7 +1863,7 @@ const ROADS_DATA = [
     ],
     tip: "The A3 tunnel now bypasses the Devil's Punchbowl — use the old A3 road (now unclassified) to reach the National Trust viewpoint overlooking it.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Devil%27s_Punchbowl.jpg?width=800", caption: "The Devil's Punchbowl near Hindhead" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Devil%27s%20Punchbowl,%20Hindhead%20-%20geograph.org.uk%20-%202064055.jpg?width=800", caption: "The Devil's Punchbowl near Hindhead" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Chichester_Cathedral.jpg?width=800", caption: "Chichester Cathedral — destination at the end of the A286" }
     ]
   },
@@ -1889,7 +1889,7 @@ const ROADS_DATA = [
     ],
     tip: "The private Toll Road is a shorter, less steep alternative through Worthy Wood with equally dramatic views — giving you a chance to compare the two routes.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Porlock_Hill.jpg?width=800", caption: "Porlock Hill — one of England's most notorious road climbs" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Mishap%20on%20Porlock%20Hill,%20Somerset%20-%20geograph.org.uk%20-%201182035.jpg?width=800", caption: "Porlock Hill — one of England's most notorious road climbs" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Porlock_Bay.jpg?width=800", caption: "Porlock Bay and the Bristol Channel from above" }
     ]
   },
@@ -1913,7 +1913,7 @@ const ROADS_DATA = [
     ],
     tip: "Dawn drives on the B3223 offer the best chance of encountering red deer — herds of 50 or more are not unusual in autumn. Take binoculars.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Exmoor_moorland.jpg?width=800", caption: "The open moorland of Exmoor" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Exmoor%20heather%20-%20geograph.org.uk%20-%20455326.jpg?width=800", caption: "The open moorland of Exmoor" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Tarr_Steps.jpg?width=800", caption: "Tarr Steps — the ancient clapper bridge on the River Barle" }
     ]
   },
@@ -1937,8 +1937,8 @@ const ROADS_DATA = [
     ],
     tip: "Dulverton is worth stopping in for lunch — the town has excellent cafés and the National Park Visitor Centre with detailed moor road maps.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dulverton.jpg?width=800", caption: "Dulverton — gateway to Exmoor on the A396" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Exe_Valley.jpg?width=800", caption: "The wooded Exe Valley from the A396" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bridge%20Street,%20Dulverton%20-%20geograph.org.uk%20-%203618065.jpg?width=800", caption: "Dulverton — gateway to Exmoor on the A396" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/River%20Exe%20at%20Hele%20Bridge%20-%20geograph.org.uk%20-%203533439.jpg?width=800", caption: "The wooded Exe Valley from the A396" }
     ]
   },
   {
@@ -1961,8 +1961,8 @@ const ROADS_DATA = [
     ],
     tip: "Lynmouth is most dramatic approached from above. Stop at the County Gate layby before the descent to appreciate the full scale of the drop to the sea.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Lynmouth.jpg?width=800", caption: "Lynmouth harbour at the foot of the A39 descent" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Valley_of_Rocks_Devon.jpg?width=800", caption: "Valley of Rocks near Lynton" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20North%20Devon%20coast%20(1908)%20(14598140288).jpg?width=800", caption: "Lynmouth harbour at the foot of the A39 descent" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/North%20Devon%20coastpath%20-%20Valley%20of%20the%20Rocks,%20Lynton%20(22978772879).jpg?width=800", caption: "Valley of Rocks near Lynton" }
     ]
   },
   {
@@ -1985,7 +1985,7 @@ const ROADS_DATA = [
     ],
     tip: "The road to Pinkery Pond (2 miles from Simonsbath) leads to the most remote and atmospheric spot on Exmoor. Only worth it in good conditions.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Simonsbath.jpg?width=800", caption: "Simonsbath — the only village in the heart of Exmoor Forest" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Exmoor%20Forest%20Inn,%20Simonsbath%20-%20geograph.org.uk%20-%205691181.jpg?width=800", caption: "Simonsbath — the only village in the heart of Exmoor Forest" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Exmoor_ponies.jpg?width=800", caption: "Free-roaming Exmoor ponies on the high moor" }
     ]
   },
@@ -2011,8 +2011,8 @@ const ROADS_DATA = [
     ],
     tip: "The Warren House Inn — England's third-highest pub — is on the B3212 east of Postbridge. The fire inside has allegedly burned continuously since 1845.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Postbridge_clapper_bridge.jpg?width=800", caption: "Postbridge clapper bridge over the East Dart" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dartmoor_Prison_Princetown.jpg?width=800", caption: "Dartmoor Prison at Princetown" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20clapper%20bridge%20over%20the%20East%20Dart%20River%20-%20geograph.org.uk%20-%202621441.jpg?width=800", caption: "Postbridge clapper bridge over the East Dart" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dartmoor%20Prison%20pan.jpg?width=800", caption: "Dartmoor Prison at Princetown" }
     ]
   },
   {
@@ -2059,7 +2059,7 @@ const ROADS_DATA = [
     ],
     tip: "Leave the A30 at Bolventor for the B3254 — the minor road across the moor to Minions and the Cheesewring tor is an exceptional detour through the heart of Bodmin Moor.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Jamaica_Inn.jpg?width=800", caption: "Jamaica Inn — immortalised by Daphne du Maurier" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Jamaica%20Inn,%20Bolventor,%20Bodmin%20Moor%20-%20geograph.org.uk%20-%203183145.jpg?width=800", caption: "Jamaica Inn — immortalised by Daphne du Maurier" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Brown_Willy.jpg?width=800", caption: "Brown Willy — Cornwall's highest point" }
     ]
   },
@@ -2084,7 +2084,7 @@ const ROADS_DATA = [
     tip: "Walk from the Minions car park to the Cheesewring — 20 minutes return and genuinely spectacular. The view north across Bodmin Moor to Rough Tor is excellent.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The_Cheesewring.jpg?width=800", caption: "The Cheesewring — a gravity-defying granite stack above Minions" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The_Hurlers_stone_circles.jpg?width=800", caption: "The Hurlers Bronze Age stone circles on Bodmin Moor" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/TheHurlers%20stoneCircles%20bodminMoor%20Cornwall.jpg?width=800", caption: "The Hurlers Bronze Age stone circles on Bodmin Moor" }
     ]
   },
 
@@ -2109,8 +2109,8 @@ const ROADS_DATA = [
     ],
     tip: "Killhope Lead Mining Museum is excellent and rarely crowded — allow 2 hours for the full experience including the underground mine tour.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Killhope_Lead_Mining_Museum.jpg?width=800", caption: "Killhope Lead Mining Museum on the A689 summit" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/North_Pennines.jpg?width=800", caption: "The vast North Pennines moorland" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Weardale%20Way%20descending%20towards%20Killhope%20Lead%20Mining%20Museum%20-%20geograph.org.uk%20-%207181017.jpg?width=800", caption: "Killhope Lead Mining Museum on the A689 summit" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pennine%20Way%20heading%20north-east%20on%20Stonesdale%20Moor%20-%20geograph.org.uk%20-%205812981.jpg?width=800", caption: "The vast North Pennines moorland" }
     ]
   },
   {
@@ -2133,8 +2133,8 @@ const ROADS_DATA = [
     ],
     tip: "High Force is only 10 minutes' walk from the car park — the entrance fee is worth it for a view of one of England's great natural spectacles.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/High_Force_waterfall.jpg?width=800", caption: "High Force — England's largest waterfall" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/River_Tees_Upper_Teesdale.jpg?width=800", caption: "The upper Tees Valley from the B6277" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/High%20Force%20Waterfall,%20River%20Tees%20-%20geograph.org.uk%20-%202480506.jpg?width=800", caption: "High Force — England's largest waterfall" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ankle-twisting%20stretch%20of%20the%20Pennine%20Way%20in%20Upper%20Teesdale%20-%20geograph.org.uk%20-%202245059.jpg?width=800", caption: "The upper Tees Valley from the B6277" }
     ]
   },
   {
@@ -2157,8 +2157,8 @@ const ROADS_DATA = [
     ],
     tip: "White Scar Cave is a world-class underground experience and Ingleton Waterfalls are among the finest in England — allow half a day at Ingleton.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ingleborough_mountain.jpg?width=800", caption: "Ingleborough from the A65" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ingleton_waterfalls.jpg?width=800", caption: "The Ingleton Waterfalls Trail" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/2014%20Three%20Peaks%20view%20from%20Pen-y-ghent.jpg?width=800", caption: "Ingleborough from the A65" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ingleton%20Waterfalls%20Trail,%20Rival%20Falls%20-%20geograph.org.uk%20-%206337968.jpg?width=800", caption: "The Ingleton Waterfalls Trail" }
     ]
   },
   {
@@ -2182,7 +2182,7 @@ const ROADS_DATA = [
     tip: "Brimham Rocks are 4 miles from Pateley Bridge — a National Trust site with extraordinary natural rock sculptures and panoramic views. Well worth the detour.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Brimham_Rocks.jpg?width=800", caption: "Brimham Rocks — natural millstone grit sculptures above Nidderdale" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pateley_Bridge.jpg?width=800", caption: "Pateley Bridge market town in Nidderdale" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pateley%20Bridge%20(2).JPG?width=800", caption: "Pateley Bridge market town in Nidderdale" }
     ]
   },
   {
@@ -2206,7 +2206,7 @@ const ROADS_DATA = [
     tip: "Downham village is 2 miles east on the B6478 — no modern signage is permitted in the entire village. It's one of England's most unspoilt.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pendle_Hill.jpg?width=800", caption: "Pendle Hill — Lancashire's most atmospheric landmark" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Downham_village.jpg?width=800", caption: "Downham — Lancashire's most unspoilt village" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/View%20from%20Pendle%20Hill%20-%20geograph.org.uk%20-%202905339.jpg?width=800", caption: "Downham — Lancashire's most unspoilt village" }
     ]
   },
   {
@@ -2229,7 +2229,7 @@ const ROADS_DATA = [
     ],
     tip: "Combine with the A537 Cat and Fiddle and A54 for a triumvirate of eastern Cheshire roads in a single excellent day.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Macclesfield_Forest.jpg?width=800", caption: "Macclesfield Forest from Tegg's Nose" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Macclesfield%20Forest+Trentabank.jpg?width=800", caption: "Macclesfield Forest from Tegg's Nose" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Tegg%27s_Nose.jpg?width=800", caption: "Tegg's Nose Country Park above Macclesfield" }
     ]
   },
@@ -2255,8 +2255,8 @@ const ROADS_DATA = [
     ],
     tip: "Maiden Castle is 2 miles south of the A35 near Dorchester — the largest Iron Age hillfort in Europe and one of England's most dramatic ancient monuments.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Maiden_Castle_Dorset.jpg?width=800", caption: "Maiden Castle — one of Europe's largest Iron Age hillforts" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dorset_chalk_downland.jpg?width=800", caption: "The rolling Dorset chalk downland on the A35" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20photograph%20of%20Maiden%20Castle,%201935.jpg?width=800", caption: "Maiden Castle — one of Europe's largest Iron Age hillforts" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Wessex%20Ridgeway%20-%20geograph.org.uk%20-%20295664.jpg?width=800", caption: "The rolling Dorset chalk downland on the A35" }
     ]
   },
   {
@@ -2279,7 +2279,7 @@ const ROADS_DATA = [
     ],
     tip: "Sherborne is worth half a day — the castle, almshouses, and abbey are all exceptional. Park and walk rather than driving through.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Sherborne_Abbey.jpg?width=800", caption: "Sherborne Abbey in the heart of Dorset" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Sherborne%20Abbey,%20Dorset.jpg?width=800", caption: "Sherborne Abbey in the heart of Dorset" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Blackmore_Vale.jpg?width=800", caption: "The Blackmore Vale — Hardy's Vale of Little Dairies" }
     ]
   },
@@ -2303,8 +2303,8 @@ const ROADS_DATA = [
     ],
     tip: "Gold Hill in Shaftesbury is the iconic Hovis advert hill — park below the top and look back up the cobbled street for the full effect. Best in golden afternoon light.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Gold_Hill_Shaftesbury.jpg?width=800", caption: "Gold Hill Shaftesbury — the Hovis advert cobbled street" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Cranborne_Chase.jpg?width=800", caption: "The Cranborne Chase chalk downland" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Hovis%20Hill%20(Explored)%20-%20Flickr%20-%20M%20McBey.jpg?width=800", caption: "Gold Hill Shaftesbury — the Hovis advert cobbled street" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Alderholt,%20Cranborne%20Chase%20-%20geograph.org.uk%20-%201245401.jpg?width=800", caption: "The Cranborne Chase chalk downland" }
     ]
   },
   {
@@ -2351,7 +2351,7 @@ const ROADS_DATA = [
     ],
     tip: "Charmouth beach is one of the best fossil hunting spots in Europe — ammonites and ichthyosaur fragments wash out regularly after winter storms.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Golden_Cap_Dorset.jpg?width=800", caption: "Golden Cap — the highest sea cliff on England's south coast" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20beach%20west%20of%20Seatown%20towards%20Golden%20Cap%20-%20geograph.org.uk%20-%20356910.jpg?width=800", caption: "Golden Cap — the highest sea cliff on England's south coast" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Lyme_Regis.jpg?width=800", caption: "Lyme Regis harbour at the end of the B3165" }
     ]
   },
@@ -2375,8 +2375,8 @@ const ROADS_DATA = [
     ],
     tip: "Box Hill is a short detour north from Dorking — drive the narrow zigzag road to the summit for views south across 14 counties. The National Trust café has a famous view.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Box_Hill_Surrey.jpg?width=800", caption: "Box Hill from the North Downs escarpment" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Shere_village_Surrey.jpg?width=800", caption: "Shere — Surrey's most beautiful village" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Box%20Hill%20Salomons%20Memorial.jpg?width=800", caption: "Box Hill from the North Downs escarpment" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Shere%20Village%20Hall%20-%20geograph.org.uk%20-%20656328.jpg?width=800", caption: "Shere — Surrey's most beautiful village" }
     ]
   },
   {
@@ -2399,8 +2399,8 @@ const ROADS_DATA = [
     ],
     tip: "Selborne is 4 miles east on the B3006 — the village is unchanged from Gilbert White's 1789 descriptions in The Natural History of Selborne, which is still in print.",
     images: [
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/East_Meon_Hampshire.jpg?width=800", caption: "East Meon — a perfect Hampshire downland village" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Selborne_Hanger.jpg?width=800", caption: "Selborne Hanger — the ancient yew wood above Gilbert White's village" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Church%20Street,%20East%20Meon%20ca%201975%20-%20geograph.org.uk%20-%203826067.jpg?width=800", caption: "East Meon — a perfect Hampshire downland village" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Beech%20woodland%20-%20Selborne%20Hanger%20-%20geograph.org.uk%20-%203015886.jpg?width=800", caption: "Selborne Hanger — the ancient yew wood above Gilbert White's village" }
     ]
   },
   {
@@ -2424,7 +2424,7 @@ const ROADS_DATA = [
     tip: "Divert to the B4319 to reach Angle and Freshwater East — two of Pembrokeshire's finest coastal destinations that the A477 only hints at from inland.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pembroke_Castle.jpg?width=800", caption: "Pembroke Castle — birthplace of Henry VII" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Daugleddau_Estuary.jpg?width=800", caption: "The Daugleddau Estuary from the Pembrokeshire peninsula" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Cleddau%20estuary-Daugleddau%20-%20geograph.org.uk%20-%203550397.jpg?width=800", caption: "The Daugleddau Estuary from the Pembrokeshire peninsula" }
     ]
   }
 ];
