@@ -54,12 +54,40 @@ const map = L.map('map', {
   center: [54.5, -3.5],
   zoom: 6,
   zoomControl: true,
-  scrollWheelZoom: true
+  scrollWheelZoom: false
 });
 
 window.map = map;
 window.currentTileLayer = createTileLayer();
 window.currentTileLayer.addTo(map);
+
+/* ===== SCROLL WHEEL ZOOM GUARD ===== */
+// Only allow scroll-zoom after the user clicks the map;
+// disable again when the mouse leaves so page scrolling works normally.
+(function() {
+  const mapEl = document.getElementById('map');
+  let hint = null;
+  let hintTimer = null;
+
+  function showHint() {
+    if (!hint) {
+      hint = document.createElement('div');
+      hint.className = 'map-scroll-hint';
+      mapEl.appendChild(hint);
+    }
+    hint.classList.add('visible');
+    clearTimeout(hintTimer);
+    hintTimer = setTimeout(() => hint.classList.remove('visible'), 1800);
+  }
+
+  mapEl.addEventListener('wheel', (e) => {
+    if (!map.scrollWheelZoom._enabled) { e.stopPropagation(); showHint(); }
+  }, { passive: false, capture: true });
+
+  map.on('focus', () => { map.scrollWheelZoom.enable(); if (hint) hint.classList.remove('visible'); });
+  mapEl.addEventListener('click', () => { map.scrollWheelZoom.enable(); if (hint) hint.classList.remove('visible'); });
+  mapEl.addEventListener('mouseleave', () => { map.scrollWheelZoom.disable(); });
+})();
 
 // Collapse panel by default on mobile
 if (window.innerWidth <= 900) {

@@ -706,6 +706,48 @@
   gap: var(--space-1);
 }
 
+/* ===== SCROLL HINT OVERLAY ===== */
+.map-scroll-hint {
+  position: absolute;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.map-scroll-hint::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: oklch(0 0 0 / 0.35);
+  border-radius: inherit;
+}
+
+.map-scroll-hint.visible {
+  opacity: 1;
+}
+
+.map-scroll-hint::after {
+  content: 'Click map to enable scroll zoom';
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: #fff;
+  background: oklch(0 0 0 / 0.65);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  border: 1px solid oklch(1 0 0 / 0.18);
+  backdrop-filter: blur(8px);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
 /* ===== ROUTE HIGHLIGHT ===== */
 /* Routes are drawn via Leaflet GeoJSON/polyline — no extra CSS needed beyond animation */
 @keyframes route-in {
