@@ -430,6 +430,74 @@ if (window.ResizeObserver) {
   new ResizeObserver(() => { map.invalidateSize(); }).observe(mapEl);
 }
 
+/* ===== PLACES OF INTEREST ===== */
+(function() {
+  // Custom pane so POI markers sit below road number markers
+  map.createPane('poiPane').style.zIndex = 550;
+
+  const activeLayers = {};
+
+  // Lucide SVG paths keyed by icon name (inline, no CDN dependency)
+  const iconPaths = {
+    landmark:   'M3 22V9l9-7 9 7v13H3zm6 0v-5h6v5H9zm3-15a1 1 0 100 2 1 1 0 000-2z',
+    mountain:   'M8 3l4 8 5-5 5 15H2L8 3z',
+    waves:      'M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2v2c-2.5 0-2.5 2-5 2-2.6 0-2.4-2-5-2C7 9 7 11 4.5 11 3.2 11 2.6 10.5 2 10V6zm0 6c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2v2c-2.5 0-2.5 2-5 2-2.6 0-2.4-2-5-2C7 15 7 17 4.5 17c-1.3 0-1.9-.5-2.5-1v-4z',
+    home:       'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9zm6 11V10h6v10H9z',
+    beer:       'M17 11h1a3 3 0 010 6h-1M3 11h14v10a1 1 0 01-1 1H4a1 1 0 01-1-1V11zm3-7l.5 4M11 4l-.5 4',
+    trees:      'M17 14c0 3.31-3.13 6-7 6S3 17.31 3 14c0-2.33 1.35-4.38 3.38-5.54A4.99 4.99 0 0110 3a5 5 0 014.62 3.09A5.49 5.49 0 0117 11M10 8v6m0 6v-6',
+  };
+
+  function makeSvgIcon(category) {
+    const { color, icon } = POIS_DATA[category];
+    const path = iconPaths[icon] || iconPaths.landmark;
+    return L.divIcon({
+      className: '',
+      html: `<div class="poi-marker" style="--poi-bg:${color}">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" width="12" height="12">
+                 <path d="${path}"/>
+               </svg>
+             </div>`,
+      iconSize:   [26, 26],
+      iconAnchor: [13, 13],
+      popupAnchor:[0, -16]
+    });
+  }
+
+  function buildLayer(category) {
+    const { color, pois } = POIS_DATA[category];
+    const icon = makeSvgIcon(category);
+    const layer = L.layerGroup();
+    pois.forEach(poi => {
+      const marker = L.marker([poi.lat, poi.lng], { icon, pane: 'poiPane' });
+      marker.bindPopup(`
+        <div class="popup-name">${poi.name}</div>
+        <div class="popup-region" style="color:${color};text-transform:capitalize;font-weight:600;margin-bottom:6px">${category}</div>
+        <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0;max-width:220px;line-height:1.5">${poi.desc}</p>
+      `, { maxWidth: 260 });
+      layer.addLayer(marker);
+    });
+    return layer;
+  }
+
+  document.querySelectorAll('.poi-btn[data-poi]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.poi;
+      const isOn = btn.getAttribute('aria-pressed') === 'true';
+
+      if (isOn) {
+        map.removeLayer(activeLayers[cat]);
+        delete activeLayers[cat];
+        btn.setAttribute('aria-pressed', 'false');
+      } else {
+        if (!activeLayers[cat]) activeLayers[cat] = buildLayer(cat);
+        activeLayers[cat].addTo(map);
+        btn.setAttribute('aria-pressed', 'true');
+      }
+    });
+  });
+})();
+
 /* ===== HEADER SCROLL SHADOW ===== */
 const header = document.getElementById('header');
 let lastScroll = 0;
