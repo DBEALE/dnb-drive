@@ -1,0 +1,13 @@
+{
+  "name": "dnb-drive",
+  "version": "1.0.0",
+  "description": "UK's Greatest Driving Roads — Interactive Map",
+  "scripts": {
+    "serve": "python -m http.server 8765",
+    "test:ui": "npx playwright test",
+    "test:ui:headed": "npx playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  }
+}

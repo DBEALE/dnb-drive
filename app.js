@@ -36,16 +36,18 @@ function createTileLayer() {
   const isDark = theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches);
   
   if (isDark) {
+    // dark_all = CartoDB dark matter with all labels (road names & numbers included)
     return L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
       subdomains: 'abcd',
-      maxZoom: 18
+      maxZoom: 19
     });
   } else {
-    return L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    // Voyager style shows road names and numbers much more prominently than positron
+    return L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
       subdomains: 'abcd',
-      maxZoom: 18
+      maxZoom: 19
     });
   }
 }
@@ -514,3 +516,18 @@ window.addEventListener('scroll', () => {
   }
   lastScroll = current;
 }, { passive: true });
+
+/* ===== MOBILE SIDEBAR TOGGLE ===== */
+(function() {
+  const handle = document.getElementById('sidebarHandle');
+  const sidebar = document.getElementById('app-sidebar');
+  if (!handle || !sidebar) return;
+  handle.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+  });
+  // Close sidebar when a road card is tapped (map reveals)
+  document.getElementById('roadGrid').addEventListener('click', () => {
+    // slight delay so panel animation starts first
+    setTimeout(() => sidebar.classList.remove('open'), 150);
+  });
+})();

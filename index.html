@@ -19,7 +19,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UK's Greatest Driving Roads — Interactive Map</title>
-<meta name="description" content="Explore the UK's most exhilarating driving roads for sports cars. An interactive map featuring 20 legendary routes across England, Scotland, and Wales.">
+<meta name="description" content="Explore the UK's most exhilarating driving roads for sports cars. An interactive map featuring 100 legendary routes across England, Scotland, and Wales.">
 
 <!-- Fonts -->
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
@@ -51,77 +51,92 @@
         <span class="logo-sub">The Essential Sports Car Map</span>
       </div>
     </div>
-    <nav class="header-nav">
-      <button class="nav-btn active" data-filter="all">All Roads</button>
-      <button class="nav-btn" data-filter="scotland">Scotland</button>
-      <button class="nav-btn" data-filter="wales">Wales</button>
-      <button class="nav-btn" data-filter="england">England</button>
-    </nav>
-    <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-    </button>
+    <div class="header-actions">
+      <button class="nav-btn-plan" id="openRoutePlanner">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        Plan a Route
+      </button>
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
-<!-- Hero -->
-<section class="hero" id="hero">
-  <div class="hero-content">
-    <h1 class="hero-title">Britain's Greatest<br><span class="hero-accent">Driving Roads</span></h1>
-    <p class="hero-desc">100 legendary routes across England, Scotland, and Wales — every hairpin, summit, and sweeping curve that makes a sports car feel alive.</p>
-    <button class="hero-cta" id="scrollToMap">
-      <i data-lucide="map" style="width:18px;height:18px"></i>
-      Explore the Map
-    </button>
-  </div>
-  <div class="hero-stats">
-    <div class="stat">
-      <span class="stat-num" id="roadCount">100</span>
-      <span class="stat-label">Roads</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">3</span>
-      <span class="stat-label">Countries</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">3,000+</span>
-      <span class="stat-label">Miles</span>
-    </div>
-  </div>
-</section>
+<div class="app-shell">
 
-<!-- Map Section -->
-<section class="map-section" id="map-section">
-  <div class="map-controls">
-    <div class="search-box">
-      <i data-lucide="search" style="width:16px;height:16px"></i>
-      <input type="text" id="searchInput" placeholder="Search roads..." autocomplete="off">
+  <!-- SIDEBAR -->
+  <aside class="app-sidebar" id="app-sidebar">
+
+    <!-- Mobile drag handle -->
+    <button class="sidebar-handle" id="sidebarHandle" aria-label="Toggle road list">
+      <span class="handle-pill"></span>
+    </button>
+
+    <div class="sidebar-inner">
+
+      <!-- Brand section (replaces hero) -->
+      <div class="sidebar-brand">
+        <p class="brand-eyebrow">Interactive Map</p>
+        <h1 class="brand-title">Britain's Greatest<br><span class="brand-accent">Driving Roads</span></h1>
+        <p class="brand-desc">100 legendary routes for the driver who appreciates the road.</p>
+        <div class="brand-stats">
+          <div class="stat"><span class="stat-num" id="roadCount">100</span><span class="stat-label">Roads</span></div>
+          <div class="stat"><span class="stat-num">3</span><span class="stat-label">Nations</span></div>
+          <div class="stat"><span class="stat-num">3,000+</span><span class="stat-label">Miles</span></div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="sidebar-filters">
+        <div class="search-box">
+          <i data-lucide="search" style="width:16px;height:16px"></i>
+          <input type="text" id="searchInput" placeholder="Search roads..." autocomplete="off">
+        </div>
+        <nav class="filter-row" aria-label="Filter by country">
+          <button class="nav-btn active" data-filter="all">All</button>
+          <button class="nav-btn" data-filter="scotland">Scotland</button>
+          <button class="nav-btn" data-filter="wales">Wales</button>
+          <button class="nav-btn" data-filter="england">England</button>
+        </nav>
+        <div class="filter-row difficulty-filters">
+          <button class="diff-btn active" data-difficulty="all">All</button>
+          <button class="diff-btn" data-difficulty="thrilling">Thrilling</button>
+          <button class="diff-btn" data-difficulty="challenging">Challenging</button>
+          <button class="diff-btn" data-difficulty="scenic">Scenic</button>
+        </div>
+        <details class="poi-accordion" id="poiControls">
+          <summary class="poi-accordion-label">
+            <i data-lucide="map-pin" style="width:13px;height:13px"></i>
+            <span>Places of Interest</span>
+            <i data-lucide="chevron-down" class="poi-chevron" style="width:14px;height:14px;margin-left:auto"></i>
+          </summary>
+          <div class="poi-filters">
+            <button class="poi-btn" data-poi="historic"      aria-pressed="false" style="--poi-color:#b87c3a">Historic</button>
+            <button class="poi-btn" data-poi="viewpoints"    aria-pressed="false" style="--poi-color:#5a8fc9">Viewpoints</button>
+            <button class="poi-btn" data-poi="waterfalls"    aria-pressed="false" style="--poi-color:#3a9ab8">Waterfalls</button>
+            <button class="poi-btn" data-poi="villages"      aria-pressed="false" style="--poi-color:#8c6ac9">Villages</button>
+            <button class="poi-btn" data-poi="pubs"          aria-pressed="false" style="--poi-color:#c94a8c">Pubs</button>
+            <button class="poi-btn" data-poi="nature"        aria-pressed="false" style="--poi-color:#4a9a4a">Nature</button>
+            <button class="poi-btn" data-poi="motorsport"    aria-pressed="false" style="--poi-color:#d43a3a">Racing Circuits</button>
+            <button class="poi-btn" data-poi="motormuseums"  aria-pressed="false" style="--poi-color:#e07020">Motor Museums</button>
+            <button class="poi-btn" data-poi="industrial"    aria-pressed="false" style="--poi-color:#7a7a5a">Industrial Heritage</button>
+          </div>
+        </details>
+      </div>
+
+      <!-- Road list (compact) -->
+      <div class="sidebar-road-list">
+        <div class="road-grid" id="roadGrid"></div>
+      </div>
+
+      <footer class="sidebar-footer">
+        <p>Drive responsibly. Respect speed limits and road conditions. These roads are public highways — not racetracks.</p>
+      </footer>
+
     </div>
-    <div class="difficulty-filters">
-      <button class="diff-btn active" data-difficulty="all">All</button>
-      <button class="diff-btn" data-difficulty="thrilling">Thrilling</button>
-      <button class="diff-btn" data-difficulty="challenging">Challenging</button>
-      <button class="diff-btn" data-difficulty="scenic">Scenic</button>
-    </div>
-  </div>
-  <div class="poi-controls" id="poiControls">
-    <span class="poi-controls-label">
-      <i data-lucide="map-pin" style="width:13px;height:13px"></i>
-      Places of interest:
-    </span>
-    <div class="poi-filters">
-      <button class="poi-btn" data-poi="historic"      aria-pressed="false" style="--poi-color:#b87c3a">Historic</button>
-      <button class="poi-btn" data-poi="viewpoints"   aria-pressed="false" style="--poi-color:#5a8fc9">Viewpoints</button>
-      <button class="poi-btn" data-poi="waterfalls"   aria-pressed="false" style="--poi-color:#3a9ab8">Waterfalls</button>
-      <button class="poi-btn" data-poi="villages"     aria-pressed="false" style="--poi-color:#8c6ac9">Villages</button>
-      <button class="poi-btn" data-poi="pubs"         aria-pressed="false" style="--poi-color:#c94a8c">Pubs</button>
-      <button class="poi-btn" data-poi="nature"       aria-pressed="false" style="--poi-color:#4a9a4a">Nature</button>
-      <button class="poi-btn" data-poi="motorsport"   aria-pressed="false" style="--poi-color:#d43a3a">Racing Circuits</button>
-      <button class="poi-btn" data-poi="motormuseums" aria-pressed="false" style="--poi-color:#e07020">Motor Museums</button>
-      <button class="poi-btn" data-poi="industrial"   aria-pressed="false" style="--poi-color:#7a7a5a">Industrial Heritage</button>
-    </div>
-  </div>
-  <div class="map-wrapper">
-    <div id="map"></div>
+
+    <!-- Road detail panel overlays the sidebar -->
     <aside class="road-panel collapsed" id="roadPanel">
       <div class="panel-header">
         <h2 class="panel-title" id="panelTitle">Select a Road</h2>
@@ -133,23 +148,116 @@
         <p class="panel-hint">Click any marker on the map to discover route details, driving tips, and what makes each road special.</p>
       </div>
     </aside>
+
+  </aside>
+
+  <!-- MAP -->
+  <div class="app-map" id="map-section">
+    <div id="map"></div>
   </div>
-</section>
 
-<!-- Road List -->
-<section class="road-list-section" id="road-list">
-  <h2 class="section-title">All Routes at a Glance</h2>
-  <div class="road-grid" id="roadGrid"></div>
-</section>
+</div>
 
-<!-- Footer -->
-<footer class="site-footer">
-  <p>Drive responsibly. Respect speed limits and road conditions. These roads are public highways — not racetracks.</p>
-  <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer" class="footer-attr">Created with Perplexity Computer</a>
-</footer>
+<!-- Hidden: JS compat for scrollToMap event listener -->
+<button id="scrollToMap" hidden aria-hidden="true"></button>
+
+<!-- Route Planner Modal -->
+<div id="routePlannerModal" class="planner-overlay" role="dialog" aria-modal="true" aria-labelledby="plannerModalTitle">
+  <div class="planner-modal">
+    <div class="planner-modal-header">
+      <h2 class="planner-modal-title" id="plannerModalTitle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        Plan Your Drive
+      </h2>
+      <button class="planner-modal-close" id="closePlannerModal" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="planner-modal-body">
+      <form id="plannerForm" novalidate>
+        <div id="plannerFormError" class="planner-form-error" style="display:none"></div>
+
+        <div class="planner-form-row">
+          <div class="planner-field">
+            <label class="planner-label" for="plannerStart">Starting Location</label>
+            <input class="planner-input" type="text" id="plannerStart" placeholder="e.g. Edinburgh" required>
+          </div>
+          <div class="planner-field">
+            <label class="planner-label" for="plannerEnd">Ending Location</label>
+            <input class="planner-input" type="text" id="plannerEnd" placeholder="e.g. Fort William" required>
+          </div>
+        </div>
+
+        <div class="planner-field">
+          <label class="planner-label" for="plannerStops">Towns to Stop At <span class="planner-optional">(optional)</span></label>
+          <input class="planner-input" type="text" id="plannerStops" placeholder="e.g. Pitlochry, Aviemore, Glencoe">
+        </div>
+
+        <div class="planner-field">
+          <label class="planner-label">Places of Interest to Include</label>
+          <div class="planner-poi-grid">
+            <label class="planner-poi-label"><input type="checkbox" class="planner-poi-cb" value="historic"> Historic</label>
+            <label class="planner-poi-label"><input type="checkbox" class="planner-poi-cb" value="viewpoints"> Viewpoints</label>
+            <label class="planner-poi-label"><input type="checkbox" class="planner-poi-cb" value="waterfalls"> Waterfalls</label>
+            <label class="planner-poi-label"><input type="checkbox" class="planner-poi-cb" value="villages"> Villages</label>
+            <label class="planner-poi-label"><input type="checkbox" class="planner-poi-cb" value="pubs"> Pubs</label>
+            <label class="planner-poi-label"><input type="checkbox" class="planner-poi-cb" value="nature"> Nature</label>
+            <label class="planner-poi-label"><input type="checkbox" class="planner-poi-cb" value="motorsport"> Racing Circuits</label>
+            <label class="planner-poi-label"><input type="checkbox" class="planner-poi-cb" value="motormuseums"> Motor Museums</label>
+            <label class="planner-poi-label"><input type="checkbox" class="planner-poi-cb" value="industrial"> Industrial</label>
+          </div>
+        </div>
+
+        <div class="planner-form-row">
+          <div class="planner-field">
+            <label class="planner-label" for="plannerDays">Number of Days</label>
+            <input class="planner-input" type="number" id="plannerDays" min="1" max="14" value="3">
+          </div>
+          <div class="planner-field">
+            <label class="planner-label" for="plannerMaxHours">Max Driving Hours / Day</label>
+            <input class="planner-input" type="number" id="plannerMaxHours" min="1" max="12" step="0.5" value="4">
+          </div>
+        </div>
+
+        <div class="planner-field planner-api-section">
+          <label class="planner-label" for="plannerApiKey">
+            OpenRouter API Key
+            <a href="https://openrouter.ai/keys" target="_blank" rel="noopener noreferrer" class="planner-api-link">Get API key →</a>
+          </label>
+          <input class="planner-input planner-input-mono" type="password" id="plannerApiKey" placeholder="sk-or-v1-..." autocomplete="off">
+          <p class="planner-api-hint">Stored only in your browser. Requests are sent via OpenRouter.</p>
+        </div>
+
+        <div class="planner-field">
+          <label class="planner-label" for="plannerModel">
+            Model <span class="planner-optional">(optional — leave blank to auto-select)</span>
+            <a href="https://openrouter.ai/models" target="_blank" rel="noopener noreferrer" class="planner-api-link">Browse models →</a>
+          </label>
+          <input class="planner-input planner-input-mono" type="text" id="plannerModel" list="plannerModelList" placeholder="e.g. anthropic/claude-3-haiku" autocomplete="off" spellcheck="false">
+          <datalist id="plannerModelList">
+            <option value="anthropic/claude-3-haiku">
+            <option value="anthropic/claude-3.5-sonnet">
+            <option value="google/gemini-2.0-flash-001">
+            <option value="openai/gpt-4o-mini">
+            <option value="openai/gpt-4o">
+            <option value="meta-llama/llama-3.1-8b-instruct">
+            <option value="mistralai/mistral-7b-instruct">
+          </datalist>
+          <p class="planner-api-hint">If your privacy settings block automatic selection, pick a specific model above.
+        </div>
+
+        <button class="planner-submit" type="submit" id="plannerSubmit">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+          Plan My Route
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <script src="./pois-data.js"></script>
 <script src="./roads-data.js"></script>
 <script src="./app.js"></script>
+<script src="./route-planner.js"></script>
 </body>
 </html>
