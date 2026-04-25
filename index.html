@@ -109,7 +109,11 @@
           <summary class="poi-accordion-label">
             <i data-lucide="map-pin" style="width:13px;height:13px"></i>
             <span>Places of Interest</span>
-            <i data-lucide="chevron-down" class="poi-chevron" style="width:14px;height:14px;margin-left:auto"></i>
+            <div class="poi-quick-btns">
+              <button class="poi-quick-btn" data-poi-select="all" type="button">All</button>
+              <button class="poi-quick-btn" data-poi-select="none" type="button">None</button>
+            </div>
+            <i data-lucide="chevron-down" class="poi-chevron" style="width:14px;height:14px"></i>
           </summary>
           <div class="poi-filters">
             <button class="poi-btn" data-poi="historic"      aria-pressed="false" style="--poi-color:#b87c3a">Historic</button>

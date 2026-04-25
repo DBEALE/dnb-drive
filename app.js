@@ -108,7 +108,7 @@ function createMarkerIcon(road) {
   const countryClass = getCountryClass(road.region);
   return L.divIcon({
     className: '',
-    html: `<div class="custom-marker ${countryClass}">${road.id}</div>`,
+    html: `<div class="custom-marker ${countryClass}">${road.regionRank}</div>`,
     iconSize: [32, 32],
     iconAnchor: [16, 16],
     popupAnchor: [0, -20]
@@ -120,11 +120,15 @@ ROADS_DATA.forEach(road => {
     icon: createMarkerIcon(road)
   });
 
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${road.lat},${road.lng}`;
   const popupContent = `
     <div class="popup-name">${road.name}</div>
     <div class="popup-region">${road.county}, ${road.region}</div>
     <span class="diff-badge ${road.difficulty}">${road.difficulty}</span>
-    <div class="popup-link" onclick="showRoadPanel(${road.id})">View details →</div>
+    <div class="popup-actions">
+      <div class="popup-link" onclick="showRoadPanel(${road.id})">View details →</div>
+      <a class="popup-maps-link" href="${mapsUrl}" target="_blank" rel="noopener noreferrer">Google Maps ↗</a>
+    </div>
   `;
 
   marker.bindPopup(popupContent, { maxWidth: 250, closeButton: true });
@@ -238,6 +242,7 @@ function showRoadPanel(roadId) {
   drawRoute(road);
 
   const countryColor = `var(--color-${road.region.toLowerCase()})`;
+  const rankClass = road.regionRank === 1 ? 'gold' : road.regionRank === 2 ? 'silver' : road.regionRank === 3 ? 'bronze' : 'default';
 
   const imagesHTML = road.images && road.images.length
     ? `<div class="panel-images">
@@ -255,6 +260,10 @@ function showRoadPanel(roadId) {
   panelBody.innerHTML = `
     <div class="panel-road-name">${road.roadDesignation}</div>
     <div class="panel-region">${road.county}, ${road.region}</div>
+    <div class="panel-rank">
+      <span class="rank-badge rank-${rankClass}">#${road.regionRank}</span>
+      <span class="panel-rank-label">in ${road.region}</span>
+    </div>
     ${imagesHTML}
     <p class="panel-desc">${road.description}</p>
     <div class="panel-meta">
@@ -287,6 +296,10 @@ function showRoadPanel(roadId) {
         <li><span class="highlight-dot" style="background: var(--color-challenging)"></span>${road.tip}</li>
       </ul>
     </div>
+    <a class="panel-maps-btn" href="https://www.google.com/maps/search/?api=1&query=${road.lat},${road.lng}" target="_blank" rel="noopener noreferrer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Open in Google Maps
+    </a>
   `;
 
   requestAnimationFrame(() => map.invalidateSize());
@@ -370,9 +383,12 @@ const roadGrid = document.getElementById('roadGrid');
 
 function buildRoadGrid(roads) {
   if (!roads) roads = ROADS_DATA;
-  
-  roadGrid.innerHTML = roads.map(road => {
+
+  const sorted = [...roads].sort((a, b) => a.regionRank - b.regionRank);
+
+  roadGrid.innerHTML = sorted.map(road => {
     const countryColor = `var(--color-${road.region.toLowerCase()})`;
+    const rankClass = road.regionRank === 1 ? 'gold' : road.regionRank === 2 ? 'silver' : road.regionRank === 3 ? 'bronze' : 'default';
     const cardImgHTML = road.images && road.images.length
       ? `<div class="road-card-img-wrap">
            <img class="road-card-img" src="${road.images[0].url}" alt="${road.images[0].caption}" loading="lazy">
@@ -386,7 +402,10 @@ function buildRoadGrid(roads) {
             <div class="road-card-name">${road.name}</div>
             <div class="road-card-region">${road.county}</div>
           </div>
-          <span class="diff-badge ${road.difficulty}">${road.difficulty}</span>
+          <div class="road-card-badges">
+            <span class="rank-badge rank-${rankClass}">#${road.regionRank}</span>
+            <span class="diff-badge ${road.difficulty}">${road.difficulty}</span>
+          </div>
         </div>
         <p class="road-card-desc">${road.description}</p>
         <div class="road-card-footer">
@@ -501,6 +520,20 @@ if (window.ResizeObserver) {
       }
     });
   });
+
+  // POI quick-select: All / None buttons in accordion summary
+  document.querySelectorAll('[data-poi-select]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation(); // don't toggle the <details> accordion
+      const selectAll = btn.dataset.poiSelect === 'all';
+      document.querySelectorAll('.poi-btn[data-poi]').forEach(poiBtn => {
+        const isOn = poiBtn.getAttribute('aria-pressed') === 'true';
+        if (selectAll && !isOn) poiBtn.click();
+        else if (!selectAll && isOn) poiBtn.click();
+      });
+    });
+  });
 })();
 
 /* ===== HEADER SCROLL SHADOW ===== */
@@ -530,4 +563,43 @@ window.addEventListener('scroll', () => {
     // slight delay so panel animation starts first
     setTimeout(() => sidebar.classList.remove('open'), 150);
   });
+})();
+
+/* ===== CARD HOVER → MAP MARKER HIGHLIGHT ===== */
+(function() {
+  let activeHoverMarker = null;
+
+  function clearHover() {
+    if (activeHoverMarker) {
+      const el = activeHoverMarker.getElement();
+      if (el) el.querySelector('.custom-marker')?.classList.remove('custom-marker--hover');
+      activeHoverMarker.setZIndexOffset(0);
+      activeHoverMarker = null;
+    }
+  }
+
+  document.getElementById('roadGrid').addEventListener('mouseover', function(e) {
+    const card = e.target.closest('.road-card[data-road-id]');
+    if (!card) return;
+
+    const roadId = parseInt(card.dataset.roadId, 10);
+    if (activeHoverMarker && activeHoverMarker.roadData.id === roadId) return; // already highlighted
+
+    clearHover();
+
+    const marker = markers.find(m => m.roadData.id === roadId);
+    if (!marker) return;
+
+    // Only highlight if the marker is within the current visible map bounds
+    if (!map.getBounds().contains(marker.getLatLng())) return;
+
+    const el = marker.getElement();
+    if (!el) return;
+
+    el.querySelector('.custom-marker')?.classList.add('custom-marker--hover');
+    marker.setZIndexOffset(500);
+    activeHoverMarker = marker;
+  });
+
+  document.getElementById('roadGrid').addEventListener('mouseleave', clearHover);
 })();

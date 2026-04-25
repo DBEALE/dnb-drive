@@ -427,6 +427,33 @@
   gap: var(--space-1) var(--space-2);
 }
 
+/* All / None quick-select inside the summary */
+.poi-quick-btns {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+  margin-right: var(--space-1);
+}
+
+.poi-quick-btn {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-offset);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.poi-quick-btn:hover {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-color: var(--color-primary);
+}
+
 /* ===== SIDEBAR ROAD LIST ===== */
 .sidebar-road-list {
   padding: var(--space-3) var(--space-3) var(--space-4);
@@ -436,21 +463,21 @@
 .sidebar-road-list .road-grid {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: 2px;
 }
 
 .sidebar-road-list .road-card {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3);
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-md);
 }
 
 .sidebar-road-list .road-card-img-wrap {
-  width: 60px;
-  height: 50px;
+  width: 56px;
+  height: 46px;
   flex-shrink: 0;
   margin: 0;
   border-radius: var(--radius-sm);
@@ -458,28 +485,46 @@
 }
 
 .sidebar-road-list .road-card-img {
-  width: 60px;
-  height: 50px;
+  width: 56px;
+  height: 46px;
 }
 
+/* Override: header must be ROW so badges sit beside the name, not below it */
 .sidebar-road-list .road-card-header {
   flex: 1;
   min-width: 0;
   margin-bottom: 0;
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  flex-direction: row;          /* ← was column, that's the bug */
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+/* The inner div holding name + region must be able to shrink below content width */
+.sidebar-road-list .road-card-header > div:first-child {
+  min-width: 0;
+  overflow: hidden;
 }
 
 .sidebar-road-list .road-card-name {
   font-size: var(--text-sm);
+  font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .sidebar-road-list .road-card-region {
-  font-size: 11px;
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+/* Shrink diff-badge inside sidebar cards */
+.sidebar-road-list .diff-badge {
+  font-size: 9px;
+  padding: 1px 5px;
+  letter-spacing: 0.04em;
 }
 
 .sidebar-road-list .road-card-desc { display: none; }
@@ -695,6 +740,31 @@
 
 .highlight-list li:last-child { border-bottom: none; }
 
+/* Google Maps button in road detail panel */
+.panel-maps-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  margin-top: var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-offset);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.panel-maps-btn:hover {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-color: var(--color-primary);
+}
+
 .highlight-dot {
   width: 6px;
   height: 6px;
@@ -727,6 +797,65 @@
 .diff-badge.scenic {
   background: oklch(from var(--color-scenic) l c h / 0.15);
   color: var(--color-scenic);
+}
+
+/* ===== RANK BADGE ===== */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rank-badge.rank-gold {
+  background: linear-gradient(135deg, #b8860b, #ffd700, #b8860b);
+  color: #3d2800;
+}
+
+.rank-badge.rank-silver {
+  background: linear-gradient(135deg, #8a8a8a, #d4d4d4, #8a8a8a);
+  color: #1a1a1a;
+}
+
+.rank-badge.rank-bronze {
+  background: linear-gradient(135deg, #8b4513, #cd7f32, #8b4513);
+  color: #fff;
+}
+
+.rank-badge.rank-default {
+  background: var(--color-surface-offset);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.road-card-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+/* Panel rank display */
+.panel-rank {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.panel-rank-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
 }
 
 /* ===== ROAD GRID (base styles, sidebar overrides above) ===== */
@@ -962,6 +1091,12 @@
 
 .custom-marker:hover { transform: scale(1.2); }
 
+.custom-marker--hover {
+  transform: scale(1.5);
+  box-shadow: 0 0 0 3px #fff, 0 4px 16px rgba(0,0,0,0.55);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
 .custom-marker.scotland { background: var(--color-scotland); }
 .custom-marker.wales { background: var(--color-wales); }
 .custom-marker.england { background: var(--color-england); }
@@ -999,16 +1134,35 @@
   margin-bottom: var(--space-2);
 }
 
+.popup-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-1);
+}
+
 .popup-link {
   font-size: var(--text-xs);
   color: var(--color-primary);
   font-weight: 500;
   cursor: pointer;
   display: inline-block;
-  margin-top: var(--space-1);
 }
 
 .popup-link:hover { text-decoration: underline; }
+
+.popup-maps-link {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.popup-maps-link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
 
 /* Zoom controls */
 .leaflet-control-zoom a {

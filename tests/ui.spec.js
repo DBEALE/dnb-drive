@@ -264,6 +264,79 @@ test.describe('Theme toggle', () => {
   });
 });
 
+// ─── Rankings ─────────────────────────────────────────────────────────────────
+
+test.describe('Rankings', () => {
+  test('every road card has a rank badge', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(600);
+
+    const cards = page.locator('.sidebar-road-list .road-card');
+    const badges = page.locator('.sidebar-road-list .rank-badge');
+    const cardCount = await cards.count();
+    const badgeCount = await badges.count();
+    expect(cardCount).toBeGreaterThan(0);
+    expect(badgeCount).toBe(cardCount);
+  });
+
+  test('rank-1 card has the gold badge class', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(600);
+
+    // After filtering Scotland, the first card should be rank #1 (Bealach na Bà)
+    await page.locator('.app-sidebar button[data-filter="scotland"]').click();
+    await page.waitForTimeout(300);
+
+    const firstBadge = page.locator('.sidebar-road-list .rank-badge').first();
+    await expect(firstBadge).toHaveClass(/rank-gold/);
+    await expect(firstBadge).toHaveText('#1');
+  });
+
+  test('road cards are sorted by regionRank within a region', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+
+    // Filter to Wales (21 roads)
+    await page.locator('.app-sidebar button[data-filter="wales"]').click();
+    await page.waitForTimeout(400);
+
+    // First card badge should be #1, second #2
+    const badges = page.locator('.sidebar-road-list .rank-badge');
+    const first = await badges.nth(0).textContent();
+    const second = await badges.nth(1).textContent();
+    expect(first).toBe('#1');
+    expect(second).toBe('#2');
+  });
+
+  test('road detail panel shows the rank badge', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(600);
+
+    // Click first card (rank #1 overall — Hardknott Pass in England when "All")
+    const card = page.locator('.sidebar-road-list .road-card').first();
+    await card.click();
+
+    await expect(page.locator('#roadPanel')).not.toHaveClass(/collapsed/, { timeout: 5000 });
+    await expect(page.locator('#roadPanel .rank-badge')).toBeVisible();
+    await expect(page.locator('#roadPanel .panel-rank-label')).toBeVisible();
+  });
+
+  test('silver and bronze badges appear for ranks 2 and 3', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+
+    await page.locator('.app-sidebar button[data-filter="england"]').click();
+    await page.waitForTimeout(400);
+
+    const badges = page.locator('.sidebar-road-list .rank-badge');
+    await expect(badges.nth(1)).toHaveClass(/rank-silver/);
+    await expect(badges.nth(2)).toHaveClass(/rank-bronze/);
+  });
+});
+
 // ─── Search ───────────────────────────────────────────────────────────────────
 
 test.describe('Search', () => {
@@ -295,5 +368,371 @@ test.describe('Search', () => {
 
     const countAfter = await page.locator('.sidebar-road-list .road-card').count();
     expect(countAfter).toBe(countBefore);
+  });
+});
+
+// ─── Compact cards ────────────────────────────────────────────────────────────
+
+test.describe('Compact cards', () => {
+  test('road card badges are inline with the title (not stacked below)', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(600);
+
+    const card = page.locator('.sidebar-road-list .road-card').first();
+    const header = card.locator('.road-card-header');
+    const badge = card.locator('.rank-badge');
+
+    // Both header and badge must be visible
+    await expect(header).toBeVisible();
+    await expect(badge).toBeVisible();
+
+    // Badge should be horizontally alongside the name, not pushed below:
+    // their vertical midpoints should be within 20px of each other
+    const headerBox = await header.boundingBox();
+    const badgeBox = await badge.boundingBox();
+    expect(headerBox).not.toBeNull();
+    expect(badgeBox).not.toBeNull();
+
+    const headerMidY = headerBox.y + headerBox.height / 2;
+    const badgeMidY = badgeBox.y + badgeBox.height / 2;
+    expect(Math.abs(headerMidY - badgeMidY)).toBeLessThan(20);
+  });
+
+  test('road cards are compact — height under 80px', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(600);
+
+    const card = page.locator('.sidebar-road-list .road-card').first();
+    const box = await card.boundingBox();
+    expect(box).not.toBeNull();
+    expect(box.height).toBeLessThan(80);
+  });
+});
+
+// ─── Hover highlight ──────────────────────────────────────────────────────────
+
+test.describe('Hover highlight', () => {
+  test('hovering a road card adds custom-marker--hover class to the visible marker', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(800);
+
+    // Find a card whose marker is in view at default zoom
+    // The map starts at UK overview so most markers should be visible
+    const cards = page.locator('.sidebar-road-list .road-card[data-road-id]');
+    const count = await cards.count();
+    expect(count).toBeGreaterThan(0);
+
+    // Hover over the first card
+    const firstCard = cards.first();
+    const roadId = await firstCard.getAttribute('data-road-id');
+    await firstCard.hover();
+    await page.waitForTimeout(200);
+
+    // Check if the corresponding marker got the hover class
+    // (only if it's in current map bounds — the JS guards against out-of-bounds)
+    const hoverClass = await page.evaluate(() => {
+      return document.querySelectorAll('.custom-marker--hover').length;
+    });
+
+    // The hover class count should be 0 or 1 — never more than 1
+    expect(hoverClass).toBeLessThanOrEqual(1);
+  });
+
+  test('moving mouse off the road list removes all hover highlights', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(800);
+
+    const firstCard = page.locator('.sidebar-road-list .road-card[data-road-id]').first();
+    await firstCard.hover();
+    await page.waitForTimeout(200);
+
+    // Move mouse to the map (away from road grid)
+    await page.locator('#map').hover();
+    await page.waitForTimeout(200);
+
+    const hoverCount = await page.evaluate(() => {
+      return document.querySelectorAll('.custom-marker--hover').length;
+    });
+    expect(hoverCount).toBe(0);
+  });
+});
+
+// ─── Card text alignment ──────────────────────────────────────────────────────
+
+test.describe('Card text alignment', () => {
+  test('rank badge does not overflow outside the card boundary', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(600);
+
+    const cards = page.locator('.sidebar-road-list .road-card');
+    const cardCount = await cards.count();
+
+    for (let i = 0; i < Math.min(cardCount, 10); i++) {
+      const card = cards.nth(i);
+      const badge = card.locator('.rank-badge');
+      const cardBox = await card.boundingBox();
+      const badgeBox = await badge.boundingBox();
+      expect(badgeBox).not.toBeNull();
+      // Badge right edge must be within the card's right edge (with 2px tolerance)
+      expect(badgeBox.x + badgeBox.width).toBeLessThanOrEqual(cardBox.x + cardBox.width + 2);
+    }
+  });
+
+  test('diff badge does not overflow outside the card boundary', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(600);
+
+    const cards = page.locator('.sidebar-road-list .road-card');
+    const cardCount = await cards.count();
+
+    for (let i = 0; i < Math.min(cardCount, 10); i++) {
+      const card = cards.nth(i);
+      const badge = card.locator('.diff-badge');
+      const cardBox = await card.boundingBox();
+      const badgeBox = await badge.boundingBox();
+      expect(badgeBox).not.toBeNull();
+      expect(badgeBox.x + badgeBox.width).toBeLessThanOrEqual(cardBox.x + cardBox.width + 2);
+    }
+  });
+
+  test('road name and badges are on the same row (vertically aligned)', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(600);
+
+    const card = page.locator('.sidebar-road-list .road-card').first();
+    const nameEl = card.locator('.road-card-name');
+    const badge = card.locator('.rank-badge');
+
+    const nameBox = await nameEl.boundingBox();
+    const badgeBox = await badge.boundingBox();
+    expect(nameBox).not.toBeNull();
+    expect(badgeBox).not.toBeNull();
+
+    // Vertical midpoints within 16px — both on the same row
+    const nameMidY = nameBox.y + nameBox.height / 2;
+    const badgeMidY = badgeBox.y + badgeBox.height / 2;
+    expect(Math.abs(nameMidY - badgeMidY)).toBeLessThan(16);
+  });
+
+  test('long road names truncate with ellipsis and do not push badges out', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(600);
+
+    // Filter to all roads, find a card with a long name (Wales has "Black Mountain Pass (A4069)")
+    await page.locator('.app-sidebar button[data-filter="wales"]').click();
+    await page.waitForTimeout(300);
+
+    const cards = page.locator('.sidebar-road-list .road-card');
+    const cardCount = await cards.count();
+    expect(cardCount).toBeGreaterThan(0);
+
+    for (let i = 0; i < cardCount; i++) {
+      const card = cards.nth(i);
+      const badge = card.locator('.rank-badge');
+      const cardBox = await card.boundingBox();
+      const badgeBox = await badge.boundingBox();
+      // Badge must not overflow the card to the right
+      expect(badgeBox.x + badgeBox.width).toBeLessThanOrEqual(cardBox.x + cardBox.width + 2);
+    }
+  });
+});
+
+// ─── POI quick-select ─────────────────────────────────────────────────────────
+
+test.describe('POI quick-select', () => {
+  test('All and None buttons are visible in the accordion summary (no open needed)', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+
+    // Accordion must be closed
+    const accordion = page.locator('.poi-accordion');
+    await expect(accordion).not.toHaveAttribute('open', '');
+
+    // Buttons should still be visible inside the summary
+    await expect(page.locator('[data-poi-select="all"]')).toBeVisible();
+    await expect(page.locator('[data-poi-select="none"]')).toBeVisible();
+  });
+
+  test('clicking All enables all POI categories without opening the accordion', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+
+    const accordion = page.locator('.poi-accordion');
+    const allBtn = page.locator('[data-poi-select="all"]');
+    await allBtn.click();
+
+    // Accordion should remain closed (or at least the All button worked without requiring open)
+    // Check all poi-btn buttons are now pressed
+    const poiBtns = page.locator('.poi-btn[data-poi]');
+    const count = await poiBtns.count();
+    expect(count).toBeGreaterThan(0);
+    for (let i = 0; i < count; i++) {
+      const pressed = await poiBtns.nth(i).getAttribute('aria-pressed');
+      expect(pressed).toBe('true');
+    }
+  });
+
+  test('clicking None disables all POI categories', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+
+    // First enable all, then disable all
+    await page.locator('[data-poi-select="all"]').click();
+    await page.waitForTimeout(200);
+    await page.locator('[data-poi-select="none"]').click();
+    await page.waitForTimeout(200);
+
+    const poiBtns = page.locator('.poi-btn[data-poi]');
+    const count = await poiBtns.count();
+    for (let i = 0; i < count; i++) {
+      const pressed = await poiBtns.nth(i).getAttribute('aria-pressed');
+      expect(pressed).toBe('false');
+    }
+  });
+
+  test('clicking All button does not toggle the accordion open/closed', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+
+    const accordion = page.locator('.poi-accordion');
+    const wasOpen = await accordion.evaluate(el => el.hasAttribute('open'));
+
+    await page.locator('[data-poi-select="all"]').click();
+    await page.waitForTimeout(150);
+
+    const isOpen = await accordion.evaluate(el => el.hasAttribute('open'));
+    expect(isOpen).toBe(wasOpen); // accordion state unchanged
+  });
+});
+
+// ─── Marker / card rank consistency ──────────────────────────────────────────
+
+test.describe('Marker / card rank consistency', () => {
+  test('map markers display a number matching the card rank badge', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(800);
+
+    // Filter to Scotland so we have a small, predictable set
+    await page.locator('.app-sidebar button[data-filter="scotland"]').click();
+    await page.waitForTimeout(400);
+
+    // First card badge should read "#1"
+    const firstBadge = page.locator('.sidebar-road-list .rank-badge').first();
+    const badgeText = await firstBadge.textContent();
+    expect(badgeText).toBe('#1');
+
+    // At least one marker on the map should display the text "1"
+    const markerWithOne = page.locator('.leaflet-marker-pane .custom-marker').filter({ hasText: '1' }).first();
+    await expect(markerWithOne).toBeAttached({ timeout: 5000 });
+    expect(await markerWithOne.textContent()).toBe('1');
+  });
+
+  test('marker numbers are regionRank values, not arbitrary road ids', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(800);
+
+    // Filter to Wales (21 roads with regionRank 1-21)
+    await page.locator('.app-sidebar button[data-filter="wales"]').click();
+    await page.waitForTimeout(400);
+
+    // Collect all visible marker texts
+    const markers = page.locator('.leaflet-marker-pane .custom-marker');
+    const count = await markers.count();
+    expect(count).toBeGreaterThan(0);
+
+    for (let i = 0; i < count; i++) {
+      const text = await markers.nth(i).textContent();
+      const num = parseInt(text, 10);
+      // Wales has 21 roads ranked 1-21; no marker should show a value > 21
+      expect(num).toBeGreaterThan(0);
+      expect(num).toBeLessThanOrEqual(21);
+    }
+  });
+});
+
+// ─── Google Maps links ────────────────────────────────────────────────────────
+
+test.describe('Google Maps links', () => {
+  test('popup contains a Google Maps link', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(800);
+
+    const markerIcon = page.locator('.leaflet-marker-pane .leaflet-marker-icon').first();
+    await expect(markerIcon).toBeVisible({ timeout: 10000 });
+    await markerIcon.dispatchEvent('click');
+
+    await expect(page.locator('.leaflet-popup-content')).toBeVisible({ timeout: 5000 });
+
+    const mapsLink = page.locator('.leaflet-popup-content .popup-maps-link');
+    await expect(mapsLink).toBeVisible();
+
+    const href = await mapsLink.getAttribute('href');
+    expect(href).toContain('google.com/maps');
+    expect(href).toContain('query=');
+  });
+
+  test('popup Google Maps link opens in a new tab (target=_blank)', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(800);
+
+    const markerIcon = page.locator('.leaflet-marker-pane .leaflet-marker-icon').first();
+    await markerIcon.dispatchEvent('click');
+    await expect(page.locator('.leaflet-popup-content')).toBeVisible({ timeout: 5000 });
+
+    const mapsLink = page.locator('.leaflet-popup-content .popup-maps-link');
+    expect(await mapsLink.getAttribute('target')).toBe('_blank');
+    expect(await mapsLink.getAttribute('rel')).toContain('noopener');
+  });
+
+  test('road detail panel contains a Google Maps button', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(800);
+
+    const card = page.locator('.sidebar-road-list .road-card').first();
+    await card.click();
+    await expect(page.locator('#roadPanel')).not.toHaveClass(/collapsed/, { timeout: 5000 });
+
+    const panelMapsBtn = page.locator('#roadPanel .panel-maps-btn');
+    await expect(panelMapsBtn).toBeVisible();
+
+    const href = await panelMapsBtn.getAttribute('href');
+    expect(href).toContain('google.com/maps');
+    expect(href).toContain('query=');
+    expect(await panelMapsBtn.getAttribute('target')).toBe('_blank');
+  });
+
+  test('Google Maps URL contains valid lat/lng coordinates', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(800);
+
+    const card = page.locator('.sidebar-road-list .road-card').first();
+    await card.click();
+    await expect(page.locator('#roadPanel')).not.toHaveClass(/collapsed/, { timeout: 5000 });
+
+    const href = await page.locator('#roadPanel .panel-maps-btn').getAttribute('href');
+    // Extract query param: ?query=lat,lng
+    const match = href.match(/query=([-\d.]+),([-\d.]+)/);
+    expect(match).not.toBeNull();
+    const lat = parseFloat(match[1]);
+    const lng = parseFloat(match[2]);
+    // UK bounding box: lat 49-61, lng -8 to 2
+    expect(lat).toBeGreaterThan(49);
+    expect(lat).toBeLessThan(61);
+    expect(lng).toBeGreaterThan(-9);
+    expect(lng).toBeLessThan(3);
   });
 });

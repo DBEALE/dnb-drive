@@ -1,6 +1,7 @@
 const ROADS_DATA = [
   {
     id: 1,
+    regionRank: 2,
     waypoints: [[51.807, -3.872], [51.835, -3.781], [51.917, -3.74]],
     name: "Black Mountain Pass (A4069)",
     region: "Wales",
@@ -26,6 +27,7 @@ const ROADS_DATA = [
   },
   {
     id: 2,
+    regionRank: 1,
     waypoints: [[57.44, -5.652], [57.432, -5.725], [57.441, -5.818]],
     name: "Bealach na Bà",
     region: "Scotland",
@@ -52,6 +54,7 @@ const ROADS_DATA = [
   },
   {
     id: 3,
+    regionRank: 1,
     waypoints: [[53.067, -3.741], [53.143, -3.655], [53.03, -3.599], [53.09, -3.802]],
     name: "The Evo Triangle",
     region: "Wales",
@@ -77,6 +80,7 @@ const ROADS_DATA = [
   },
   {
     id: 4,
+    regionRank: 4,
     waypoints: [[53.404, -1.765], [53.43, -1.858], [53.444, -1.946]],
     name: "Snake Pass (A57)",
     region: "England",
@@ -102,6 +106,7 @@ const ROADS_DATA = [
   },
   {
     id: 5,
+    regionRank: 3,
     waypoints: [[53.259, -2.123], [53.257, -1.986], [53.258, -1.913]],
     name: "Cat and Fiddle (A537)",
     region: "England",
@@ -127,6 +132,7 @@ const ROADS_DATA = [
   },
   {
     id: 6,
+    regionRank: 2,
     waypoints: [[57.477, -4.224], [57.894, -5.156], [58.568, -4.753], [58.642, -3.07], [57.59, -3.534]],
     name: "North Coast 500",
     region: "Scotland",
@@ -153,6 +159,7 @@ const ROADS_DATA = [
   },
   {
     id: 7,
+    regionRank: 5,
     waypoints: [[54.388, -2.244], [54.363, -2.215], [54.305, -2.199]],
     name: "Buttertubs Pass",
     region: "England",
@@ -178,6 +185,7 @@ const ROADS_DATA = [
   },
   {
     id: 8,
+    regionRank: 16,
     waypoints: [[51.082, -4.058], [50.997, -4.394], [50.831, -4.543], [50.624, -4.69]],
     name: "Atlantic Highway (A39)",
     region: "England",
@@ -203,6 +211,7 @@ const ROADS_DATA = [
   },
   {
     id: 9,
+    regionRank: 3,
     waypoints: [[53.118, -4.131], [53.083, -4.02], [53.082, -3.893]],
     name: "Llanberis Pass (A4086)",
     region: "Wales",
@@ -228,6 +237,7 @@ const ROADS_DATA = [
   },
   {
     id: 10,
+    regionRank: 8,
     waypoints: [[51.275, -2.78], [51.281, -2.754]],
     name: "Cheddar Gorge (B3135)",
     region: "England",
@@ -253,6 +263,7 @@ const ROADS_DATA = [
   },
   {
     id: 11,
+    regionRank: 3,
     waypoints: [[56.681, -5.109], [56.656, -4.944], [56.614, -4.812]],
     name: "A82 Glencoe",
     region: "Scotland",
@@ -278,6 +289,7 @@ const ROADS_DATA = [
   },
   {
     id: 12,
+    regionRank: 4,
     waypoints: [[52.969, -3.166], [53.07, -3.211], [53.099, -3.288]],
     name: "Horseshoe Pass (A542)",
     region: "Wales",
@@ -303,6 +315,7 @@ const ROADS_DATA = [
   },
   {
     id: 13,
+    regionRank: 1,
     waypoints: [[54.39, -3.284], [54.401, -3.2], [54.401, -3.107]],
     name: "Hardknott Pass",
     region: "England",
@@ -328,6 +341,7 @@ const ROADS_DATA = [
   },
   {
     id: 14,
+    regionRank: 5,
     waypoints: [[52.046, -3.558], [51.878, -3.611], [51.786, -3.616]],
     name: "A4067 Sennybridge to Swansea",
     region: "Wales",
@@ -353,6 +367,7 @@ const ROADS_DATA = [
   },
   {
     id: 15,
+    regionRank: 6,
     waypoints: [[54.366, -2.902], [54.444, -2.963], [54.481, -2.927], [54.53, -2.937]],
     name: "Kirkstone Pass (A592)",
     region: "England",
@@ -378,6 +393,7 @@ const ROADS_DATA = [
   },
   {
     id: 16,
+    regionRank: 10,
     waypoints: [[50.55, -4.143], [50.546, -4.029], [50.52, -3.757]],
     name: "B3357 Dartmoor",
     region: "England",
@@ -404,6 +420,7 @@ const ROADS_DATA = [
   },
   {
     id: 17,
+    regionRank: 5,
     waypoints: [[56.594, -3.337], [56.779, -3.393], [57.249, -3.371], [57.325, -3.619]],
     name: "Snow Roads Scenic Route",
     region: "Scotland",
@@ -430,6 +447,7 @@ const ROADS_DATA = [
   },
   {
     id: 18,
+    regionRank: 25,
     waypoints: [[50.615, -2.459], [50.668, -2.605], [50.73, -2.756]],
     name: "Jurassic Coast Road (B3157)",
     region: "England",
@@ -455,6 +473,7 @@ const ROADS_DATA = [
   },
   {
     id: 19,
+    regionRank: 10,
     waypoints: [[52.415, -4.081], [52.432, -3.843], [52.43, -3.638]],
     name: "A44 Aberystwyth to Llangurig",
     region: "Wales",
@@ -480,6 +499,7 @@ const ROADS_DATA = [
   },
   {
     id: 20,
+    regionRank: 14,
     waypoints: [[54.664, -2.754], [54.725, -2.531], [54.805, -2.436]],
     name: "A686 Penrith to Alston",
     region: "England",
@@ -509,6 +529,7 @@ const ROADS_DATA = [
   // --- SCOTLAND ---
   {
     id: 21,
+    regionRank: 7,
     waypoints: [[56.819, -5.106], [56.872, -5.444], [56.953, -5.831], [57.004, -5.828]],
     name: "Road to the Isles (A830)",
     region: "Scotland",
@@ -534,6 +555,7 @@ const ROADS_DATA = [
   },
   {
     id: 22,
+    regionRank: 8,
     waypoints: [[56.726, -5.893], [56.69, -6.083], [56.726, -6.221]],
     name: "Ardnamurchan Peninsula (B8007)",
     region: "Scotland",
@@ -559,6 +581,7 @@ const ROADS_DATA = [
   },
   {
     id: 23,
+    regionRank: 4,
     waypoints: [[57.048, -4.984], [57.1, -5.12], [57.228, -5.467], [57.278, -5.518]],
     name: "Glen Shiel (A87)",
     region: "Scotland",
@@ -584,6 +607,7 @@ const ROADS_DATA = [
   },
   {
     id: 24,
+    regionRank: 10,
     waypoints: [[57.58, -5.077], [57.413, -5.294], [57.275, -5.714]],
     name: "Glen Carron (A890)",
     region: "Scotland",
@@ -609,6 +633,7 @@ const ROADS_DATA = [
   },
   {
     id: 25,
+    regionRank: 6,
     waypoints: [[57.603, -5.303], [57.54, -5.485], [57.516, -5.63]],
     name: "Torridon Road (A832)",
     region: "Scotland",
@@ -634,6 +659,7 @@ const ROADS_DATA = [
   },
   {
     id: 26,
+    regionRank: 9,
     waypoints: [[57.85, -5.171], [57.998, -5.06], [58.152, -4.993]],
     name: "Assynt Inselbergs (A835)",
     region: "Scotland",
@@ -659,6 +685,7 @@ const ROADS_DATA = [
   },
   {
     id: 27,
+    regionRank: 15,
     waypoints: [[56.857, -2.561], [56.893, -2.611], [57.048, -2.494]],
     name: "Cairn o'Mount (B974)",
     region: "Scotland",
@@ -684,6 +711,7 @@ const ROADS_DATA = [
   },
   {
     id: 28,
+    regionRank: 12,
     waypoints: [[55.574, -5.147], [55.58, -5.198], [55.536, -5.323]],
     name: "The String Road (B880), Isle of Arran",
     region: "Scotland",
@@ -709,6 +737,7 @@ const ROADS_DATA = [
   },
   {
     id: 29,
+    regionRank: 11,
     waypoints: [[55.336, -3.445], [55.421, -3.311], [55.479, -3.225], [55.553, -2.845]],
     name: "Grey Mare's Tail (A708)",
     region: "Scotland",
@@ -734,6 +763,7 @@ const ROADS_DATA = [
   },
   {
     id: 30,
+    regionRank: 13,
     waypoints: [[56.434, -5.234], [56.391, -5.123], [56.401, -4.996]],
     name: "Pass of Brander (A85)",
     region: "Scotland",
@@ -759,6 +789,7 @@ const ROADS_DATA = [
   },
   {
     id: 31,
+    regionRank: 14,
     waypoints: [[56.679, -5.178], [56.643, -5.374], [56.459, -5.389]],
     name: "Appin Road (A828)",
     region: "Scotland",
@@ -784,6 +815,7 @@ const ROADS_DATA = [
   },
   {
     id: 32,
+    regionRank: 16,
     waypoints: [[56.003, -4.58], [56.1, -4.634], [56.198, -4.713], [56.283, -4.721]],
     name: "Loch Lomond (A82)",
     region: "Scotland",
@@ -809,6 +841,7 @@ const ROADS_DATA = [
   },
   {
     id: 33,
+    regionRank: 17,
     waypoints: [[56.464, -5.7], [56.342, -6.067], [56.322, -6.368]],
     name: "Ross of Mull (A849)",
     region: "Scotland",
@@ -834,6 +867,7 @@ const ROADS_DATA = [
   },
   {
     id: 34,
+    regionRank: 19,
     waypoints: [[58.481, -4.417], [58.523, -4.053], [58.591, -3.519]],
     name: "North Coast — Tongue to Thurso (A836)",
     region: "Scotland",
@@ -859,6 +893,7 @@ const ROADS_DATA = [
   },
   {
     id: 35,
+    regionRank: 18,
     waypoints: [[57.144, -4.682], [57.254, -4.497], [57.365, -4.276]],
     name: "Loch Ness South Shore (B862)",
     region: "Scotland",
@@ -886,6 +921,7 @@ const ROADS_DATA = [
   // --- WALES ---
   {
     id: 36,
+    regionRank: 6,
     waypoints: [[53.006, -4.103], [52.982, -4.098], [52.918, -4.135]],
     name: "Aberglaslyn Pass (A498)",
     region: "Wales",
@@ -911,6 +947,7 @@ const ROADS_DATA = [
   },
   {
     id: 37,
+    regionRank: 11,
     waypoints: [[52.301, -3.51], [52.285, -3.706], [52.252, -3.793]],
     name: "Elan Valley (B4518)",
     region: "Wales",
@@ -936,6 +973,7 @@ const ROADS_DATA = [
   },
   {
     id: 38,
+    regionRank: 9,
     waypoints: [[51.946, -3.393], [51.997, -3.291], [52.149, -3.407]],
     name: "A470 Brecon to Builth Wells",
     region: "Wales",
@@ -961,6 +999,7 @@ const ROADS_DATA = [
   },
   {
     id: 39,
+    regionRank: 13,
     waypoints: [[52.909, -3.593], [52.876, -3.673], [52.854, -3.739]],
     name: "Bala Lake Road (A494)",
     region: "Wales",
@@ -986,6 +1025,7 @@ const ROADS_DATA = [
   },
   {
     id: 40,
+    regionRank: 14,
     waypoints: [[52.726, -4.057], [52.809, -4.115], [52.86, -4.107]],
     name: "Barmouth to Harlech (A496)",
     region: "Wales",
@@ -1011,6 +1051,7 @@ const ROADS_DATA = [
   },
   {
     id: 41,
+    regionRank: 19,
     waypoints: [[52.594, -3.858], [52.5, -3.983], [52.415, -4.082]],
     name: "Machynlleth to Aberystwyth (A487)",
     region: "Wales",
@@ -1036,6 +1077,7 @@ const ROADS_DATA = [
   },
   {
     id: 42,
+    regionRank: 12,
     waypoints: [[52.741, -3.883], [52.782, -3.884], [52.909, -3.593]],
     name: "A470 Dolgellau to Bala",
     region: "Wales",
@@ -1061,6 +1103,7 @@ const ROADS_DATA = [
   },
   {
     id: 43,
+    regionRank: 7,
     waypoints: [[51.655, -3.492], [51.73, -3.502], [51.724, -3.537]],
     name: "Rhigos Mountain Road (A4061)",
     region: "Wales",
@@ -1086,6 +1129,7 @@ const ROADS_DATA = [
   },
   {
     id: 44,
+    regionRank: 8,
     waypoints: [[51.672, -3.474], [51.72, -3.614], [51.711, -3.656]],
     name: "Bwlch Mountain Road (A4107)",
     region: "Wales",
@@ -1111,6 +1155,7 @@ const ROADS_DATA = [
   },
   {
     id: 45,
+    regionRank: 17,
     waypoints: [[52.66, -3.148], [52.641, -3.33], [52.636, -3.752]],
     name: "Welshpool to Mallwyd (A458)",
     region: "Wales",
@@ -1136,6 +1181,7 @@ const ROADS_DATA = [
   },
   {
     id: 46,
+    regionRank: 18,
     waypoints: [[52.766, -3.474], [52.79, -3.447], [52.748, -3.436]],
     name: "Lake Vyrnwy Circuit (B4393)",
     region: "Wales",
@@ -1161,6 +1207,7 @@ const ROADS_DATA = [
   },
   {
     id: 47,
+    regionRank: 15,
     waypoints: [[51.724, -3.537], [51.858, -3.47], [51.946, -3.392]],
     name: "Storey Arms (A4059)",
     region: "Wales",
@@ -1186,6 +1233,7 @@ const ROADS_DATA = [
   },
   {
     id: 48,
+    regionRank: 16,
     waypoints: [[53.082, -3.896], [53.09, -3.802]],
     name: "Capel Curig to Betws-y-Coed (A5)",
     region: "Wales",
@@ -1211,6 +1259,7 @@ const ROADS_DATA = [
   },
   {
     id: 49,
+    regionRank: 20,
     waypoints: [[52.149, -3.407], [52.1, -3.56], [51.985, -3.488]],
     name: "Mynydd Epynt (B4520)",
     region: "Wales",
@@ -1238,6 +1287,7 @@ const ROADS_DATA = [
   // --- ENGLAND: LAKE DISTRICT ---
   {
     id: 50,
+    regionRank: 2,
     waypoints: [[54.401, -3.103], [54.393, -3.112], [54.39, -3.178]],
     name: "Wrynose Pass",
     region: "England",
@@ -1263,6 +1313,7 @@ const ROADS_DATA = [
   },
   {
     id: 51,
+    regionRank: 12,
     waypoints: [[54.6, -3.135], [54.543, -3.142], [54.519, -3.152]],
     name: "Borrowdale (B5289)",
     region: "England",
@@ -1288,6 +1339,7 @@ const ROADS_DATA = [
   },
   {
     id: 52,
+    regionRank: 13,
     waypoints: [[54.437, -2.989], [54.446, -3.082]],
     name: "Great Langdale (B5343)",
     region: "England",
@@ -1313,6 +1365,7 @@ const ROADS_DATA = [
   },
   {
     id: 53,
+    regionRank: 21,
     waypoints: [[54.366, -2.902], [54.461, -3.009], [54.527, -3.046], [54.6, -3.134]],
     name: "Dunmail Raise (A591)",
     region: "England",
@@ -1338,6 +1391,7 @@ const ROADS_DATA = [
   },
   {
     id: 54,
+    regionRank: 17,
     waypoints: [[54.605, -3.193], [54.619, -3.231], [54.617, -3.283]],
     name: "Whinlatter Pass (B5292)",
     region: "England",
@@ -1363,6 +1417,7 @@ const ROADS_DATA = [
   },
   {
     id: 55,
+    regionRank: 24,
     waypoints: [[54.664, -2.754], [54.533, -2.676], [54.4, -2.706]],
     name: "Shap Fell (A6)",
     region: "England",
@@ -1390,6 +1445,7 @@ const ROADS_DATA = [
   // --- ENGLAND: YORKSHIRE ---
   {
     id: 56,
+    regionRank: 22,
     waypoints: [[54.402, -1.735], [54.394, -1.934], [54.388, -2.156], [54.389, -2.263]],
     name: "Swaledale (B6270)",
     region: "England",
@@ -1415,6 +1471,7 @@ const ROADS_DATA = [
   },
   {
     id: 57,
+    regionRank: 23,
     waypoints: [[54.163, -2.298], [54.178, -2.37], [54.305, -2.199]],
     name: "Ribblehead (B6255)",
     region: "England",
@@ -1440,6 +1497,7 @@ const ROADS_DATA = [
   },
   {
     id: 58,
+    regionRank: 32,
     waypoints: [[54.246, -0.776], [54.368, -0.718], [54.488, -0.616]],
     name: "North York Moors (A169)",
     region: "England",
@@ -1465,6 +1523,7 @@ const ROADS_DATA = [
   },
   {
     id: 59,
+    regionRank: 36,
     waypoints: [[54.244, -1.064], [54.338, -1.066], [54.395, -1.122]],
     name: "Bilsdale (B1257)",
     region: "England",
@@ -1490,6 +1549,7 @@ const ROADS_DATA = [
   },
   {
     id: 60,
+    regionRank: 40,
     waypoints: [[54.488, -0.616], [54.435, -0.529], [54.28, -0.397]],
     name: "Whitby to Scarborough (A171)",
     region: "England",
@@ -1515,6 +1575,7 @@ const ROADS_DATA = [
   },
   {
     id: 61,
+    regionRank: 45,
     waypoints: [[54.339, -1.427], [54.314, -1.828], [54.305, -2.199], [54.322, -2.526]],
     name: "Wensleydale (A684)",
     region: "England",
@@ -1540,6 +1601,7 @@ const ROADS_DATA = [
   },
   {
     id: 62,
+    regionRank: 46,
     waypoints: [[53.986, -1.887], [54.076, -1.994], [54.151, -2.028], [54.198, -2.073]],
     name: "Wharfedale (B6160)",
     region: "England",
@@ -1567,6 +1629,7 @@ const ROADS_DATA = [
   // --- ENGLAND: PEAK DISTRICT ---
   {
     id: 63,
+    regionRank: 19,
     waypoints: [[53.343, -1.773], [53.348, -1.734], [53.357, -1.688]],
     name: "Hope Valley (A625)",
     region: "England",
@@ -1592,6 +1655,7 @@ const ROADS_DATA = [
   },
   {
     id: 64,
+    regionRank: 7,
     waypoints: [[53.344, -1.815], [53.34, -1.8]],
     name: "Winnats Pass",
     region: "England",
@@ -1617,6 +1681,7 @@ const ROADS_DATA = [
   },
   {
     id: 65,
+    regionRank: 26,
     waypoints: [[53.215, -1.671], [53.234, -1.762], [53.267, -1.783]],
     name: "Miller's Dale (B6049)",
     region: "England",
@@ -1642,6 +1707,7 @@ const ROADS_DATA = [
   },
   {
     id: 66,
+    regionRank: 31,
     waypoints: [[53.296, -1.671], [53.303, -1.718], [53.298, -1.75]],
     name: "Baslow Edge (A623)",
     region: "England",
@@ -1667,6 +1733,7 @@ const ROADS_DATA = [
   },
   {
     id: 67,
+    regionRank: 37,
     waypoints: [[53.259, -1.914], [53.199, -2.065], [53.161, -2.216]],
     name: "Buxton to Congleton (A54)",
     region: "England",
@@ -1692,6 +1759,7 @@ const ROADS_DATA = [
   },
   {
     id: 68,
+    regionRank: 39,
     waypoints: [[53.017, -1.729], [53.091, -1.764], [53.259, -1.914]],
     name: "Tissington (A515)",
     region: "England",
@@ -1717,6 +1785,7 @@ const ROADS_DATA = [
   },
   {
     id: 69,
+    regionRank: 33,
     waypoints: [[53.32, -1.922], [53.35, -1.865], [53.363, -1.811]],
     name: "Rushup Edge",
     region: "England",
@@ -1744,6 +1813,7 @@ const ROADS_DATA = [
   // --- ENGLAND: COTSWOLDS ---
   {
     id: 70,
+    regionRank: 41,
     waypoints: [[52.036, -1.851], [52.041, -1.879], [52.057, -1.778]],
     name: "Broadway Hill (B4632)",
     region: "England",
@@ -1769,6 +1839,7 @@ const ROADS_DATA = [
   },
   {
     id: 71,
+    regionRank: 44,
     waypoints: [[51.933, -1.726], [51.973, -1.882], [51.9, -2.074]],
     name: "Stow Hill (B4077)",
     region: "England",
@@ -1794,6 +1865,7 @@ const ROADS_DATA = [
   },
   {
     id: 72,
+    regionRank: 48,
     waypoints: [[51.717, -1.955], [51.829, -2.074], [51.906, -2.074]],
     name: "Birdlip Hill (A417)",
     region: "England",
@@ -1819,6 +1891,7 @@ const ROADS_DATA = [
   },
   {
     id: 73,
+    regionRank: 51,
     waypoints: [[51.941, -1.545], [51.997, -1.7], [52.036, -1.851]],
     name: "Chipping Norton to Broadway (A44)",
     region: "England",
@@ -1846,6 +1919,7 @@ const ROADS_DATA = [
   // --- ENGLAND: SOUTH EAST ---
   {
     id: 74,
+    regionRank: 54,
     waypoints: [[51.063, -1.311], [50.984, -0.739], [50.984, -0.601], [51.023, -0.45]],
     name: "South Downs Way (A272)",
     region: "England",
@@ -1871,6 +1945,7 @@ const ROADS_DATA = [
   },
   {
     id: 75,
+    regionRank: 56,
     waypoints: [[51.113, -0.051], [51.095, 0.097], [51.06, 0.165]],
     name: "Ashdown Forest (B2026)",
     region: "England",
@@ -1896,6 +1971,7 @@ const ROADS_DATA = [
   },
   {
     id: 76,
+    regionRank: 59,
     waypoints: [[51.236, -0.574], [51.24, -0.682], [51.214, -0.799]],
     name: "Hog's Back (A31)",
     region: "England",
@@ -1921,6 +1997,7 @@ const ROADS_DATA = [
   },
   {
     id: 77,
+    regionRank: 58,
     waypoints: [[51.114, -0.726], [51.086, -0.707], [50.984, -0.738], [50.835, -0.79]],
     name: "Hindhead to Chichester (A286)",
     region: "England",
@@ -1948,6 +2025,7 @@ const ROADS_DATA = [
   // --- ENGLAND: EXMOOR ---
   {
     id: 78,
+    regionRank: 9,
     waypoints: [[51.215, -3.59], [51.228, -3.613], [51.232, -3.643]],
     name: "Porlock Hill (A39)",
     region: "England",
@@ -1973,6 +2051,7 @@ const ROADS_DATA = [
   },
   {
     id: 79,
+    regionRank: 18,
     waypoints: [[51.156, -3.627], [51.149, -3.591], [51.018, -3.499]],
     name: "Exmoor High Moor (B3223)",
     region: "England",
@@ -1998,6 +2077,7 @@ const ROADS_DATA = [
   },
   {
     id: 80,
+    regionRank: 34,
     waypoints: [[50.906, -3.491], [51.018, -3.499], [51.177, -3.526]],
     name: "Exe Valley (A396)",
     region: "England",
@@ -2023,6 +2103,7 @@ const ROADS_DATA = [
   },
   {
     id: 81,
+    regionRank: 27,
     waypoints: [[51.228, -3.77], [51.231, -3.802], [51.231, -3.837]],
     name: "County Gate to Lynmouth (A39)",
     region: "England",
@@ -2048,6 +2129,7 @@ const ROADS_DATA = [
   },
   {
     id: 82,
+    regionRank: 28,
     waypoints: [[51.139, -3.795], [51.124, -3.763], [51.118, -3.729]],
     name: "Simonsbath (B3358)",
     region: "England",
@@ -2075,6 +2157,7 @@ const ROADS_DATA = [
   // --- ENGLAND: DEVON & CORNWALL ---
   {
     id: 83,
+    regionRank: 15,
     waypoints: [[50.598, -3.892], [50.575, -3.948], [50.542, -4.025]],
     name: "Two Bridges (B3212)",
     region: "England",
@@ -2100,6 +2183,7 @@ const ROADS_DATA = [
   },
   {
     id: 84,
+    regionRank: 29,
     waypoints: [[50.55, -4.143], [50.651, -4.14], [50.736, -4.014]],
     name: "Dartmoor Edge (A386)",
     region: "England",
@@ -2125,6 +2209,7 @@ const ROADS_DATA = [
   },
   {
     id: 85,
+    regionRank: 47,
     waypoints: [[50.636, -4.36], [50.571, -4.597], [50.469, -4.719]],
     name: "Bodmin Moor (A30)",
     region: "England",
@@ -2150,6 +2235,7 @@ const ROADS_DATA = [
   },
   {
     id: 86,
+    regionRank: 30,
     waypoints: [[50.514, -4.439], [50.519, -4.444], [50.49, -4.464]],
     name: "Minions and The Cheesewring (B3254)",
     region: "England",
@@ -2177,6 +2263,7 @@ const ROADS_DATA = [
   // --- ENGLAND: NORTH PENNINES & LANCASHIRE ---
   {
     id: 87,
+    regionRank: 11,
     waypoints: [[54.805, -2.437], [54.74, -2.215], [54.748, -2.018]],
     name: "Killhope Pass (A689)",
     region: "England",
@@ -2202,6 +2289,7 @@ const ROADS_DATA = [
   },
   {
     id: 88,
+    regionRank: 20,
     waypoints: [[54.541, -1.923], [54.661, -2.076], [54.693, -2.205]],
     name: "Upper Teesdale (B6277)",
     region: "England",
@@ -2227,6 +2315,7 @@ const ROADS_DATA = [
   },
   {
     id: 89,
+    regionRank: 35,
     waypoints: [[54.066, -2.278], [54.109, -2.331], [54.163, -2.375]],
     name: "Settle to Ingleton (A65)",
     region: "England",
@@ -2252,6 +2341,7 @@ const ROADS_DATA = [
   },
   {
     id: 90,
+    regionRank: 38,
     waypoints: [[54.076, -1.994], [54.089, -1.869], [54.082, -1.79]],
     name: "Grassington to Pateley Bridge (B6265)",
     region: "England",
@@ -2277,6 +2367,7 @@ const ROADS_DATA = [
   },
   {
     id: 91,
+    regionRank: 42,
     waypoints: [[53.834, -2.217], [53.88, -2.298], [53.946, -2.26]],
     name: "Pendle Hill (A682)",
     region: "England",
@@ -2302,6 +2393,7 @@ const ROADS_DATA = [
   },
   {
     id: 92,
+    regionRank: 43,
     waypoints: [[53.259, -2.125], [53.267, -2.085], [53.161, -2.216]],
     name: "Macclesfield Forest (A536)",
     region: "England",
@@ -2329,6 +2421,7 @@ const ROADS_DATA = [
   // --- ENGLAND: DORSET & SOUTH WEST ---
   {
     id: 93,
+    regionRank: 50,
     waypoints: [[50.737, -2.233], [50.71, -2.438], [50.73, -2.756]],
     name: "Dorset Ridgeway (A35)",
     region: "England",
@@ -2354,6 +2447,7 @@ const ROADS_DATA = [
   },
   {
     id: 94,
+    regionRank: 53,
     waypoints: [[50.92, -2.317], [50.949, -2.521], [51.056, -2.403]],
     name: "Blackmore Vale (A357)",
     region: "England",
@@ -2379,6 +2473,7 @@ const ROADS_DATA = [
   },
   {
     id: 95,
+    regionRank: 49,
     waypoints: [[51.002, -2.195], [50.966, -1.966], [50.925, -1.785]],
     name: "Cranborne Chase (B3081)",
     region: "England",
@@ -2404,6 +2499,7 @@ const ROADS_DATA = [
   },
   {
     id: 96,
+    regionRank: 52,
     waypoints: [[51.275, -2.781], [51.209, -2.645], [51.185, -2.547]],
     name: "Mendip Hills (A371)",
     region: "England",
@@ -2429,6 +2525,7 @@ const ROADS_DATA = [
   },
   {
     id: 97,
+    regionRank: 55,
     waypoints: [[50.731, -2.756], [50.72, -2.848], [50.726, -2.937]],
     name: "Golden Cap (B3165)",
     region: "England",
@@ -2454,6 +2551,7 @@ const ROADS_DATA = [
   },
   {
     id: 98,
+    regionRank: 57,
     waypoints: [[51.236, -0.574], [51.219, -0.467], [51.23, -0.33], [51.188, -0.195]],
     name: "Surrey Hills (A25)",
     region: "England",
@@ -2479,6 +2577,7 @@ const ROADS_DATA = [
   },
   {
     id: 99,
+    regionRank: 60,
     waypoints: [[51.143, -1.08], [51.0, -1.075], [50.855, -1.179]],
     name: "Meon Valley (A32)",
     region: "England",
@@ -2504,6 +2603,7 @@ const ROADS_DATA = [
   },
   {
     id: 100,
+    regionRank: 21,
     waypoints: [[51.804, -4.499], [51.717, -4.701], [51.694, -4.941]],
     name: "Pembrokeshire Coast (A477)",
     region: "Wales",
