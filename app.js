@@ -239,6 +239,12 @@ function showRoadPanel(roadId) {
 
   panel.classList.remove('collapsed');
   panelTitle.textContent = road.name;
+
+  // On mobile: expand sidebar to full height so the panel is fully readable
+  if (window.innerWidth <= 900) {
+    const sidebar = document.getElementById('app-sidebar');
+    sidebar.classList.add('open', 'panel-open');
+  }
   drawRoute(road);
 
   const countryColor = `var(--color-${road.region.toLowerCase()})`;
@@ -309,6 +315,10 @@ panelClose.addEventListener('click', () => {
   panel.classList.add('collapsed');
   clearRoute();
   map.flyTo([54.5, -3.5], 6, { duration: 0.8 });
+  // On mobile: shrink back to road list height, keep sidebar open
+  if (window.innerWidth <= 900) {
+    document.getElementById('app-sidebar').classList.remove('panel-open');
+  }
 });
 
 // Make globally accessible for popup onclick
@@ -365,8 +375,10 @@ function applyFilters() {
 
   filtered.forEach(m => markerGroup.addLayer(m));
 
-  // Update road count
+  // Update road count (main stat + mobile handle label)
   document.getElementById('roadCount').textContent = filtered.length;
+  const handleCount = document.getElementById('handleRoadCount');
+  if (handleCount) handleCount.textContent = filtered.length;
 
   // Rebuild road grid
   buildRoadGrid(filtered.map(m => m.roadData));
