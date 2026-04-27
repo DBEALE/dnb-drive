@@ -1,21 +1,27 @@
 /* ===== THEME TOGGLE ===== */
 (function() {
   const toggle = document.querySelector('[data-theme-toggle]');
+  const mapToggle = document.querySelector('[data-map-toggle]');
   const root = document.documentElement;
   let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  let mapMode = 'road';
   root.setAttribute('data-theme', theme);
   updateToggleIcon();
+  updateMapToggle();
+  window.currentMapMode = mapMode;
 
   toggle && toggle.addEventListener('click', () => {
     theme = theme === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', theme);
     updateToggleIcon();
-    // Update map tiles if map exists
-    if (window.currentTileLayer && window.map) {
-      window.map.removeLayer(window.currentTileLayer);
-      window.currentTileLayer = createTileLayer();
-      window.map.addLayer(window.currentTileLayer);
-    }
+    syncTileLayer();
+  });
+
+  mapToggle && mapToggle.addEventListener('click', () => {
+    mapMode = mapMode === 'road' ? 'satellite' : 'road';
+    window.currentMapMode = mapMode;
+    updateMapToggle();
+    syncTileLayer();
   });
 
   function updateToggleIcon() {
@@ -25,6 +31,22 @@
       ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
       : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
   }
+
+  function updateMapToggle() {
+    if (!mapToggle) return;
+    const isSatellite = mapMode === 'satellite';
+    mapToggle.setAttribute('aria-pressed', String(isSatellite));
+    mapToggle.setAttribute('aria-label', isSatellite ? 'Switch to road map view' : 'Switch to satellite view');
+    mapToggle.textContent = isSatellite ? 'Road map' : 'Satellite';
+  }
+
+  function syncTileLayer() {
+    if (window.currentTileLayer && window.map) {
+      window.map.removeLayer(window.currentTileLayer);
+      window.currentTileLayer = createTileLayer();
+      window.map.addLayer(window.currentTileLayer);
+    }
+  }
 })();
 
 /* ===== LUCIDE ICONS ===== */
@@ -32,6 +54,13 @@ lucide.createIcons();
 
 /* ===== MAP SETUP ===== */
 function createTileLayer() {
+  if (window.currentMapMode === 'satellite') {
+    return L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community',
+      maxZoom: 19
+    });
+  }
+
   const theme = document.documentElement.getAttribute('data-theme');
   const isDark = theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches);
   
@@ -270,6 +299,10 @@ function showRoadPanel(roadId) {
       <span class="rank-badge rank-${rankClass}">#${road.regionRank}</span>
       <span class="panel-rank-label">in ${road.region}</span>
     </div>
+    <button class="panel-view-map-btn" id="panelViewOnMap" type="button">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+      Show route on map
+    </button>
     ${imagesHTML}
     <p class="panel-desc">${road.description}</p>
     <div class="panel-meta">
@@ -302,10 +335,6 @@ function showRoadPanel(roadId) {
         <li><span class="highlight-dot" style="background: var(--color-challenging)"></span>${road.tip}</li>
       </ul>
     </div>
-    <button class="panel-view-map-btn" id="panelViewOnMap" type="button">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
-      View on Map
-    </button>
     <a class="panel-maps-btn" href="https://www.google.com/maps/search/?api=1&query=${road.lat},${road.lng}" target="_blank" rel="noopener noreferrer">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
       Open in Google Maps

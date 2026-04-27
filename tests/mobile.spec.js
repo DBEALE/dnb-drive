@@ -166,6 +166,25 @@ test.describe('Mobile — road detail panel', () => {
     await expect(sidebar).toHaveClass(/panel-open/);
   });
 
+  test('show route on map button collapses the panel so the route is visible', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+
+    await page.locator('#sidebarHandle').tap();
+    await page.waitForTimeout(500);
+
+    const card = page.locator('.sidebar-road-list .road-card').first();
+    await card.tap();
+    await page.waitForTimeout(500);
+
+    const button = page.locator('#panelViewOnMap');
+    await expect(button).toBeVisible();
+    await button.tap();
+    await page.waitForTimeout(500);
+
+    await expect(page.locator('.app-sidebar')).not.toHaveClass(/panel-open/);
+  });
+
   test('panel title is visible when panel is open on mobile', async ({ page }) => {
     await page.goto('/');
     await waitForMap(page);

@@ -264,6 +264,24 @@ test.describe('Theme toggle', () => {
   });
 });
 
+// ─── Map base layer ─────────────────────────────────────────────────────────
+
+test.describe('Map base layer', () => {
+  test('satellite toggle switches the tile layer', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+
+    const toggle = page.locator('[data-map-toggle]');
+    await expect(toggle).toHaveText('Satellite');
+    await toggle.click();
+
+    await expect(toggle).toHaveText('Road map');
+    await page.waitForFunction(() => window.currentMapMode === 'satellite');
+    const tileUrl = await page.evaluate(() => window.currentTileLayer && window.currentTileLayer._url);
+    expect(tileUrl).toContain('World_Imagery');
+  });
+});
+
 // ─── Rankings ─────────────────────────────────────────────────────────────────
 
 test.describe('Rankings', () => {
