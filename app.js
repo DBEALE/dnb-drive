@@ -257,6 +257,19 @@ function useFallback(road, color) {
   map.fitBounds(bounds.pad(0.25), { animate: true, maxZoom: 13, duration: 0.6 });
 }
 
+window.getCurrentRouteBounds = function() {
+  if (!currentRouteLayer || !currentRouteLayer.getLayers) return null;
+
+  let bounds = null;
+  currentRouteLayer.getLayers().forEach(layer => {
+    if (!layer.getBounds) return;
+    const layerBounds = layer.getBounds();
+    bounds = bounds ? bounds.extend(layerBounds) : layerBounds;
+  });
+
+  return bounds;
+};
+
 /* ===== ROAD PANEL ===== */
 const panel = document.getElementById('roadPanel');
 const panelTitle = document.getElementById('panelTitle');
@@ -387,6 +400,11 @@ function showRoadPanel(roadId) {
       if (window.innerWidth <= 900) {
         const sidebar = document.getElementById('app-sidebar');
         sidebar.classList.remove('open', 'panel-open');
+        requestAnimationFrame(() => {
+          map.invalidateSize();
+          if (window.focusNearbyRoutePoi) window.focusNearbyRoutePoi(lat, lng);
+        });
+        return;
       }
 
       if (window.focusNearbyRoutePoi) window.focusNearbyRoutePoi(lat, lng);
@@ -648,12 +666,16 @@ if (window.ResizeObserver) {
       });
     }
 
-    // Fit bounds to show selected POI + all nearby route POIs together
-    if (positions.length > 1) {
-      map.fitBounds(L.latLngBounds(positions).pad(0.3), { animate: true, maxZoom: 13, duration: 0.6 });
-    } else {
-      map.flyTo([lat, lng], 12, { duration: 0.6 });
+    let bounds = L.latLngBounds(positions);
+    if (currentRouteLayer && currentRouteLayer.getLayers) {
+      currentRouteLayer.getLayers().forEach(layer => {
+        if (!layer.getBounds) return;
+        bounds = bounds.extend(layer.getBounds());
+      });
     }
+
+    // Fit bounds to show the selected POI, nearby route POIs, and the route itself.
+    map.fitBounds(bounds.pad(0.3), { animate: true, maxZoom: 13, duration: 0.6 });
 
     // Open the popup for the selected POI after the map animation settles
     if (currentRoutePoiLayer) {
@@ -808,4 +830,33 @@ window.addEventListener('scroll', () => {
     if (activeHoverMarker) {
       const el = activeHoverMarker.getElement();
       if (el) el.querySelector('.custom-marker')?.classList.remove('custom-marker--hover');
-      activeHoverMarker.setZIndexOffset(0
+      activeHoverMarker.setZIndexOffset(0);
+      activeHoverMarker = null;
+    }
+  }
+
+  document.getElementById('roadGrid').addEventListener('mouseover', function(e) {
+    const card = e.target.closest('.road-card[data-road-id]');
+    if (!card) return;
+
+    const roadId = parseInt(card.dataset.roadId, 10);
+    if (activeHoverMarker && activeHoverMarker.roadData.id === roadId) return; // already highlighted
+
+    clearHover();
+
+    const marker = markers.find(m => m.roadData.id === roadId);
+    if (!marker) return;
+
+    // Only highlight if the marker is within the current visible map bounds
+    if (!map.getBounds().contains(marker.getLatLng())) return;
+
+    const el = marker.getElement();
+    if (!el) return;
+
+    el.querySelector('.custom-marker')?.classList.add('custom-marker--hover');
+    marker.setZIndexOffset(500);
+    activeHoverMarker = marker;
+  });
+
+  document.getElementById('roadGrid').addEventListener('mouseleave', clearHover);
+})();

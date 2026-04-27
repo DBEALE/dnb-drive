@@ -235,6 +235,32 @@ test.describe('Mobile — road detail panel', () => {
 
     await expect(page.locator('.app-sidebar')).not.toHaveClass(/panel-open/);
   });
+
+  test('tapping a route POI closes the panel and keeps the road visible', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+
+    await page.locator('#sidebarHandle').tap();
+    await page.waitForTimeout(500);
+
+    const card = page.locator('.sidebar-road-list .road-card').filter({ hasText: 'Cat and Fiddle' }).first();
+    await expect(card).toBeVisible({ timeout: 10000 });
+    await card.tap();
+    await page.waitForTimeout(700);
+
+    const routeButton = page.locator('#roadPanel .panel-route-poi-link').first();
+    await expect(routeButton).toBeVisible({ timeout: 5000 });
+    await routeButton.tap();
+
+    await expect(page.locator('.app-sidebar')).not.toHaveClass(/panel-open/, { timeout: 5000 });
+    await expect(page.locator('.leaflet-popup')).toBeVisible({ timeout: 5000 });
+
+    const routeStillVisible = await page.evaluate(() => {
+      const bounds = window.getCurrentRouteBounds?.();
+      return !!bounds && window.map.getBounds().contains(bounds);
+    });
+    expect(routeStillVisible).toBe(true);
+  });
 });
 
 // ─── Touch targets ───────────────────────────────────────────────────────────
