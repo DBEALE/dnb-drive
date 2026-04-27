@@ -320,6 +320,7 @@ test.describe('Mobile — Google Maps links', () => {
     const href = await mapsBtn.getAttribute('href');
     expect(href).toContain('google.com/maps');
   });
+
 });
 
 // ─── Filters on mobile ───────────────────────────────────────────────────────

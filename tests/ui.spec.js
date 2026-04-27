@@ -280,6 +280,46 @@ test.describe('Map base layer', () => {
     const tileUrl = await page.evaluate(() => window.currentTileLayer && window.currentTileLayer._url);
     expect(tileUrl).toContain('World_Imagery');
   });
+
+  test('satellite label detail slider updates the overlay layers', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+
+    const toggle = page.locator('[data-map-toggle]');
+    await toggle.click();
+    await page.waitForFunction(() => window.currentMapMode === 'satellite');
+
+    const slider = page.locator('#mapDetailSlider');
+    await expect(slider).toBeVisible();
+    await expect(slider).toBeEnabled();
+
+    await slider.evaluate((input, value) => {
+      input.value = value;
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    }, '90');
+    await page.waitForFunction(() => window.currentMapLabelDetail === 90);
+
+    const overlayCount = await page.evaluate(() => (window.currentSatelliteLabelLayers || []).length);
+    expect(overlayCount).toBeGreaterThan(0);
+  });
+
+  test('road map label detail slider also updates the overlay layers', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+
+    const slider = page.locator('#mapDetailSlider');
+    await expect(slider).toBeVisible();
+    await expect(slider).toBeEnabled();
+
+    await slider.evaluate((input, value) => {
+      input.value = value;
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+    }, '15');
+    await page.waitForFunction(() => window.currentMapLabelDetail === 15);
+
+    const overlayCount = await page.evaluate(() => (window.currentSatelliteLabelLayers || []).length);
+    expect(overlayCount).toBeGreaterThan(0);
+  });
 });
 
 // ─── Rankings ─────────────────────────────────────────────────────────────────
@@ -692,7 +732,7 @@ test.describe('Google Maps links', () => {
 
     await expect(page.locator('.leaflet-popup-content')).toBeVisible({ timeout: 5000 });
 
-    const mapsLink = page.locator('.leaflet-popup-content .popup-maps-link');
+    const mapsLink = page.getByRole('link', { name: 'Google Maps ↗' }).first();
     await expect(mapsLink).toBeVisible();
 
     const href = await mapsLink.getAttribute('href');
@@ -709,7 +749,7 @@ test.describe('Google Maps links', () => {
     await markerIcon.dispatchEvent('click');
     await expect(page.locator('.leaflet-popup-content')).toBeVisible({ timeout: 5000 });
 
-    const mapsLink = page.locator('.leaflet-popup-content .popup-maps-link');
+    const mapsLink = page.getByRole('link', { name: 'Google Maps ↗' }).first();
     expect(await mapsLink.getAttribute('target')).toBe('_blank');
     expect(await mapsLink.getAttribute('rel')).toContain('noopener');
   });

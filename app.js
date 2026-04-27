@@ -2,13 +2,17 @@
 (function() {
   const toggle = document.querySelector('[data-theme-toggle]');
   const mapToggle = document.querySelector('[data-map-toggle]');
+  const mapDetailSlider = document.getElementById('mapDetailSlider');
   const root = document.documentElement;
   let theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   let mapMode = 'road';
+  let labelDetail = mapDetailSlider ? parseInt(mapDetailSlider.value, 10) : 70;
   root.setAttribute('data-theme', theme);
   updateToggleIcon();
   updateMapToggle();
+  updateMapDetail();
   window.currentMapMode = mapMode;
+  window.currentMapLabelDetail = labelDetail;
 
   toggle && toggle.addEventListener('click', () => {
     theme = theme === 'dark' ? 'light' : 'dark';
@@ -21,7 +25,16 @@
     mapMode = mapMode === 'road' ? 'satellite' : 'road';
     window.currentMapMode = mapMode;
     updateMapToggle();
+    updateMapDetail();
     syncTileLayer();
+    syncSatelliteLabelLayers();
+  });
+
+  mapDetailSlider && mapDetailSlider.addEventListener('input', () => {
+    labelDetail = parseInt(mapDetailSlider.value, 10);
+    window.currentMapLabelDetail = labelDetail;
+    updateMapDetail();
+    syncSatelliteLabelLayers();
   });
 
   function updateToggleIcon() {
@@ -40,6 +53,12 @@
     mapToggle.textContent = isSatellite ? 'Road map' : 'Satellite';
   }
 
+  function updateMapDetail() {
+    if (!mapDetailSlider) return;
+    mapDetailSlider.disabled = false;
+    mapDetailSlider.setAttribute('aria-disabled', 'false');
+  }
+
   function syncTileLayer() {
     if (window.currentTileLayer && window.map) {
       window.map.removeLayer(window.currentTileLayer);
@@ -47,6 +66,46 @@
       window.map.addLayer(window.currentTileLayer);
     }
   }
+
+  function syncSatelliteLabelLayers() {
+    if (!window.map) return;
+
+    if (window.currentSatelliteLabelLayers) {
+      window.currentSatelliteLabelLayers.forEach(layer => {
+        if (window.map.hasLayer(layer)) window.map.removeLayer(layer);
+      });
+    }
+
+    window.currentSatelliteLabelLayers = [];
+
+    if (mapMode !== 'satellite' && mapMode !== 'road') return;
+
+    const detail = Math.max(0, Math.min(100, labelDetail));
+    const showPlaces = detail > 0;
+    const showRoads = detail >= 35;
+    const placesOpacity = showRoads ? 0.95 : Math.max(0.25, 0.25 + (detail / 100) * 0.6);
+    const roadsOpacity = showRoads ? Math.max(0.2, (detail - 35) / 65) : 0;
+
+    if (showPlaces) {
+      const placesLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+        opacity: placesOpacity,
+        pane: 'overlayPane',
+        attribution: 'Reference &copy; Esri'
+      }).addTo(window.map);
+      window.currentSatelliteLabelLayers.push(placesLayer);
+    }
+
+    if (showRoads) {
+      const roadsLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}', {
+        opacity: roadsOpacity,
+        pane: 'overlayPane',
+        attribution: 'Reference &copy; Esri'
+      }).addTo(window.map);
+      window.currentSatelliteLabelLayers.push(roadsLayer);
+    }
+  }
+
+  window.syncSatelliteLabelLayers = syncSatelliteLabelLayers;
 })();
 
 /* ===== LUCIDE ICONS ===== */
@@ -65,15 +124,15 @@ function createTileLayer() {
   const isDark = theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches);
   
   if (isDark) {
-    // dark_all = CartoDB dark matter with all labels (road names & numbers included)
-    return L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    // dark_nolabels keeps the road map clean so the slider can control label density.
+    return L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
       subdomains: 'abcd',
       maxZoom: 19
     });
   } else {
-    // Voyager style shows road names and numbers much more prominently than positron
-    return L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    // light_nolabels keeps the road map clean so the slider can control label density.
+    return L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
       subdomains: 'abcd',
       maxZoom: 19
@@ -91,6 +150,7 @@ const map = L.map('map', {
 window.map = map;
 window.currentTileLayer = createTileLayer();
 window.currentTileLayer.addTo(map);
+if (window.syncSatelliteLabelLayers) window.syncSatelliteLabelLayers();
 
 /* ===== SCROLL WHEEL ZOOM GUARD ===== */
 // Only allow scroll-zoom after the user clicks the map;
@@ -144,12 +204,18 @@ function createMarkerIcon(road) {
   });
 }
 
+function buildRoadMapsUrl(road) {
+  const waypoints = road.waypoints && road.waypoints.length >= 2 ? road.waypoints : [[road.lat, road.lng]];
+  const points = waypoints.map(([lat, lng]) => `${lat},${lng}`);
+  return `https://www.google.com/maps/dir/${points.join('/')}`;
+}
+
 ROADS_DATA.forEach(road => {
   const marker = L.marker([road.lat, road.lng], {
     icon: createMarkerIcon(road)
   });
 
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${road.lat},${road.lng}`;
+  const mapsUrl = buildRoadMapsUrl(road);
   const popupContent = `
     <div class="popup-name">${road.name}</div>
     <div class="popup-region">${road.county}, ${road.region}</div>
@@ -239,7 +305,7 @@ async function drawRoute(road) {
     if (data.routes && data.routes[0]) {
       currentRouteLayer = drawRouteLayers(data.routes[0].geometry, color, false);
       map.fitBounds(currentRouteLayer.getLayers()[0].getBounds().pad(0.15), {
-        animate: true, maxZoom: 13, duration: 0.6
+        animate: true, maxZoom: 14, duration: 0.6
       });
     } else {
       useFallback(road, color);
@@ -254,7 +320,7 @@ function useFallback(road, color) {
   const latlngs = road.waypoints.map(([lat, lng]) => [lat, lng]);
   currentRouteLayer = drawRouteLayers(latlngs, color, true);
   const bounds = L.latLngBounds(latlngs);
-  map.fitBounds(bounds.pad(0.25), { animate: true, maxZoom: 13, duration: 0.6 });
+  map.fitBounds(bounds.pad(0.25), { animate: true, maxZoom: 14, duration: 0.6 });
 }
 
 window.getCurrentRouteBounds = function() {
@@ -323,7 +389,6 @@ function showRoadPanel(roadId) {
         </div>
       </div>`
     : '';
-
   panelBody.innerHTML = `
     <div class="panel-road-name">${road.roadDesignation}</div>
     <div class="panel-region">${road.county}, ${road.region}</div>
@@ -368,7 +433,7 @@ function showRoadPanel(roadId) {
       </ul>
     </div>
     ${nearbyPoisHTML}
-    <a class="panel-maps-btn" href="https://www.google.com/maps/search/?api=1&query=${road.lat},${road.lng}" target="_blank" rel="noopener noreferrer">
+    <a class="panel-maps-btn" href="${buildRoadMapsUrl(road)}" target="_blank" rel="noopener noreferrer">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
       Open in Google Maps
     </a>
@@ -385,7 +450,7 @@ function showRoadPanel(roadId) {
       // Fly/fit map to road bounds
       if (road.waypoints && road.waypoints.length >= 2) {
         const latlngs = road.waypoints.map(([lat, lng]) => [lat, lng]);
-        map.fitBounds(L.latLngBounds(latlngs).pad(0.25), { animate: true, maxZoom: 13, duration: 0.6 });
+        map.fitBounds(L.latLngBounds(latlngs).pad(0.25), { animate: true, maxZoom: 14, duration: 0.6 });
       } else {
         map.flyTo([road.lat, road.lng], 11, { duration: 0.6 });
       }
@@ -675,7 +740,7 @@ if (window.ResizeObserver) {
     }
 
     // Fit bounds to show the selected POI, nearby route POIs, and the route itself.
-    map.fitBounds(bounds.pad(0.3), { animate: true, maxZoom: 13, duration: 0.6 });
+    map.fitBounds(bounds.pad(0.3), { animate: true, maxZoom: 14, duration: 0.6 });
 
     // Open the popup for the selected POI after the map animation settles
     if (currentRoutePoiLayer) {
