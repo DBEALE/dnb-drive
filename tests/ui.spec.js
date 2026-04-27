@@ -736,3 +736,164 @@ test.describe('Google Maps links', () => {
     expect(lng).toBeLessThan(3);
   });
 });
+
+// ─── European country filters ─────────────────────────────────────────────────
+
+test.describe('European country filters', () => {
+  for (const [country, expectedMin, expectedMax] of [
+    ['france',      14, 16],
+    ['belgium',      7,  9],
+    ['netherlands',  6,  8],
+  ]) {
+    test(`${country} filter shows the correct number of roads`, async ({ page }) => {
+      await page.goto('/');
+      await waitForMap(page);
+
+      const btn = page.locator(`.app-sidebar button[data-filter="${country}"]`);
+      await expect(btn).toBeVisible();
+      await btn.click();
+      await expect(btn).toHaveClass(/active/);
+      await page.waitForTimeout(300);
+
+      const count = parseInt(await page.locator('#roadCount').textContent(), 10);
+      expect(count).toBeGreaterThanOrEqual(expectedMin);
+      expect(count).toBeLessThanOrEqual(expectedMax);
+    });
+
+    test(`${country} road cards have rank badges starting at #1`, async ({ page }) => {
+      await page.goto('/');
+      await waitForMap(page);
+
+      await page.locator(`.app-sidebar button[data-filter="${country}"]`).click();
+      await page.waitForTimeout(400);
+
+      const firstBadge = page.locator('.sidebar-road-list .rank-badge').first();
+      await expect(firstBadge).toBeVisible({ timeout: 5000 });
+      await expect(firstBadge).toHaveText('#1');
+    });
+
+    test(`${country} markers appear on the map after filtering`, async ({ page }) => {
+      await page.goto('/');
+      await waitForMap(page);
+
+      await page.locator(`.app-sidebar button[data-filter="${country}"]`).click();
+      await page.waitForTimeout(500);
+
+      const markers = page.locator('.leaflet-marker-pane .custom-marker');
+      const count = await markers.count();
+      expect(count).toBeGreaterThan(0);
+    });
+  }
+
+  test('total road count is 130 on initial load', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    const count = parseInt(await page.locator('#roadCount').textContent(), 10);
+    expect(count).toBe(130);
+  });
+
+  test('brand stat shows 6 nations', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    // The Nations stat is the second .stat-num element
+    const stats = page.locator('.brand-stats .stat-num');
+    const nationsText = await stats.nth(1).textContent();
+    expect(nationsText).toBe('6');
+  });
+
+  test('France filter button has correct active colour class', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    const btn = page.locator('.app-sidebar button[data-filter="france"]');
+    await btn.click();
+    await expect(btn).toHaveClass(/active/);
+  });
+
+  test('clicking a France road card opens the detail panel', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(500);
+
+    await page.locator('.app-sidebar button[data-filter="france"]').click();
+    await page.waitForTimeout(400);
+
+    const card = page.locator('.sidebar-road-list .road-card').first();
+    await expect(card).toBeVisible({ timeout: 8000 });
+    await card.click();
+
+    await expect(page.locator('#roadPanel')).not.toHaveClass(/collapsed/, { timeout: 5000 });
+    await expect(page.locator('#panelTitle')).not.toHaveText('Select a Road');
+  });
+});
+
+// ─── Gallery image display ────────────────────────────────────────────────────
+
+test.describe('Gallery image display', () => {
+  test('road detail panel gallery images all render (no broken images)', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(500);
+
+    // Open a road card to get the detail panel
+    const card = page.locator('.sidebar-road-list .road-card').first();
+    await card.click();
+    await expect(page.locator('#roadPanel')).not.toHaveClass(/collapsed/, { timeout: 5000 });
+
+    // Wait until every gallery image has finished loading
+    const allLoaded = await page.waitForFunction(() => {
+      const imgs = Array.from(document.querySelectorAll('#roadPanel .gallery-img'));
+      if (imgs.length === 0) return true; // no images is fine
+      return imgs.every(img => img.complete);
+    }, { timeout: 15000 });
+
+    // Assert none are broken (complete but naturalWidth === 0 means broken)
+    const brokenCount = await page.evaluate(() => {
+      return Array.from(document.querySelectorAll('#roadPanel .gallery-img'))
+        .filter(img => img.complete && img.naturalWidth === 0).length;
+    });
+    expect(brokenCount).toBe(0);
+  });
+
+  test('France road panel gallery images all render', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(500);
+
+    await page.locator('.app-sidebar button[data-filter="france"]').click();
+    await page.waitForTimeout(400);
+
+    const card = page.locator('.sidebar-road-list .road-card').first();
+    await expect(card).toBeVisible({ timeout: 8000 });
+    await card.click();
+    await expect(page.locator('#roadPanel')).not.toHaveClass(/collapsed/, { timeout: 5000 });
+
+    // Scroll panel body to trigger lazy-loaded images
+    await page.evaluate(() => {
+      const panel = document.querySelector('#panelBody');
+      if (panel) panel.scrollTop = panel.scrollHeight;
+    });
+
+    await page.waitForFunction(() => {
+      const imgs = Array.from(document.querySelectorAll('#roadPanel .gallery-img'));
+      return imgs.length > 0 && imgs.every(img => img.complete);
+    }, { timeout: 15000 });
+
+    const brokenCount = await page.evaluate(() => {
+      return Array.from(document.querySelectorAll('#roadPanel .gallery-img'))
+        .filter(img => img.complete && img.naturalWidth === 0).length;
+    });
+    expect(brokenCount).toBe(0);
+  });
+
+  test('road detail panel has a View on Map button', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(500);
+
+    const card = page.locator('.sidebar-road-list .road-card').first();
+    await card.click();
+    await expect(page.locator('#roadPanel')).not.toHaveClass(/collapsed/, { timeout: 5000 });
+
+    await expect(page.locator('#panelViewOnMap')).toBeAttached();
+  });
+});

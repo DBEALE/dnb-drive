@@ -54,6 +54,9 @@
   --color-scotland:       #4f98a3;
   --color-wales:          #d4614a;
   --color-england:        #7aa856;
+  --color-france:         #6b8fd4;
+  --color-belgium:        #c9b84a;
+  --color-netherlands:    #c470aa;
 
   --color-thrilling:      #e85d3a;
   --color-challenging:    #d4a04a;
@@ -85,6 +88,9 @@
   --color-scotland:       #1a7a85;
   --color-wales:          #b84a35;
   --color-england:        #5a8a3a;
+  --color-france:         #2a5fa8;
+  --color-belgium:        #9a8a18;
+  --color-netherlands:    #963a88;
 
   --color-thrilling:      #c94a2a;
   --color-challenging:    #b8891a;
@@ -114,6 +120,9 @@
     --color-scotland:       #1a7a85;
     --color-wales:          #b84a35;
     --color-england:        #5a8a3a;
+    --color-france:         #2a5fa8;
+    --color-belgium:        #9a8a18;
+    --color-netherlands:    #963a88;
     --color-thrilling:      #c94a2a;
     --color-challenging:    #b8891a;
     --color-scenic:         #1a7a85;
@@ -364,9 +373,12 @@
   border-color: var(--color-border);
 }
 
-.nav-btn[data-filter="scotland"].active { color: var(--color-scotland); }
-.nav-btn[data-filter="wales"].active { color: var(--color-wales); }
-.nav-btn[data-filter="england"].active { color: var(--color-england); }
+.nav-btn[data-filter="scotland"].active    { color: var(--color-scotland); }
+.nav-btn[data-filter="wales"].active       { color: var(--color-wales); }
+.nav-btn[data-filter="england"].active     { color: var(--color-england); }
+.nav-btn[data-filter="france"].active      { color: var(--color-france); }
+.nav-btn[data-filter="belgium"].active     { color: var(--color-belgium); }
+.nav-btn[data-filter="netherlands"].active { color: var(--color-netherlands); }
 
 .difficulty-filters {
   display: flex;
@@ -746,6 +758,32 @@
 
 .highlight-list li:last-child { border-bottom: none; }
 
+/* View on Map button — collapses sidebar on mobile to reveal the map */
+.panel-view-map-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  margin-top: var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: none;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.panel-view-map-btn:hover { opacity: 0.88; }
+
+/* Hide on desktop — map is always visible */
+@media (min-width: 901px) {
+  .panel-view-map-btn { display: none; }
+}
+
 /* Google Maps button in road detail panel */
 .panel-maps-btn {
   display: flex;
@@ -753,7 +791,7 @@
   justify-content: center;
   gap: var(--space-2);
   width: 100%;
-  margin-top: var(--space-5);
+  margin-top: var(--space-3);
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
@@ -1103,9 +1141,12 @@
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.custom-marker.scotland { background: var(--color-scotland); }
-.custom-marker.wales { background: var(--color-wales); }
-.custom-marker.england { background: var(--color-england); }
+.custom-marker.scotland    { background: var(--color-scotland); }
+.custom-marker.wales       { background: var(--color-wales); }
+.custom-marker.england     { background: var(--color-england); }
+.custom-marker.france      { background: var(--color-france); }
+.custom-marker.belgium     { background: var(--color-belgium); }
+.custom-marker.netherlands { background: var(--color-netherlands); }
 
 .leaflet-popup-content-wrapper {
   background: var(--color-surface) !important;

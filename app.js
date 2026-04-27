@@ -302,11 +302,33 @@ function showRoadPanel(roadId) {
         <li><span class="highlight-dot" style="background: var(--color-challenging)"></span>${road.tip}</li>
       </ul>
     </div>
+    <button class="panel-view-map-btn" id="panelViewOnMap" type="button">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+      View on Map
+    </button>
     <a class="panel-maps-btn" href="https://www.google.com/maps/search/?api=1&query=${road.lat},${road.lng}" target="_blank" rel="noopener noreferrer">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
       Open in Google Maps
     </a>
   `;
+
+  // View on Map — collapses sidebar on mobile so the map is visible
+  const viewOnMapBtn = document.getElementById('panelViewOnMap');
+  if (viewOnMapBtn) {
+    viewOnMapBtn.addEventListener('click', () => {
+      if (window.innerWidth <= 900) {
+        const sidebar = document.getElementById('app-sidebar');
+        sidebar.classList.remove('open', 'panel-open');
+      }
+      // Fly/fit map to road bounds
+      if (road.waypoints && road.waypoints.length >= 2) {
+        const latlngs = road.waypoints.map(([lat, lng]) => [lat, lng]);
+        map.fitBounds(L.latLngBounds(latlngs).pad(0.25), { animate: true, maxZoom: 13, duration: 0.6 });
+      } else {
+        map.flyTo([road.lat, road.lng], 11, { duration: 0.6 });
+      }
+    });
+  }
 
   requestAnimationFrame(() => map.invalidateSize());
 }

@@ -442,7 +442,7 @@ const ROADS_DATA = [
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Glenshee%20Ski%20Centre%20-%20geograph.org.uk%20-%206926428.jpg?width=800", caption: "Glenshee ski area in the Cairngorms" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Approaching%20Cairngorm%20Summit%20-%20geograph.org.uk%20-%202280838.jpg?width=800", caption: "Cairngorm mountains — Britain's highest public roads" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The_Lecht.jpg?width=800", caption: "The Lecht ski road with dramatic hairpins" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/A939_climbing_towards_the_Lecht_-_geograph.org.uk_-_1726013.jpg?width=800", caption: "The Lecht ski road with dramatic hairpins" }
     ]
   },
   {
@@ -680,7 +680,7 @@ const ROADS_DATA = [
     tip: "Approaching from the south, the reveal of the Assynt inselbergs as you crest the ridge is one of Scotland's great driving moments. Pull over often.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Stac_Pollaidh.jpg?width=800", caption: "Stac Pollaidh visible from the A835" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Suilven.jpg?width=800", caption: "Suilven rising from the Assynt moorland" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Suilven_looking_east.jpg?width=800", caption: "Suilven rising from the Assynt moorland" }
     ]
   },
   {
@@ -836,7 +836,7 @@ const ROADS_DATA = [
     tip: "Can be very busy at weekends. Early mornings in autumn offer low mist on the water and dramatic light. The section north of Tarbet is the most spectacular.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Loch_Lomond.jpg?width=800", caption: "Loch Lomond from the western shore" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Luss_village.jpg?width=800", caption: "Luss village on the banks of Loch Lomond" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/View_towards_Loch_Lomond_from_Beinn_Eich,_Luss_Hills,_Scotland.jpg?width=800", caption: "Luss village on the banks of Loch Lomond" }
     ]
   },
   {
@@ -1046,7 +1046,7 @@ const ROADS_DATA = [
     tip: "Stop at the Panorama Walk viewpoint above Barmouth for the definitive Mawddach Estuary view before starting the drive north.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Mawddach%20Estuary%20and%20Barmouth%20-%20geograph.org.uk%20-%208137366.jpg?width=800", caption: "The Mawddach Estuary from the A496" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Harlech_Castle.jpg?width=800", caption: "Harlech Castle above Cardigan Bay" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Harlech_Castle,_Merionethshire,_Wales_-_25-06-2017.jpg?width=800", caption: "Harlech Castle above Cardigan Bay" }
     ]
   },
   {
@@ -1098,7 +1098,7 @@ const ROADS_DATA = [
     tip: "The short A494 south from Bala into the Dee Valley adds another excellent layer — take it before heading home.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Dolgellau.jpg?width=800", caption: "Dolgellau — starting point of the A470 climb" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Aran%20Fawddwy%20-%20geograph.org.uk%20-%203876168.jpg?width=800", caption: "The Aran mountains from the high moorland" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Aran_Fawddwy.jpg?width=800", caption: "The Aran mountains from the high moorland" }
     ]
   },
   {
@@ -1254,7 +1254,7 @@ const ROADS_DATA = [
     tip: "Stop at Swallow Falls, just off the A5 west of Betws-y-Coed. It takes 10 minutes and is genuinely impressive — best after heavy rain.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Moel_Siabod.jpg?width=800", caption: "Moel Siabod from the A5 near Capel Curig" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Swallow%20Falls,%20Betws-y-Coed%20-%20geograph.org.uk%20-%206620765.jpg?width=800", caption: "Swallow Falls near Betws-y-Coed" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Swallow_Falls,_Betws-y-Coed_-_geograph.org.uk_-_6620765.jpg?width=800", caption: "Swallow Falls near Betws-y-Coed" }
     ]
   },
   {
@@ -1334,7 +1334,7 @@ const ROADS_DATA = [
     tip: "Continue beyond Seatoller to Honister Pass for a complete Borrowdale loop. The road south from Keswick along Derwent Water's western shore is equally beautiful.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Derwent_Water.jpg?width=800", caption: "Derwent Water from the B5289" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Borrowdale%20Valley,%20from%20Bowder%20Stone,%20Lake%20District,%20England-LCCN2002696842.jpg?width=800", caption: "The Bowder Stone — a glacial erratic in Borrowdale" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bowder_Stone,_Borrowdale_-_geograph.org.uk_-_5567400.jpg?width=800", caption: "The Bowder Stone — a glacial erratic in Borrowdale" }
     ]
   },
   {
@@ -1570,7 +1570,7 @@ const ROADS_DATA = [
     tip: "Stop at Robin Hood's Bay and walk to the cliff edge for the full sense of the Yorkshire coast's dramatic scale. The village below is inaccessible to cars.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Robin%20Hood%E2%80%99s%20Bay,%20Yorkshire%20(52874571583).jpg?width=800", caption: "Robin Hood's Bay — Yorkshire's most picturesque coastal village" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Scarborough%20Headland%20^%20Castle%20-%20geograph.org.uk%20-%203833739.jpg?width=800", caption: "Scarborough Castle on its dramatic headland" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Scarborough_castle_and_headland_-_geograph.org.uk_-_136080.jpg?width=800", caption: "Scarborough Castle on its dramatic headland" }
     ]
   },
   {
@@ -1702,7 +1702,7 @@ const ROADS_DATA = [
     tip: "Stop at Monsal Head for the viaduct view — one of the Peak District's most photographed spots. Walk down into the dale from the car park for the full scale.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Monsal%20Head,%20Peak%20District,%20Derbyshire,%20UK%20(14588024369).jpg?width=800", caption: "Monsal Head viaduct over the River Wye" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Millers%20Dale%20Station%20(geograph%201664518).jpg?width=800", caption: "The wooded limestone gorge of Miller's Dale" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Millers_Dale_Station_-_geograph.org.uk_-_275757.jpg?width=800", caption: "The wooded limestone gorge of Miller's Dale" }
     ]
   },
   {
@@ -2124,7 +2124,7 @@ const ROADS_DATA = [
     tip: "Lynmouth is most dramatic approached from above. Stop at the County Gate layby before the descent to appreciate the full scale of the drop to the sea.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20North%20Devon%20coast%20(1908)%20(14598140288).jpg?width=800", caption: "Lynmouth harbour at the foot of the A39 descent" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/North%20Devon%20coastpath%20-%20Valley%20of%20the%20Rocks,%20Lynton%20(22978772879).jpg?width=800", caption: "Valley of Rocks near Lynton" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Road_to_the_Valley_of_Rocks_-_Lynton,_North_Devon_-_geograph.org.uk_-_4098055.jpg?width=800", caption: "Valley of Rocks near Lynton" }
     ]
   },
   {
@@ -2256,7 +2256,7 @@ const ROADS_DATA = [
     tip: "Walk from the Minions car park to the Cheesewring — 20 minutes return and genuinely spectacular. The view north across Bodmin Moor to Rough Tor is excellent.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The_Cheesewring.jpg?width=800", caption: "The Cheesewring — a gravity-defying granite stack above Minions" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/TheHurlers%20stoneCircles%20bodminMoor%20Cornwall.jpg?width=800", caption: "The Hurlers Bronze Age stone circles on Bodmin Moor" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The_Hurlers_stone_circles_-_geograph.org.uk_-_2984178.jpg?width=800", caption: "The Hurlers Bronze Age stone circles on Bodmin Moor" }
     ]
   },
 
@@ -2388,7 +2388,7 @@ const ROADS_DATA = [
     tip: "Downham village is 2 miles east on the B6478 — no modern signage is permitted in the entire village. It's one of England's most unspoilt.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pendle_Hill.jpg?width=800", caption: "Pendle Hill — Lancashire's most atmospheric landmark" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/View%20from%20Pendle%20Hill%20-%20geograph.org.uk%20-%202905339.jpg?width=800", caption: "Downham — Lancashire's most unspoilt village" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_Pendle_Hill_(geograph_3176975).jpg?width=800", caption: "Downham — Lancashire's most unspoilt village" }
     ]
   },
   {
@@ -2414,7 +2414,7 @@ const ROADS_DATA = [
     tip: "Combine with the A537 Cat and Fiddle and A54 for a triumvirate of eastern Cheshire roads in a single excellent day.",
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Macclesfield%20Forest+Trentabank.jpg?width=800", caption: "Macclesfield Forest from Tegg's Nose" },
-      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Tegg%27s_Nose.jpg?width=800", caption: "Tegg's Nose Country Park above Macclesfield" }
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Ridgegate_Reservoir_%26_view_towards_Tegg%27s_Nose,_Macclesfield_Forest_-_geograph.org.uk_-_5219337.jpg?width=800", caption: "Tegg's Nose Country Park above Macclesfield" }
     ]
   },
 
@@ -2625,6 +2625,791 @@ const ROADS_DATA = [
     images: [
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pembroke_Castle.jpg?width=800", caption: "Pembroke Castle — birthplace of Henry VII" },
       { url: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Cleddau%20estuary-Daugleddau%20-%20geograph.org.uk%20-%203550397.jpg?width=800", caption: "The Daugleddau Estuary from the Pembrokeshire peninsula" }
+    ]
+  },
+
+  // ── FRANCE ────────────────────────────────────────────────────────────────
+  {
+    id: 101,
+    regionRank: 1,
+    waypoints: [[43.898, 7.309], [43.963, 7.362], [44.012, 7.390]],
+    name: "Col de Turini",
+    region: "France",
+    county: "Alpes-Maritimes, Provence-Alpes-Côte d'Azur",
+    lat: 43.963,
+    lng: 7.362,
+    distance: "26 miles",
+    difficulty: "thrilling",
+    elevation: "5,276 ft summit",
+    roadDesignation: "D70 / D2566",
+    description: "Monte Carlo Rally legend made tarmac. Rising through Mediterranean pine and fir forests above Nice, the Col de Turini has been the defining night stage of the greatest winter rally since 1911. The Gorges de Saorge approach is spectacular, a medieval aqueduct perches above the void, and the summit plateau opens to panoramic views across the Maritime Alps to the Côte d'Azur.",
+    highlights: [
+      "Monte Carlo Rally night stage — gravel, ice, drama since 1911",
+      "Gorges de la Vésubie — dramatic gorge approach through hanging villages",
+      "Summit plateau at 1,607m with views to the Mediterranean",
+      "Intricate hairpins demand absolute commitment"
+    ],
+    tip: "Drive it at dusk in winter — frosted pines and rallying heritage combine for an unforgettable atmosphere. Combine with the D2566 descent to La Bollène-Vésubie for a perfect loop.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/20080520_-_col_de_Turini.jpg?width=800", caption: "The summit of Col de Turini above the Maritime Alps" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Vesubie.JPG?width=800", caption: "Gorges de la Vésubie on the approach" }
+    ]
+  },
+  {
+    id: 102,
+    regionRank: 2,
+    waypoints: [[45.056, 6.349], [45.063, 6.408], [45.071, 6.440]],
+    name: "Col du Galibier",
+    region: "France",
+    county: "Savoie / Hautes-Alpes",
+    lat: 45.063,
+    lng: 6.408,
+    distance: "18 miles",
+    difficulty: "thrilling",
+    elevation: "8,688 ft summit",
+    roadDesignation: "D902",
+    description: "At 2,646 metres, the Col du Galibier stands among the highest and most celebrated road passes in the Alps. A Tour de France summit finish since 1911, it separates the Vallée de la Maurienne from the Romanche valley with an uncompromising wall of asphalt. The final kilometres above the tunnel are raw and elemental — bare rock, thin air, and a horizon that stretches to the Mont Blanc massif.",
+    highlights: [
+      "Tour de France summit finish — cycling pilgrimage and driving legend",
+      "Views north to the Meije and south toward Briançon and the Écrins",
+      "The approach from Valloire is a sustained 8% average gradient",
+      "Traffic-free early morning — a rare gift on a famous road"
+    ],
+    tip: "Only open June to October. Combine with the Col du Télégraphe (D902 north) for a back-to-back alpine double. Fuel up in Saint-Michel-de-Maurienne — nothing at the top.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Galibier.jpg?width=800", caption: "The final climb to the Col du Galibier summit" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Col_du_Galibier_et_massif_du_Galibier.JPG?width=800", caption: "Looking south from the summit toward the Écrins" }
+    ]
+  },
+  {
+    id: 103,
+    regionRank: 3,
+    waypoints: [[43.730, 6.250], [43.766, 6.388], [43.800, 6.510]],
+    name: "Gorge du Verdon",
+    region: "France",
+    county: "Alpes-de-Haute-Provence / Var",
+    lat: 43.766,
+    lng: 6.388,
+    distance: "25 miles",
+    difficulty: "thrilling",
+    elevation: "700m canyon rim",
+    roadDesignation: "D952 / D71",
+    description: "Europe's answer to the Grand Canyon. The Verdon Gorge cuts 700 metres deep through limestone for 25 kilometres, its turquoise waters visible far below through the scrub oak. The rim roads — the D952 on the north and D71 on the south — cling to cliff edges, duck through short tunnels, and deliver constant vertigo-inducing panoramas. Both roads are required; neither can be described in advance.",
+    highlights: [
+      "700m sheer limestone walls — deepest canyon in Western Europe",
+      "Turquoise Lac de Sainte-Croix at the western end",
+      "Belvedere de la Mescla — confluence viewpoint of extraordinary drama",
+      "Hairpin corniche sections demand total concentration"
+    ],
+    tip: "Drive the D952 (north rim, Castellane to Moustiers) then return via the D71 south rim for the complete experience. Allow a full day. Not recommended in high summer midday heat.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Verdon_Gorge_1.jpg?width=800", caption: "The Verdon Gorge from the northern rim road" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial_view_of_the_Lake_of_Sainte-Croix_03.jpg?width=800", caption: "Lac de Sainte-Croix at the canyon entrance" }
+    ]
+  },
+  {
+    id: 104,
+    regionRank: 4,
+    waypoints: [[45.350, 6.980], [45.416, 7.029], [45.450, 7.100]],
+    name: "Col de l'Iseran",
+    region: "France",
+    county: "Savoie",
+    lat: 45.416,
+    lng: 7.029,
+    distance: "22 miles",
+    difficulty: "thrilling",
+    elevation: "9,088 ft summit",
+    roadDesignation: "D902",
+    description: "The highest paved mountain pass in the Alps at 2,770 metres. The D902 climbs from Bourg-Saint-Maurice through Val d'Isère — the ski resort that transforms into a pilgrimage site for petrolheads each summer — before ascending into a lunar landscape of ice fields and glacial moraines. Above 2,400m there is nothing but sky, rock, and the faint white noise of altitude.",
+    highlights: [
+      "Highest paved alpine road at 2,770m — world record altitude",
+      "Val d'Isère — glamorous ski resort transformed in summer",
+      "Glacial terrain above the snowline in June",
+      "The descent into Bonneval-sur-Arc rewards with medieval village scenery"
+    ],
+    tip: "Open July to October only. Arrive early — by 10am in peak season the road is busy with cyclists. The descent into Bonneval-sur-Arc is the more scenic direction.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Col_de_l%27Iseran_2.jpg?width=800", caption: "The summit of the Col de l'Iseran at 2,770m" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/RGA_231.JPG?width=800", caption: "Val d'Isère on the southern approach" }
+    ]
+  },
+  {
+    id: 105,
+    regionRank: 5,
+    waypoints: [[44.790, 6.690], [44.821, 6.734], [44.855, 6.770]],
+    name: "Col d'Izoard",
+    region: "France",
+    county: "Hautes-Alpes",
+    lat: 44.821,
+    lng: 6.734,
+    distance: "20 miles",
+    difficulty: "thrilling",
+    elevation: "7,743 ft summit",
+    roadDesignation: "D902",
+    description: "The most otherworldly road in France. The Casse Déserte — a Mars-like landscape of broken ochre pinnacles below the summit — looks as if tectonic violence has only just subsided. The D902 climbs from Briançon through forests to reach this geological amphitheatre, whose rocks are pocked with plaques commemorating Tour de France climbs by Coppi and Bobet. Beyond the col, Guillestre lies in classical Provençal pine country.",
+    highlights: [
+      "Casse Déserte — a unique landscape of fractured limestone towers",
+      "Tour de France monuments to Coppi and Bobet on the col",
+      "Briançon approach — Europe's highest city as your start point",
+      "Brilliant contrast: lush forest south, lunar desert north of summit"
+    ],
+    tip: "Approach from Briançon (north) for the drama of the Casse Déserte revealed as you descend from the col. Open late June to October. The D902 south towards Guillestre is equally rewarding.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Casse_Deserte_Izoard.JPG?width=800", caption: "The Casse Déserte's alien landscape below the col" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Col_d%27Izoard.jpg?width=800", caption: "The summit of the Col d'Izoard at 2,360m" }
+    ]
+  },
+  {
+    id: 106,
+    regionRank: 6,
+    waypoints: [[43.548, 6.927], [44.092, 6.236], [44.891, 5.765]],
+    name: "Route Napoléon",
+    region: "France",
+    county: "Alpes-Maritimes / Alpes-de-Haute-Provence / Isère",
+    lat: 44.092,
+    lng: 6.236,
+    distance: "200 miles",
+    difficulty: "scenic",
+    elevation: "3,600 ft max (Col Bayard)",
+    roadDesignation: "N85",
+    description: "Following the route Napoleon Bonaparte took from his Elba exile to Paris in 1815, the N85 crosses Provence and the pre-Alps from Cannes to Grenoble in one magnificent sweep. Lavender fields around Digne-les-Bains, the gorges of the Verdon tributaries, and the dramatic Gap plateau make this one of the great touring roads of Europe — historically resonant, scenically extraordinary.",
+    highlights: [
+      "Napoleon's 1815 march from Cannes to Grenoble in 7 days",
+      "Digne-les-Bains — lavender capital of France",
+      "Gorges du Daluis and Gorges de Daluis visible on approaches",
+      "Col Bayard above Gap with views to the Écrins massif"
+    ],
+    tip: "Break the drive at Castellane and Digne-les-Bains. Spring and autumn are best — lavender blooms July, snow can close the Col Bayard in winter. Allow two days for the full route.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Route-Napoleon02.jpg?width=800", caption: "The Route Napoléon at Col Bayard above Gap" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Digne_les_bains_-_vue_est.jpg?width=800", caption: "Digne-les-Bains — lavender capital of France" }
+    ]
+  },
+  {
+    id: 107,
+    regionRank: 7,
+    waypoints: [[44.268, 6.756], [44.324, 6.803], [44.378, 6.849]],
+    name: "Col de la Bonette",
+    region: "France",
+    county: "Alpes-Maritimes / Alpes-de-Haute-Provence",
+    lat: 44.324,
+    lng: 6.803,
+    distance: "30 miles",
+    difficulty: "thrilling",
+    elevation: "9,193 ft summit loop",
+    roadDesignation: "D2205",
+    description: "Disputed claimant to the title of France's highest road, the Cime de la Bonette loop climbs to 2,802 metres — several hundred metres above the pass itself. The D2205 from Jausiers is a relentless, gradual climb through progressively desolate terrain, the surrounding peaks shrinking below you until only sky and stone remain. The summit loop is one of the great high-altitude drives in Europe.",
+    highlights: [
+      "Cime de la Bonette loop at 2,802m — France's highest paved road",
+      "The Camp des Fourches — a ghost army camp above 2,400m",
+      "Ubaye valley approach is itself a spectacular drive",
+      "Total isolation — feel genuinely on top of the world"
+    ],
+    tip: "The south approach from Saint-Étienne-de-Tinée is more dramatic. Only open July to October. Fuel at Jausiers (north) or Saint-Étienne (south) — nothing above.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bonette.jpg?width=800", caption: "The Cime de la Bonette summit loop at 2,802m" }
+    ]
+  },
+  {
+    id: 108,
+    regionRank: 8,
+    waypoints: [[45.181, 6.180], [45.233, 6.218], [45.271, 6.272]],
+    name: "Col de la Croix de Fer",
+    region: "France",
+    county: "Savoie",
+    lat: 45.233,
+    lng: 6.218,
+    distance: "28 miles",
+    difficulty: "challenging",
+    elevation: "6,773 ft summit",
+    roadDesignation: "D926",
+    description: "Named for the iron cross at its 2,067m summit, the Col de la Croix de Fer links the Maurienne and Romanche valleys through one of the most glacier-rich landscapes in the Alps. The D926 from Saint-Jean-de-Maurienne passes the Lac du Barrage de Grand Maison — a reservoir dwarfed by surrounding 3,000m peaks — before the final exposed climb to a col that offers breathtaking views in every direction.",
+    highlights: [
+      "Lac du Barrage de Grand Maison — dramatic high-alpine reservoir",
+      "Views to the Aiguilles d'Arves from the summit",
+      "The D926 descent to Allemont passes waterfalls and chalets",
+      "Combines beautifully with the Col du Glandon (adjacent col)"
+    ],
+    tip: "Approach from Saint-Jean-de-Maurienne for the best climbing experience. Combine with Col du Glandon (same road, adjacent summit) in a single day. Open June to October.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Het_ijzeren_kruis_op_Col_de_la_Croix-de-Fer.jpg?width=800", caption: "The iron cross at the summit of the Col de la Croix de Fer" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Barrage_de_Grand%27Maison.JPG?width=800", caption: "Barrage de Grand'Maison on the ascent" }
+    ]
+  },
+  {
+    id: 109,
+    regionRank: 9,
+    waypoints: [[43.200, 6.500], [43.270, 6.630], [43.323, 6.745]],
+    name: "Corniche des Maures",
+    region: "France",
+    county: "Var, Provence-Alpes-Côte d'Azur",
+    lat: 43.270,
+    lng: 6.630,
+    distance: "32 miles",
+    difficulty: "scenic",
+    elevation: "600 ft coastal hills",
+    roadDesignation: "D559",
+    description: "The Riviera's finest coastal back road, the D559 hugs the slopes of the Massif des Maures between Hyères and Saint-Tropez. Where the A8 motorway speeds past obliviously, this magnificent corniche weaves through cork oak and chestnut forest above a succession of sublime beaches — Cavalaire, La Croix-Valmer, Pampelonne — with the islands of Porquerolles and Port-Cros glittering offshore.",
+    highlights: [
+      "Massif des Maures — ancient cork oak forest, rarely visited",
+      "Views to Porquerolles and Port-Cros national park islands",
+      "Ramatuelle village — perched medieval village above Saint-Tropez",
+      "Pampelonne Beach — the Riviera's most famous stretch of sand"
+    ],
+    tip: "Drive it west to east in morning light for the best coastal views. Avoid peak summer (July/August) — Saint-Tropez traffic backs up for miles. April and October are perfect.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/FR_Le_Lavandou_seen_from_the_seaside.jpg?width=800", caption: "The Maures coastline above the Mediterranean" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Saint-Tropez_-_Vue_g%C3%A9n%C3%A9rale%2C_%C3%A9glise%2C_phare.jpg?width=800", caption: "Saint-Tropez at the eastern end of the Corniche des Maures" }
+    ]
+  },
+  {
+    id: 110,
+    regionRank: 10,
+    waypoints: [[44.313, 4.350], [44.390, 4.452], [44.459, 4.558]],
+    name: "Gorge de l'Ardèche",
+    region: "France",
+    county: "Ardèche, Auvergne-Rhône-Alpes",
+    lat: 44.390,
+    lng: 4.452,
+    distance: "22 miles",
+    difficulty: "scenic",
+    elevation: "300m canyon rim",
+    roadDesignation: "D290",
+    description: "The D290 follows the northern rim of the Ardèche Gorge — a 30km limestone canyon that is the closest France gets to the American Southwest. The road loops from Vallon-Pont-d'Arc, past the Pont d'Arc natural arch (the original template for the Arch de Triomphe, reportedly), through maquis scrubland to a series of belvederes where the river loops 150 metres below through cathedral rock. The Chauvet-Pont d'Arc cave nearby contains the oldest cave art ever discovered.",
+    highlights: [
+      "Pont d'Arc — a 34m natural limestone arch over the river",
+      "Belvédère de la Madeleine — the gorge at its most dramatic",
+      "Chauvet Cave nearby — UNESCO world heritage, 36,000-year-old art",
+      "River Ardèche visible throughout — impossibly blue in summer"
+    ],
+    tip: "Drive it anti-clockwise (Vallon to Aiguèze) for the best belvedere approach angles. Arrive before 9am in summer — the road is busy with canoe traffic later in the day.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Pont_d%27Arc_arch.JPG?width=800", caption: "Pont d'Arc — the natural limestone arch over the Ardèche" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/GorgesArdeche.jpg?width=800", caption: "The Ardèche Gorge from the D290 rim road" }
+    ]
+  },
+  {
+    id: 111,
+    regionRank: 11,
+    waypoints: [[48.500, 7.052], [48.052, 7.090], [47.695, 7.195]],
+    name: "Route des Crêtes des Vosges",
+    region: "France",
+    county: "Haut-Rhin / Bas-Rhin, Alsace",
+    lat: 48.052,
+    lng: 7.090,
+    distance: "75 miles",
+    difficulty: "scenic",
+    elevation: "4,593 ft (Grand Ballon)",
+    roadDesignation: "D430 / D431",
+    description: "Built during the First World War as a strategic supply route behind the front lines, the Route des Crêtes now runs the full length of the Vosges ridge between Cernay and Wangenbourg — 120km of pine forest, panoramic belvederes, and highland farms (chaumes) with views east across the Rhine plain to the Black Forest and west over the rolling French countryside.",
+    highlights: [
+      "Grand Ballon — highest Vosges summit at 1,424m with 360° views",
+      "Hartmannswillerkopf WWI memorial site on the ridge",
+      "Traditional Vosges chalets and ferme-auberges serving Munster cheese",
+      "Views across the Rhine to the Black Forest on clear days"
+    ],
+    tip: "Start at Cernay (south) and finish at Saverne — downhill all the way north. Stop at the Grand Ballon summit for the finest panorama in Alsace. Best in autumn when beech forests turn gold.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Rothenbachkopf_nord.jpg?width=800", caption: "The Route des Crêtes along the Vosges ridge" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Grand_Ballon_de_l%27ouest.jpg?width=800", caption: "Grand Ballon — the highest point on the route" }
+    ]
+  },
+  {
+    id: 112,
+    regionRank: 12,
+    waypoints: [[45.180, 6.850], [45.244, 6.902], [45.290, 6.960]],
+    name: "Col du Mont Cenis",
+    region: "France",
+    county: "Savoie",
+    lat: 45.244,
+    lng: 6.902,
+    distance: "24 miles",
+    difficulty: "challenging",
+    elevation: "6,834 ft summit",
+    roadDesignation: "D1006",
+    description: "The road Napoleon built to move his armies from France to Italy. The D1006 climbs from Lanslebourg through a series of elegant hairpins to the vast plateau at 2,083m — a glacial lake, a hydroelectric dam, and a landscape that feels like Scotland transported to the Alps. The descent into Italy at Susa is one of the great road panoramas in Europe, the Po plain spreading infinitely south.",
+    highlights: [
+      "Napoleon's engineered road — built in 3 years between 1803 and 1806",
+      "Lac du Mont Cenis — a vast artificial lake on the summit plateau",
+      "The Italian descent to Susa with views across the Po plain",
+      "Lanslebourg — one of the finest gateway villages in the Alps"
+    ],
+    tip: "Cross into Italy and descend to Susa for espresso — the Italian side of the road is equally fine. Return via the same road or loop back via the Fréjus tunnel. Open year-round on the French side.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Lac_du_Mont-Cenis.jpg?width=800", caption: "Lac du Mont Cenis on the summit plateau" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Col_du_Mont_Cenis.jpg?width=800", caption: "Panorama from the Col du Mont Cenis" }
+    ]
+  },
+  {
+    id: 113,
+    regionRank: 13,
+    waypoints: [[44.640, 6.970], [44.691, 6.988], [44.740, 7.008]],
+    name: "Col de l'Agnel",
+    region: "France",
+    county: "Hautes-Alpes",
+    lat: 44.691,
+    lng: 6.988,
+    distance: "16 miles",
+    difficulty: "thrilling",
+    elevation: "9,216 ft summit",
+    roadDesignation: "D947",
+    description: "The third-highest paved road in the Alps, the Col de l'Agnel crosses the French-Italian border at 2,744m through a high-altitude wilderness that makes most alpine passes feel suburban. The D947 from Château-Queyras climbs through the remote Queyras Natural Park — one of France's least-visited corners — to a summit where the air is thin, the views are vast, and the next village is Italian.",
+    highlights: [
+      "Third-highest paved road in the Alps at 2,744m",
+      "Queyras Natural Park — one of France's sunniest and most remote regions",
+      "Italian border crossing — descend to Casteldelfino for lunch",
+      "Ultra-clear high-altitude skies — perfect for photography"
+    ],
+    tip: "Approach from Château-Queyras (French side). Only open July to September. The road is narrow and loose on the summit section — take your time. The Italian descent to Pontechianale is magnificent.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Panneau_Route_des_Grandes_Alpes_au_col_du_Lautaret_01.jpg?width=800", caption: "The Route des Grandes Alpes near the Col du Galibier" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Lac_de_Roue_automne.jpg?width=800", caption: "The remote Queyras Natural Park on the approach" }
+    ]
+  },
+  {
+    id: 114,
+    regionRank: 14,
+    waypoints: [[46.100, 6.870], [45.832, 6.871], [45.063, 6.408]],
+    name: "Route des Grandes Alpes",
+    region: "France",
+    county: "Haute-Savoie / Savoie / Hautes-Alpes",
+    lat: 45.832,
+    lng: 6.871,
+    distance: "430 miles",
+    difficulty: "scenic",
+    elevation: "9,088 ft (Col de l'Iseran)",
+    roadDesignation: "D902 / N91 / D1091",
+    description: "Europe's greatest road journey. The Route des Grandes Alpes runs from Lake Geneva (Thonon-les-Bains) to Nice, crossing 16 passes through the full height of the French Alps. Taking in the Galibier, the Iseran, the Cayolle, the Vars, and a dozen more, this is a week-long meditation on altitude, scenery, and the peculiar pleasure of choosing the hardest possible line from A to B.",
+    highlights: [
+      "16 alpine passes including Col du Galibier and Col de l'Iseran",
+      "Lake Geneva to the Mediterranean — the Alps in their entirety",
+      "Col de l'Iseran — the highest pass on the route at 2,770m",
+      "Mont Blanc approaches near Chamonix midway"
+    ],
+    tip: "Only possible in full July to September. Split into 5-7 days minimum. The northern section (Thonon to Briançon) is the most dramatic. Book accommodation well in advance in the high-altitude villages.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Col-du-Galibier-2.jpg?width=800", caption: "The Route des Grandes Alpes near the Col du Galibier" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Chamonix_valley_from_la_Fl%C3%A9g%C3%A8re%2C2010_07.JPG?width=800", caption: "Mont Blanc massif from the route near Chamonix" }
+    ]
+  },
+  {
+    id: 115,
+    regionRank: 15,
+    waypoints: [[44.030, 3.050], [44.079, 3.021], [44.125, 3.000]],
+    name: "Millau Viaduct Approach (A75)",
+    region: "France",
+    county: "Aveyron, Occitanie",
+    lat: 44.079,
+    lng: 3.021,
+    distance: "12 miles",
+    difficulty: "scenic",
+    elevation: "900m causses plateau",
+    roadDesignation: "A75 / D992",
+    description: "The Millau Viaduct is the world's tallest bridge — its tallest mast stands 343m above the Tarn valley floor, higher than the Eiffel Tower. But driving across it is only half the story. The approach roads — both north (Causses du Larzac) and south (Causse Rouge) — traverse a lunar limestone plateau of extraordinary bleakness before the valley suddenly opens beneath you and the viaduct appears: an engineering miracle suspended in thin air.",
+    highlights: [
+      "Millau Viaduct — tallest bridge structure in the world",
+      "Causses du Larzac — one of France's most dramatic plateaux",
+      "The valley revelation — Tarn gorge suddenly appearing 270m below",
+      "D992 scenic alternative for those avoiding the toll"
+    ],
+    tip: "Take the D992 from Millau town to appreciate the viaduct from below first, then drive the A75 across it. The toll is minimal. Stop at the aire north of the viaduct for the definitive photograph.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Creissels_et_Viaduct_de_Millau.jpg?width=800", caption: "The Millau Viaduct — world's tallest bridge" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Creissels_et_Viaduct_de_Millau.jpg?width=800", caption: "The Tarn valley beneath the viaduct" }
+    ]
+  },
+
+  // ── BELGIUM ───────────────────────────────────────────────────────────────
+  {
+    id: 116,
+    regionRank: 1,
+    waypoints: [[50.420, 5.950], [50.437, 5.971], [50.452, 5.994]],
+    name: "Raidillon de l'Eau Rouge",
+    region: "Belgium",
+    county: "Liège Province, Ardennes",
+    lat: 50.437,
+    lng: 5.971,
+    distance: "8 miles",
+    difficulty: "thrilling",
+    elevation: "500m",
+    roadDesignation: "N62 / N696",
+    description: "The approach roads to Spa-Francorchamps — the most celebrated racing circuit in the world — are themselves amongst the most thrilling tarmac in Europe. The N62 dips into the Eau Rouge valley past the point where the famous Raidillon corner bottoms out at over 180 mph in Formula 1, then climbs the hill past the barriers where millions have held their breath. Drive it on the public roads and understand exactly why the great drivers call Spa their favourite.",
+    highlights: [
+      "Raidillon/Eau Rouge — Formula 1's most celebrated corner sequence",
+      "Spa-Francorchamps circuit — home of Belgian GP since 1925",
+      "N62 forest roads of exceptional quality through Fagnes de Spa",
+      "Stavelot — a beautiful nearby town with a famous abbey"
+    ],
+    tip: "Visit on a Belgian GP weekend (late August/early September) for the full atmosphere. The circuit's public hours allow driving on selected weekdays — check the Spa-Francorchamps website for details.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Eau_Rouge_1997.jpg?width=800", caption: "Eau Rouge / Raidillon — Spa's defining corner" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Kurve_Eau_Rouge-Raidillon.jpg?width=800", caption: "The Raidillon climb from the valley floor" }
+    ]
+  },
+  {
+    id: 117,
+    regionRank: 2,
+    waypoints: [[50.476, 6.022], [50.499, 6.083], [50.540, 6.141]],
+    name: "Hautes Fagnes Plateau",
+    region: "Belgium",
+    county: "Liège Province",
+    lat: 50.499,
+    lng: 6.083,
+    distance: "18 miles",
+    difficulty: "scenic",
+    elevation: "694m (Signal de Botrange)",
+    roadDesignation: "N68 / N629",
+    description: "The High Fens — Hautes Fagnes — form Belgium's largest nature reserve: a vast, windswept peat plateau of blanket bog and silver birch that feels more Finnish than Belgian. The N68 traverses this extraordinary landscape via the Signal de Botrange at 694m — Belgium's highest point — through a geological world of cotton grass, sundew, and ancient peat hags that has been forming since the last ice age.",
+    highlights: [
+      "Signal de Botrange — Belgium's highest point at 694m",
+      "Hautes Fagnes Nature Reserve — 10,000 hectares of raised bog",
+      "Baraque Michel crossroads — a historic inn at the plateau centre",
+      "Crystal-clear air and 360° views across the Ardennes and Eifel"
+    ],
+    tip: "Drive it in November for the full desolate grandeur. The N629 across the plateau is emptier than the N68. Visit the Baraque Michel museum for the plateau's history. Walk the wooden boardwalks into the bog.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Fagne_Tirifaye_with_the_Hill_river_in_Waimes%2C_Belgium_%28DSCF3682%29.jpg?width=800", caption: "The Hautes Fagnes peat plateau in winter" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Signal_de_Botrange.jpg?width=800", caption: "Signal de Botrange — Belgium's highest point" }
+    ]
+  },
+  {
+    id: 118,
+    regionRank: 3,
+    waypoints: [[50.340, 5.710], [50.367, 5.789], [50.420, 5.850]],
+    name: "Vallée de l'Amblève",
+    region: "Belgium",
+    county: "Liège Province, Ardennes",
+    lat: 50.367,
+    lng: 5.789,
+    distance: "22 miles",
+    difficulty: "scenic",
+    elevation: "400m",
+    roadDesignation: "N633 / N604",
+    description: "The Amblève valley is the Ardennes distilled: a fast-flowing salmon river shadowed by wooded cliffs, medieval castle ruins, and a road that swoops and winds without ever finding a straight line. The N633 follows the river from Liège Province through Stavelot — with its magnificent Benedictine abbey — and on through Remouchamps, past the famous cave system, before the valley opens into the flat calm of the Ourthe confluence.",
+    highlights: [
+      "Château de Logne — ruined castle above the river",
+      "Grottes de Remouchamps — spectacular dolomite cave system",
+      "Stavelot abbey with its Musée du Circuit de Spa",
+      "The road surface mirrors every river bend — constant engagement"
+    ],
+    tip: "Start at Trois-Ponts (where the Salm meets the Amblève) for the best introduction. Stop at Coo waterfall — one of the largest in Belgium. The valley floors regularly flood; avoid after heavy rain.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Aywaille_JPG01.jpg?width=800", caption: "The Amblève river winding through the Ardennes" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Abbaye_de_Stavelot.jpg?width=800", caption: "The Benedictine Abbey of Stavelot" }
+    ]
+  },
+  {
+    id: 119,
+    regionRank: 4,
+    waypoints: [[49.840, 5.200], [49.880, 5.272], [49.930, 5.352]],
+    name: "Route de la Semois",
+    region: "Belgium",
+    county: "Luxembourg Province, Ardennes",
+    lat: 49.880,
+    lng: 5.272,
+    distance: "35 miles",
+    difficulty: "scenic",
+    elevation: "500m",
+    roadDesignation: "N83 / N884",
+    description: "The Semois is Belgium's wildest river — a brown, tannin-rich torrent that loops and coils through an unbroken wall of ancient forest in the Belgian province of Luxembourg. The roads along its valley — especially the N83 from Florenville to Bouillon — follow the river's meanders through villages of slate-roofed stone houses, past tobacco plots in the valley bottom, and along corniche sections with views of the river 100 metres below.",
+    highlights: [
+      "Bouillon — a perfect medieval town beneath a magnificent castle",
+      "Panorama Rochehaut — the valley's most-photographed river bend",
+      "Tobacco farming in the valley — unique in Belgium",
+      "Godefroid de Bouillon — Crusader leader's home castle"
+    ],
+    tip: "The best single viewpoint is Rochehaut — park and walk 5 minutes to the panorama. Bouillon Castle is essential. The Semois is also a world-class kayaking river if you fancy a different perspective.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/0_Bouillon_-_Corne_de_Turenne_du_ch%C3%A2teau-fort_et_pont_sur_la_Semois_%281%29.JPG?width=800", caption: "The River Semois at Bouillon" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/La_ville_de_Bouillon_et_son_ch%C3%A2teau-fort.JPG?width=800", caption: "Château de Bouillon — a Crusader's fortress" }
+    ]
+  },
+  {
+    id: 120,
+    regionRank: 5,
+    waypoints: [[50.600, 6.000], [50.622, 6.044], [50.650, 6.080]],
+    name: "Lac d'Eupen Approach",
+    region: "Belgium",
+    county: "Liège Province, Eastern Belgium",
+    lat: 50.622,
+    lng: 6.044,
+    distance: "16 miles",
+    difficulty: "scenic",
+    elevation: "400m",
+    roadDesignation: "N67 / N68",
+    description: "The Vesdre reservoir at Eupen — the Barrage de la Vesdre — was rebuilt after the catastrophic 2021 floods that devastated the region. Its forested shores are reached by a series of quiet roads that explore the transitional landscape between the Herve plateau and the Hautes Fagnes, passing through the German-speaking communities of Eastern Belgium. Eupen itself is the capital of the German-speaking Community of Belgium — a Europe within Europe.",
+    highlights: [
+      "Barrage de la Vesdre — a forest-fringed reservoir with walking trails",
+      "Eupen — capital of Belgium's German-speaking Community",
+      "Transition from Herve pastoral country to Fagnes moorland",
+      "Outstanding road quality through a rarely-visited corner of Belgium"
+    ],
+    tip: "Combine with the Hautes Fagnes plateau road (N68) for a full day of exploration. Eupen's café culture is excellent — try the local Eupener Bier. The reservoir road is occasionally closed for maintenance.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Barrage-Eupen-Epuration1.JPG?width=800", caption: "The Barrage de la Vesdre reservoir near Eupen" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Evening_view_of_Sankt_Nikolaus_from_Loten%2C_Eupen%2C_2023.jpg?width=800", caption: "Eupen — capital of German-speaking Belgium" }
+    ]
+  },
+  {
+    id: 121,
+    regionRank: 6,
+    waypoints: [[50.390, 5.889], [50.413, 5.940], [50.440, 5.965]],
+    name: "Col du Rosier — Theux Loop",
+    region: "Belgium",
+    county: "Liège Province, Ardennes",
+    lat: 50.413,
+    lng: 5.940,
+    distance: "20 miles",
+    difficulty: "challenging",
+    elevation: "500m",
+    roadDesignation: "N62 / N621 / N616",
+    description: "The network of roads between Theux, Spa, and the Col du Rosier offers some of Belgium's most challenging and rewarding driving. Looping through dense beech forest on roads built by forestry and quarrying rather than tourists, these are genuine driving roads: cambered, narrowing, banked, and blind. The area is part of the Spa-Francorchamps complex's wider circuit geography — the race infrastructure hints at which roads the professionals have always favoured.",
+    highlights: [
+      "Col du Rosier — a genuine Belgian mountain road",
+      "Theux — a handsome town with a romanesque collegiate church",
+      "Forest roads used as test routes by Belgian rally teams",
+      "Spa village itself — thermal springs and art nouveau architecture"
+    ],
+    tip: "A loop from Spa town works perfectly: N62 south, N621 west, N616 north back to Spa via Theux. Best tackled in dry conditions — the leaf-covered forest sections can be extremely slippery in autumn.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Spa_JPG05.jpg?width=800", caption: "Spa town centre — the original spa destination" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Frahan_JPG01.jpg?width=800", caption: "Dense Ardennes forest on the loop roads" }
+    ]
+  },
+  {
+    id: 122,
+    regionRank: 7,
+    waypoints: [[50.100, 5.750], [50.131, 5.789], [50.165, 5.830]],
+    name: "Ardennes Houffalize Loop",
+    region: "Belgium",
+    county: "Luxembourg Province, Ardennes",
+    lat: 50.131,
+    lng: 5.789,
+    distance: "25 miles",
+    difficulty: "challenging",
+    elevation: "550m",
+    roadDesignation: "N860 / N854 / N822",
+    description: "Houffalize sits in the deepest fold of the Belgian Ardennes, its church spire rising from the bottom of a valley carved by the Ourthe Orientale. The roads radiating outward climb through a patchwork of spruce plantation and traditional farmland to belvedere views that confirm this to be one of the least-visited corners of Belgium. This was Battle of the Bulge country — American and German forces fought for these ridges in the winter of 1944.",
+    highlights: [
+      "Houffalize rock — a 30m sandstone outcrop above the town",
+      "Battle of the Bulge historical sites throughout the area",
+      "Ourthe Orientale valley — the Ardennes in miniature",
+      "Petite Mormont — a quiet hilltop hamlet with panoramic views"
+    ],
+    tip: "Visit the nearby Bastogne War Museum (30km south) for historical context on the Battle of the Bulge. The N860 to La Roche-en-Ardenne is the finest single road in this area.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/0_Houffalize_050710_%281%29.JPG?width=800", caption: "Houffalize town in the Ourthe valley" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Houffalize_JPG01.jpg?width=800", caption: "The Houffalize sandstone rock above the valley" }
+    ]
+  },
+  {
+    id: 123,
+    regionRank: 8,
+    waypoints: [[50.260, 5.180], [50.305, 5.273], [50.340, 5.355]],
+    name: "Ourthe Valley — La Roche-en-Ardenne",
+    region: "Belgium",
+    county: "Luxembourg Province, Ardennes",
+    lat: 50.305,
+    lng: 5.273,
+    distance: "28 miles",
+    difficulty: "scenic",
+    elevation: "450m",
+    roadDesignation: "N833 / N860",
+    description: "La Roche-en-Ardenne is arguably the most beautifully situated town in Belgium, its ruined castle rising from a meander-surrounded promontory of the Ourthe river. The N833 and N860 follow the river upstream and downstream through a succession of tight valley bends, forested cliff faces, and picturesque villages that have attracted Belgian holidaymakers for over a century. The tarmac is smooth, the scenery is constant, and the roads are blissfully uncrowded outside July and August.",
+    highlights: [
+      "La Roche-en-Ardenne castle — a meander-ringed fortress ruin",
+      "Ourthe river — one of Belgium's great salmon and trout rivers",
+      "Ortho village — perfectly preserved Ardennes hamlet",
+      "September Ardennes truffles — the roads pass through prime territory"
+    ],
+    tip: "A weekday visit in spring or autumn is ideal. The N833 south along the Ourthe to Maboge and Nadrin delivers the valley at its most dramatic. Combine with the Barrage de Nisramont for a full day loop.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/La_Roche-en-Ardenne.jpg?width=800", caption: "La Roche-en-Ardenne and its castle above the Ourthe" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Esneux_JPG01.jpg?width=800", caption: "The Ourthe river winding through the Ardennes" }
+    ]
+  },
+
+  // ── NETHERLANDS ───────────────────────────────────────────────────────────
+  {
+    id: 124,
+    regionRank: 1,
+    waypoints: [[52.950, 5.030], [53.052, 5.240], [53.070, 5.457]],
+    name: "Afsluitdijk",
+    region: "Netherlands",
+    county: "North Holland / Friesland",
+    lat: 53.052,
+    lng: 5.240,
+    distance: "20 miles",
+    difficulty: "scenic",
+    elevation: "Sea level",
+    roadDesignation: "A7 / N31",
+    description: "One of the world's great engineering achievements and one of its most peculiar drives. The Afsluitdijk — the Closure Dike — stretches 32 kilometres across the mouth of what was once the Zuiderzee, separating the IJsselmeer from the Wadden Sea. Completed in 1932, it transformed Dutch geography. Driving it at speed in a westerly gale, with grey seawater on both sides and the mainland invisible in either direction, is an experience unlike anything else on earth.",
+    highlights: [
+      "32km of straight dike road across open seawater",
+      "IJsselmeer on one side, Wadden Sea on the other",
+      "Den Oever and Zurich sluice monuments at each end",
+      "Spectacular in storm conditions — waves break over the dike walls"
+    ],
+    tip: "Drive east to west into the prevailing wind for the most dramatic experience. Stop at the Stevinsluizen monument midway. Walk on top of the dike for the full panoramic effect. Not to be missed.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Afsluitdijk.jpg?width=800", caption: "The Afsluitdijk stretching across the former Zuiderzee" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Afsluitdijk_%281%29.jpg?width=800", caption: "The Afsluitdijk stretching to the horizon" }
+    ]
+  },
+  {
+    id: 125,
+    regionRank: 2,
+    waypoints: [[50.760, 5.860], [50.771, 5.874], [50.790, 5.900]],
+    name: "South Limburg Hills",
+    region: "Netherlands",
+    county: "Limburg Province",
+    lat: 50.771,
+    lng: 5.874,
+    distance: "35 miles",
+    difficulty: "challenging",
+    elevation: "322m (Vaalserberg — the Netherlands' highest point)",
+    roadDesignation: "N278 / N281 / N600",
+    description: "The Netherlands is famously flat — except here. The South Limburg hills are a geological anomaly: a limestone plateau dissected by river valleys into rolling, wooded countryside with gradients that shame most of England. The N278 and its tributary roads around Maastricht, Valkenburg, and the Vaalserberg (the highest point in the Netherlands at 322m, shared with Germany and Belgium) represent the only hills-driving the Netherlands has to offer — and they are genuinely good.",
+    highlights: [
+      "Vaalserberg — three-country point (NL, Belgium, Germany) at 322m",
+      "Geulvallei — the country's most scenically wooded valley",
+      "Valkenburg cave castles — medieval fortifications in the limestone",
+      "Maastricht — one of Europe's finest historic city centres nearby"
+    ],
+    tip: "The N278 between Maastricht and Vaals delivers the best sustained driving. Combine with a visit to the Three-Country Point (Drielandenpunt) at Vaalserberg. Autumn brings spectacular colour to the beech forests.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Geul_valley_(South_Limburg,_Netherlands_2008)_(2476529680).jpg?width=800", caption: "The Geul valley — the Netherlands' most scenic wooded valley" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Hoogste_punt_van_Nederland._Drielandenpunt_(Vaals)_01.jpg?width=800", caption: "The Drielandenpunt — where Netherlands, Belgium and Germany meet" }
+    ]
+  },
+  {
+    id: 126,
+    regionRank: 3,
+    waypoints: [[52.060, 5.820], [52.082, 5.859], [52.110, 5.900]],
+    name: "Hoge Veluwe National Park",
+    region: "Netherlands",
+    county: "Gelderland Province",
+    lat: 52.082,
+    lng: 5.859,
+    distance: "20 miles",
+    difficulty: "scenic",
+    elevation: "100m",
+    roadDesignation: "N310 / N304",
+    description: "The Hoge Veluwe is the Netherlands' largest national park — 5,400 hectares of heathland, drift sand, and ancient forest on the Veluwe ridge. The park roads are closed to outside traffic (entry fee required), creating a car-free paradise of white bicycles and red deer. Outside the park, the N310 and N304 traverse open heathland with the quality of driving surface and the absence of traffic that makes the Veluwe the Netherlands' most satisfying driving region.",
+    highlights: [
+      "Hoge Veluwe National Park — heathland and drift sand landscape",
+      "Kröller-Müller Museum inside the park — finest van Gogh collection in the world",
+      "Red deer on the heathland at dusk — a remarkable sight",
+      "Drift sand dunes — inland 'desert' terrain unique in the Netherlands"
+    ],
+    tip: "Visit the Kröller-Müller Museum (entry included in park admission) — the van Gogh collection alone justifies the detour. Drive the park roads in the white bicycle zone early morning for the best wildlife.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Heidevlakte_in_Nationaal_Park_de_Hooge_Veluwe.JPG?width=800", caption: "Heathland in the Hoge Veluwe National Park" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Sand_Area_Hoge_Veluwe.jpg?width=800", caption: "Inland drift sand landscape on the Veluwe" }
+    ]
+  },
+  {
+    id: 127,
+    regionRank: 4,
+    waypoints: [[51.550, 3.710], [51.625, 3.830], [51.660, 3.970]],
+    name: "Zeeuwse Delta Islands",
+    region: "Netherlands",
+    county: "Zeeland Province",
+    lat: 51.625,
+    lng: 3.830,
+    distance: "45 miles",
+    difficulty: "scenic",
+    elevation: "Sea level",
+    roadDesignation: "N57 / N59 / N256",
+    description: "The Delta Works — the world's most ambitious flood defence system — connected a chain of Zeeland islands with a series of engineering masterpieces that happen to make magnificent roads. The N57 crosses the Haringvliet sluices, the N59 traverses the Volkerak locks, and the N256 passes the Oosterscheldekering — the 9km storm surge barrier whose concrete pillars frame the North Sea like a monument to human ingenuity. Drive it all and stand on the shoulders of Dutch engineering genius.",
+    highlights: [
+      "Oosterscheldekering — 9km North Sea storm surge barrier",
+      "Delta Works visitor centre at Neeltje Jans island",
+      "Zeeland beaches — wide, clean, and uncrowded outside summer",
+      "Middelburg — the finest medieval city in Zeeland"
+    ],
+    tip: "The N57 from Hellevoetsluis to Middelburg is the complete island-crossing experience. Stop at the Delta Works visitor centre at Neeltje Jans — it's better than it sounds. Zeeland's mussels and oysters are world-class.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Oosterscheldekering.jpg?width=800", caption: "The Oosterscheldekering storm surge barrier" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Deltawerken_-_Osterschelde_-_Zeeland.jpg?width=800", caption: "The Zeeland coastline from the Delta Works road" }
+    ]
+  },
+  {
+    id: 128,
+    regionRank: 5,
+    waypoints: [[52.795, 4.796], [52.855, 4.798], [52.920, 4.804]],
+    name: "Noord-Holland Coastal Dunes",
+    region: "Netherlands",
+    county: "Noord-Holland Province",
+    lat: 52.855,
+    lng: 4.798,
+    distance: "30 miles",
+    difficulty: "scenic",
+    elevation: "Dune ridges to 30m",
+    roadDesignation: "N9 / N510 / N512",
+    description: "The Noord-Holland dune coast between Alkmaar and Den Helder preserves one of Europe's last great coastal dune systems — 30m ridges of wind-blown sand stabilised by marram grass and sea buckthorn, behind which bulb fields turn the landscape psychedelic in April. The N9 runs the full length of the province, while local roads into the dunes via Schoorl and Bergen-aan-Zee access a secret world of pinewood riding tracks and empty beaches.",
+    highlights: [
+      "Schoorl dunes — the tallest dunes in the Netherlands at 58m",
+      "Tulip and hyacinth fields in April — extraordinary colour",
+      "Bergen village — the Netherlands' most charming artists' colony",
+      "Texel island ferry from Den Helder — car-and-driver crossing"
+    ],
+    tip: "Drive it in April for the tulip fields — an unmissable spectacle. The dune roads around Schoorl and Bergen-aan-Zee are the finest sections. Take the ferry from Den Helder to Texel for the island extension.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Heath_in_the_Noordhollands_Duinreservaat_(North_Holland_Dune_Reserve)_near_Schoorl,_Netherlands_-_panoramio.jpg?width=800", caption: "The Schoorlse dunes — tallest in the Netherlands" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Bollenvelden,_Bestanddeelnr_255-9878.jpg?width=800", caption: "Tulip fields alongside the Noord-Holland coast road" }
+    ]
+  },
+  {
+    id: 129,
+    regionRank: 6,
+    waypoints: [[51.960, 5.940], [51.983, 5.988], [52.020, 6.040]],
+    name: "Veluwezoom Ridge Road",
+    region: "Netherlands",
+    county: "Gelderland Province",
+    lat: 51.983,
+    lng: 5.988,
+    distance: "18 miles",
+    difficulty: "scenic",
+    elevation: "110m (Posbank viewpoint)",
+    roadDesignation: "N311 / N786",
+    description: "The Veluwezoom escarpment forms the eastern edge of the Veluwe — a wooded ridge that drops sharply to the IJssel valley and offers, by Dutch standards, a remarkable panorama. The N311 follows the ridge through Nationaal Park Veluwezoom (the Netherlands' first national park, established 1930), past the iconic Posbank heather viewpoint and through old estates of beech and oak that were the hunting grounds of Dutch nobility. In September, the heather turns the slopes purple.",
+    highlights: [
+      "Posbank — the Netherlands' finest heather panorama in September",
+      "Nationaal Park Veluwezoom — the country's oldest national park",
+      "IJssel valley views from the ridge — flat Netherlands revealed",
+      "Rheden and Dieren — quiet estate villages beneath the ridge"
+    ],
+    tip: "September is the month for Posbank — the heather bloom turns the Veluwezoom vivid purple and the viewpoint draws photographers from across Europe. Arrive at sunrise to have it to yourself.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Posbank_Veluwezoom.jpg?width=800", caption: "Posbank heather panorama in bloom" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Nationaal_Park_Veluwezoom_R03.jpg?width=800", caption: "Ancient estate woodland on the Veluwezoom ridge" }
+    ]
+  },
+  {
+    id: 130,
+    regionRank: 7,
+    waypoints: [[52.980, 4.760], [53.059, 4.794], [53.130, 4.820]],
+    name: "Texel Island Circuit",
+    region: "Netherlands",
+    county: "Noord-Holland Province",
+    lat: 53.059,
+    lng: 4.794,
+    distance: "40 miles loop",
+    difficulty: "scenic",
+    elevation: "Sea level / dunes to 15m",
+    roadDesignation: "N501 / N501 loop",
+    description: "Texel is the largest and most southerly of the Wadden Islands — a 24km long sheep island of bird reserves, lighthouse, dune forests, and wide North Sea beaches. The car ferry from Den Helder delivers you to a 40km circuit of empty roads, salt marshes alive with avocets and spoonbills, and the peculiar pleasure of circumnavigating an inhabited North Sea island by car. The southern polder roads are straight and fast; the northern dune tracks are intimate and extraordinary.",
+    highlights: [
+      "De Hors nature reserve — a wild tidal spit at the island's southern tip",
+      "Ecomare seal sanctuary — Texel's rescued seal rehabilitation centre",
+      "Vuurtoren Texel — the island's lighthouse at the northern tip",
+      "Bird-rich salt marshes — among the finest in the Netherlands"
+    ],
+    tip: "Book the ferry in advance in summer (TESO ferry company). The northern loop via De Cocksdorp is quieter than the main road. The island is also best explored by bicycle — hire at the ferry terminal.",
+    images: [
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Eierland_Lighthouse_texel.jpg?width=800", caption: "Vuurtoren Texel — the island's northern lighthouse" },
+      { url: "https://commons.wikimedia.org/wiki/Special:FilePath/Texel_sheep.jpg?width=800", caption: "Texel's characteristic sheep on the island dunes" }
     ]
   }
 ];
