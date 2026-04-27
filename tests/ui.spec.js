@@ -755,6 +755,32 @@ test.describe('Google Maps links', () => {
   });
 });
 
+// ─── Route-adjacent POIs ────────────────────────────────────────────────────
+
+test.describe('Route-adjacent POIs', () => {
+  test('opening a road shows nearby clickable POIs on the map and in the panel', async ({ page }) => {
+    await page.goto('/');
+    await waitForMap(page);
+    await page.waitForTimeout(800);
+
+    const card = page.locator('.sidebar-road-list .road-card').filter({ hasText: 'Cat and Fiddle' }).first();
+    await expect(card).toBeVisible({ timeout: 10000 });
+    await card.click();
+
+    await expect(page.locator('#roadPanel')).not.toHaveClass(/collapsed/, { timeout: 5000 });
+
+    const routeMarkers = page.locator('.route-poi-marker');
+    await expect(routeMarkers.first()).toBeVisible({ timeout: 5000 });
+    expect(await routeMarkers.count()).toBeGreaterThan(0);
+
+    const routeLink = page.locator('#roadPanel .panel-route-poi-link').first();
+    await expect(routeLink).toBeVisible();
+    const href = await routeLink.getAttribute('href');
+    expect(href).toContain('google.com/maps');
+    expect(href).toContain('query=');
+  });
+});
+
 // ─── European country filters ─────────────────────────────────────────────────
 
 test.describe('European country filters', () => {

@@ -185,6 +185,7 @@ function resolveColor(cssVar) {
 function clearRoute() {
   if (routeAbortController) { routeAbortController.abort(); routeAbortController = null; }
   if (currentRouteLayer) { map.removeLayer(currentRouteLayer); currentRouteLayer = null; }
+  if (window.clearNearbyRoutePois) window.clearNearbyRoutePois();
   activeRouteId = null;
 }
 
@@ -275,9 +276,27 @@ function showRoadPanel(roadId) {
     sidebar.classList.add('open', 'panel-open');
   }
   drawRoute(road);
+  const nearbyPois = window.updateNearbyRoutePois ? window.updateNearbyRoutePois(road) : [];
 
   const countryColor = `var(--color-${road.region.toLowerCase()})`;
   const rankClass = road.regionRank === 1 ? 'gold' : road.regionRank === 2 ? 'silver' : road.regionRank === 3 ? 'bronze' : 'default';
+
+  const nearbyPoisHTML = nearbyPois.length
+    ? `<div class="panel-highlights panel-route-pois">
+        <h3>Nearby places on this route</h3>
+        <ul class="highlight-list route-poi-list">
+          ${nearbyPois.map(poi => `
+            <li class="route-poi-item">
+              <span class="highlight-dot route-poi-dot"></span>
+              <div class="route-poi-copy">
+                <a class="panel-route-poi-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${poi.name} ${poi.lat},${poi.lng}`)}" target="_blank" rel="noopener noreferrer">${poi.name}</a>
+                <span class="route-poi-distance">${poi.distanceKm.toFixed(1)} km from route</span>
+              </div>
+            </li>
+          `).join('')}
+        </ul>
+      </div>`
+    : '';
 
   const imagesHTML = road.images && road.images.length
     ? `<div class="panel-images">
@@ -335,6 +354,7 @@ function showRoadPanel(roadId) {
         <li><span class="highlight-dot" style="background: var(--color-challenging)"></span>${road.tip}</li>
       </ul>
     </div>
+    ${nearbyPoisHTML}
     <a class="panel-maps-btn" href="https://www.google.com/maps/search/?api=1&query=${road.lat},${road.lng}" target="_blank" rel="noopener noreferrer">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
       Open in Google Maps
@@ -518,8 +538,10 @@ if (window.ResizeObserver) {
 (function() {
   // Custom pane so POI markers sit below road number markers
   map.createPane('poiPane').style.zIndex = 550;
+  map.createPane('routePoiPane').style.zIndex = 560;
 
   const activeLayers = {};
+  let currentRoutePoiLayer = null;
 
   // Lucide SVG paths keyed by icon name (inline, no CDN dependency)
   const iconPaths = {
@@ -534,12 +556,118 @@ if (window.ResizeObserver) {
     factory:    'M2 22V10l6-4v4l6-4v4l6-4v12H2zm3-4h2v4H5zm5 0h2v4h-2zm5 0h2v4h-2z',
   };
 
-  function makeSvgIcon(category) {
+  function buildMapsUrl(name, lat, lng) {
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name} ${lat},${lng}`)}`;
+  }
+
+  function buildPoiPopup(poi, category, color, metaText = '') {
+    const mapsUrl = buildMapsUrl(poi.name, poi.lat, poi.lng);
+    const meta = metaText
+      ? `<div class="popup-region" style="color:${color};text-transform:capitalize;font-weight:600;margin-bottom:4px">${metaText}</div>`
+      : `<div class="popup-region" style="color:${color};text-transform:capitalize;font-weight:600;margin-bottom:6px">${category}</div>`;
+
+    return `
+      <div class="popup-name">${poi.name}</div>
+      ${meta}
+      <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0;max-width:220px;line-height:1.5">${poi.desc}</p>
+      <div class="popup-actions">
+        <a class="popup-maps-link" href="${mapsUrl}" target="_blank" rel="noopener noreferrer">Google Maps ↗</a>
+      </div>
+    `;
+  }
+
+  function haversineKm([lat1, lng1], [lat2, lng2]) {
+    const toRad = value => value * Math.PI / 180;
+    const r = 6371;
+    const dLat = toRad(lat2 - lat1);
+    const dLng = toRad(lng2 - lng1);
+    const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
+    return 2 * r * Math.asin(Math.sqrt(a));
+  }
+
+  function getRoadPoints(road) {
+    if (road.waypoints && road.waypoints.length) return road.waypoints;
+    return [[road.lat, road.lng]];
+  }
+
+  function distanceToRoadKm(road, poi) {
+    return getRoadPoints(road).reduce((best, point) => Math.min(best, haversineKm(point, [poi.lat, poi.lng])), Infinity);
+  }
+
+  function getNearbyPoisForRoad(road) {
+    const thresholdKm = 42;
+    const nearby = [];
+
+    Object.entries(POIS_DATA).forEach(([category, config]) => {
+      config.pois.forEach(poi => {
+        const distanceKm = distanceToRoadKm(road, poi);
+        if (distanceKm <= thresholdKm) {
+          nearby.push({ ...poi, category, color: config.color, distanceKm });
+        }
+      });
+    });
+
+    return nearby
+      .sort((a, b) => a.distanceKm - b.distanceKm)
+      .slice(0, 4);
+  }
+
+  function clearCurrentRoutePoiLayer() {
+    if (currentRoutePoiLayer) {
+      map.removeLayer(currentRoutePoiLayer);
+      currentRoutePoiLayer = null;
+    }
+  }
+
+  window.clearNearbyRoutePois = clearCurrentRoutePoiLayer;
+  window.updateNearbyRoutePois = function(road) {
+    clearCurrentRoutePoiLayer();
+
+    const nearbyPois = getNearbyPoisForRoad(road);
+    const layer = L.layerGroup();
+
+    if (nearbyPois.length) {
+      nearbyPois.forEach(poi => {
+        const marker = L.marker([poi.lat, poi.lng], {
+          icon: makeSvgIcon(poi.category, 'route-poi-marker'),
+          pane: 'routePoiPane'
+        });
+        marker.bindPopup(buildPoiPopup(poi, poi.category, poi.color, `Nearby to ${road.name} · ${poi.distanceKm.toFixed(1)} km from route`), { maxWidth: 280 });
+        layer.addLayer(marker);
+      });
+    } else {
+      const mapsUrl = buildMapsUrl(road.name, road.lat, road.lng);
+      const marker = L.marker([road.lat, road.lng], {
+        icon: L.divIcon({
+          className: '',
+          html: `<div class="poi-marker route-poi-marker route-poi-anchor" style="--poi-bg: var(--color-primary)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg></div>`,
+          iconSize: [26, 26],
+          iconAnchor: [13, 13],
+          popupAnchor: [0, -16]
+        }),
+        pane: 'routePoiPane'
+      });
+      marker.bindPopup(`
+        <div class="popup-name">Route focus</div>
+        <div class="popup-region" style="color:var(--color-primary);font-weight:600;margin-bottom:6px">${road.name}</div>
+        <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0;max-width:220px;line-height:1.5">No nearby POIs matched this route, so this anchor opens the route center in Google Maps.</p>
+        <div class="popup-actions">
+          <a class="popup-maps-link" href="${mapsUrl}" target="_blank" rel="noopener noreferrer">Google Maps ↗</a>
+        </div>
+      `, { maxWidth: 280 });
+      layer.addLayer(marker);
+    }
+
+    currentRoutePoiLayer = layer.addTo(map);
+    return nearbyPois;
+  };
+
+  function makeSvgIcon(category, extraClass = '') {
     const { color, icon } = POIS_DATA[category];
     const path = iconPaths[icon] || iconPaths.landmark;
     return L.divIcon({
       className: '',
-      html: `<div class="poi-marker" style="--poi-bg:${color}">
+      html: `<div class="poi-marker${extraClass ? ` ${extraClass}` : ''}" style="--poi-bg:${color}">
                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" width="12" height="12">
                  <path d="${path}"/>
@@ -557,11 +685,7 @@ if (window.ResizeObserver) {
     const layer = L.layerGroup();
     pois.forEach(poi => {
       const marker = L.marker([poi.lat, poi.lng], { icon, pane: 'poiPane' });
-      marker.bindPopup(`
-        <div class="popup-name">${poi.name}</div>
-        <div class="popup-region" style="color:${color};text-transform:capitalize;font-weight:600;margin-bottom:6px">${category}</div>
-        <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0;max-width:220px;line-height:1.5">${poi.desc}</p>
-      `, { maxWidth: 260 });
+      marker.bindPopup(buildPoiPopup(poi, category, color), { maxWidth: 260 });
       layer.addLayer(marker);
     });
     return layer;
