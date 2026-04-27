@@ -771,13 +771,21 @@ test.describe('Route-adjacent POIs', () => {
 
     const routeMarkers = page.locator('.route-poi-marker');
     await expect(routeMarkers.first()).toBeVisible({ timeout: 5000 });
-    expect(await routeMarkers.count()).toBeGreaterThan(0);
+    const routeCount = await routeMarkers.count();
+    expect(routeCount).toBeGreaterThan(0);
 
-    const routeLink = page.locator('#roadPanel .panel-route-poi-link').first();
-    await expect(routeLink).toBeVisible();
-    const href = await routeLink.getAttribute('href');
-    expect(href).toContain('google.com/maps');
-    expect(href).toContain('query=');
+    const firstMarker = routeMarkers.first();
+    await firstMarker.dispatchEvent('click');
+    await expect(page.locator('.leaflet-popup').last().locator('.popup-image')).toBeVisible({ timeout: 5000 });
+
+    const routeButton = page.locator('#roadPanel .panel-route-poi-link').first();
+    await expect(routeButton).toBeVisible();
+    const beforeCenter = await page.evaluate(() => window.map.getCenter());
+    await routeButton.click();
+    await page.waitForTimeout(600);
+    const afterCenter = await page.evaluate(() => window.map.getCenter());
+    expect(Math.abs(afterCenter.lat - beforeCenter.lat) + Math.abs(afterCenter.lng - beforeCenter.lng)).toBeGreaterThan(0.01);
+    await expect(page.locator('.leaflet-popup').last().locator('.popup-image')).toBeVisible({ timeout: 5000 });
   });
 });
 

@@ -289,7 +289,7 @@ function showRoadPanel(roadId) {
             <li class="route-poi-item">
               <span class="highlight-dot route-poi-dot"></span>
               <div class="route-poi-copy">
-                <a class="panel-route-poi-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${poi.name} ${poi.lat},${poi.lng}`)}" target="_blank" rel="noopener noreferrer">${poi.name}</a>
+                <button class="panel-route-poi-link" type="button" data-route-poi-lat="${poi.lat}" data-route-poi-lng="${poi.lng}">${poi.name}</button>
                 <span class="route-poi-distance">${poi.distanceKm.toFixed(1)} km from route</span>
               </div>
             </li>
@@ -378,6 +378,13 @@ function showRoadPanel(roadId) {
       }
     });
   }
+  panelBody.querySelectorAll('[data-route-poi-lat]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lat = parseFloat(btn.dataset.routePoiLat);
+      const lng = parseFloat(btn.dataset.routePoiLng);
+      if (window.focusNearbyRoutePoi) window.focusNearbyRoutePoi(lat, lng);
+    });
+  });
 
   requestAnimationFrame(() => map.invalidateSize());
 }
@@ -562,11 +569,15 @@ if (window.ResizeObserver) {
 
   function buildPoiPopup(poi, category, color, metaText = '') {
     const mapsUrl = buildMapsUrl(poi.name, poi.lat, poi.lng);
+    const imageHtml = poi.imageUrl
+      ? `<div class="popup-image-wrap"><img class="popup-image" src="${poi.imageUrl}" alt="${poi.imageCaption || poi.name}" loading="lazy"><div class="popup-image-caption">${poi.imageCaption || poi.name}</div></div>`
+      : '';
     const meta = metaText
       ? `<div class="popup-region" style="color:${color};text-transform:capitalize;font-weight:600;margin-bottom:4px">${metaText}</div>`
       : `<div class="popup-region" style="color:${color};text-transform:capitalize;font-weight:600;margin-bottom:6px">${category}</div>`;
 
     return `
+      ${imageHtml}
       <div class="popup-name">${poi.name}</div>
       ${meta}
       <p style="font-size:0.8rem;color:var(--color-text-muted);margin:0;max-width:220px;line-height:1.5">${poi.desc}</p>
@@ -618,6 +629,20 @@ if (window.ResizeObserver) {
       currentRoutePoiLayer = null;
     }
   }
+
+  window.focusNearbyRoutePoi = function(lat, lng) {
+    map.flyTo([lat, lng], 12, { duration: 0.6 });
+
+    if (!currentRoutePoiLayer) return;
+
+    currentRoutePoiLayer.eachLayer(layer => {
+      if (!layer.getLatLng) return;
+      const point = layer.getLatLng();
+      if (Math.abs(point.lat - lat) < 1e-6 && Math.abs(point.lng - lng) < 1e-6) {
+        layer.openPopup();
+      }
+    });
+  };
 
   window.clearNearbyRoutePois = clearCurrentRoutePoiLayer;
   window.updateNearbyRoutePois = function(road) {

@@ -787,10 +787,16 @@
 }
 
 .panel-route-poi-link {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
   color: var(--color-primary);
   font-weight: 600;
   text-decoration: none;
   line-height: 1.3;
+  cursor: pointer;
 }
 
 .panel-route-poi-link:hover {
@@ -1257,6 +1263,26 @@
   align-items: center;
   gap: var(--space-3);
   margin-top: var(--space-1);
+}
+
+.popup-image-wrap {
+  margin-bottom: var(--space-3);
+}
+
+.popup-image {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  margin-bottom: var(--space-1);
+}
+
+.popup-image-caption {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  line-height: 1.3;
 }
 
 .popup-link {
